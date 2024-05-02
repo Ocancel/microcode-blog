@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>小奇的站点</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on 小奇的站点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Awards</title>
+      <link>http://localhost:1313/awards/</link>
+      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/awards/</guid>
+      
+        <description>Hugo Awards, an annual literary award for the best science fiction or fantasy works</description>
+      
+    </item>
+    
+    <item>
+      <title>Certifications</title>
+      <link>http://localhost:1313/certifications/</link>
+      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/certifications/</guid>
+      
+        <description>Hugo Certifications</description>
+      
+    </item>
+    
+    <item>
+      <title>The Notice Shortcode</title>
+      <link>http://localhost:1313/post/notice-shortcode/</link>
+      <pubDate>Fri, 18 Mar 2022 21:47:41 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/notice-shortcode/</guid>
+      
+        <description>The notice shortcode supports three different types of disclaimers.</description>
+      
+    </item>
+    
+    <item>
+      <title>Spring Bean Lifecycle</title>
+      <link>http://localhost:1313/post/spring-bean-lifecycle/</link>
+      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/spring-bean-lifecycle/</guid>
+      
+        <description>简介 Bean的生命周期主要包含实例化、属性注入、初始化、使用和销毁几个阶段。</description>
+      
+    </item>
+    
+    <item>
+      <title>Series Part 2</title>
+      <link>http://localhost:1313/post/series-part-2/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/series-part-2/</guid>
+      
+        <description>A brief guide to how to setup series part 2</description>
+      
+    </item>
+    
+    <item>
+      <title>Series Part 1</title>
+      <link>http://localhost:1313/post/series-part-1/</link>
+      <pubDate>Sat, 14 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/series-part-1/</guid>
+      
+        <description>A brief guide to how to setup series part 1</description>
+      
+    </item>
+    
+    <item>
+      <title>Redirect</title>
+      <link>http://localhost:1313/post/redirect/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/redirect/</guid>
+      
+        <description>Usage of redirectUrl</description>
+      
+    </item>
+    
+    <item>
+      <title>The Figure Shortcode</title>
+      <link>http://localhost:1313/post/figure-shortcode/</link>
+      <pubDate>Sat, 13 Mar 2021 21:47:41 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/figure-shortcode/</guid>
+      
+        <description>Hugo has figure shortcode built-in, so you can easily add figure captions or hyperlink rel attributes to images.</description>
+      
+    </item>
+    
+    <item>
+      <title>Sorting Algorithm</title>
+      <link>http://localhost:1313/post/sorting-algorithm/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/sorting-algorithm/</guid>
+      
+        <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;排序算法&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;平均时间复杂度&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;最好情况&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;最坏情况&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;空间复杂度&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;排序方式&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;稳定性&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;冒泡排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(1)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;内部排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;选择排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(1)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;内部排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;不稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;插入排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(1)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;内部排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;希尔排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(nlog&lt;sup&gt;2&lt;/sup&gt;n)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(nlog&lt;sup&gt;2&lt;/sup&gt;n)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(1)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;内部排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;不稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;归并排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;外部排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;快速排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(logn)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;内部排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;不稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;堆排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(1)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;内部排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;不稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;计数排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(k)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;外部排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;桶排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;外部排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;基数排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n*k)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n*k)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n*k)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;外部排序&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/archives/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Markdown Syntax Guide</title>
+      <link>http://localhost:1313/post/markdown-syntax/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/markdown-syntax/</guid>
+      
+        <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
+      
+    </item>
+    
+    <item>
+      <title>Rich Content</title>
+      <link>http://localhost:1313/post/rich-content/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/rich-content/</guid>
+      
+        <description>A brief description of Hugo Shortcodes</description>
+      
+    </item>
+    
+    <item>
+      <title>Placeholder Text</title>
+      <link>http://localhost:1313/post/placeholder-text/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/placeholder-text/</guid>
+      
+        <description>Lorem Ipsum Dolor Si Amet</description>
+      
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/contact/</guid>
+      
+        <description>Contact Page</description>
+      
+    </item>
+    
+    <item>
+      <title>Math Typesetting</title>
+      <link>http://localhost:1313/post/math-typesetting/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/math-typesetting/</guid>
+      
+        <description>A brief guide to setup KaTeX</description>
+      
+    </item>
+    
+    <item>
+      <title>免责声明</title>
+      <link>http://localhost:1313/statement/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/statement/</guid>
+      
+        <description>本站提供的所有内容仅供学习、分享与交流，并且不保证内容绝对正确和不会过时。通过使用本站内容随之而来的风险与本站无关。当使用本站内容时，代表你已接受本站的免责声明条款。</description>
+      
+    </item>
+    
+    <item>
+      <title>Emoji Support</title>
+      <link>http://localhost:1313/post/emoji-support/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/emoji-support/</guid>
+      
+        <description>Guide to emoji usage in Hugo</description>
+      
+    </item>
+    
+    <item>
+      <title>Guide to Thumbnails in Hugo</title>
+      <link>http://localhost:1313/post/image-test/</link>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/image-test/</guid>
+      
+        <description>Guide to Thumbnails in Hugo</description>
+      
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      
+        <description>Written in Go, Hugo is an open source static site generator available under the Apache License 2.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
