@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Index on 小奇的站点</title>
-    <link>http://localhost:1313/tags/index/</link>
+    <link>http://blog.zcoding.co/tags/index/</link>
     <description>Recent content in Index on 小奇的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 18 Mar 2022 21:47:41 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 21:47:41 +0000</lastBuildDate><atom:link href="http://blog.zcoding.co/tags/index/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Posts</title>
-      <link>http://localhost:1313/post/</link>
+      <link>http://blog.zcoding.co/post/</link>
       <pubDate>Fri, 18 Mar 2022 21:47:41 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/</guid>
+      <guid>http://blog.zcoding.co/post/</guid>
       
         <description></description>
       

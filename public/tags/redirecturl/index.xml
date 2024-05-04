@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RedirectUrl on 小奇的站点</title>
-    <link>http://localhost:1313/tags/redirecturl/</link>
+    <link>http://blog.zcoding.co/tags/redirecturl/</link>
     <description>Recent content in RedirectUrl on 小奇的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/redirecturl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.zcoding.co/tags/redirecturl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redirect</title>
-      <link>http://localhost:1313/post/redirect/</link>
+      <link>http://blog.zcoding.co/post/redirect/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/redirect/</guid>
+      <guid>http://blog.zcoding.co/post/redirect/</guid>
       
         <description>Usage of redirectUrl</description>
       

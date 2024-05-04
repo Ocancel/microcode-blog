@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Demo on 小奇的站点</title>
-    <link>http://localhost:1313/tags/demo/</link>
+    <link>http://blog.zcoding.co/tags/demo/</link>
     <description>Recent content in Demo on 小奇的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 18 Mar 2022 21:47:41 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/demo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 21:47:41 +0000</lastBuildDate><atom:link href="http://blog.zcoding.co/tags/demo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Notice Shortcode</title>
-      <link>http://localhost:1313/post/notice-shortcode/</link>
+      <link>http://blog.zcoding.co/post/notice-shortcode/</link>
       <pubDate>Fri, 18 Mar 2022 21:47:41 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/notice-shortcode/</guid>
+      <guid>http://blog.zcoding.co/post/notice-shortcode/</guid>
       
         <description>The notice shortcode supports three different types of disclaimers.</description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>The Figure Shortcode</title>
-      <link>http://localhost:1313/post/figure-shortcode/</link>
+      <link>http://blog.zcoding.co/post/figure-shortcode/</link>
       <pubDate>Sat, 13 Mar 2021 21:47:41 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/figure-shortcode/</guid>
+      <guid>http://blog.zcoding.co/post/figure-shortcode/</guid>
       
         <description>Hugo has figure shortcode built-in, so you can easily add figure captions or hyperlink rel attributes to images.</description>
       

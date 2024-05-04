@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>小奇的站点</title>
-    <link>http://localhost:1313/</link>
+    <link>http://blog.zcoding.co/</link>
     <description>Recent content on 小奇的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.zcoding.co/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Awards</title>
-      <link>http://localhost:1313/awards/</link>
+      <link>http://blog.zcoding.co/awards/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/awards/</guid>
+      <guid>http://blog.zcoding.co/awards/</guid>
       
         <description>Hugo Awards, an annual literary award for the best science fiction or fantasy works</description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Certifications</title>
-      <link>http://localhost:1313/certifications/</link>
+      <link>http://blog.zcoding.co/certifications/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/certifications/</guid>
+      <guid>http://blog.zcoding.co/certifications/</guid>
       
         <description>Hugo Certifications</description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>The Notice Shortcode</title>
-      <link>http://localhost:1313/post/notice-shortcode/</link>
+      <link>http://blog.zcoding.co/post/notice-shortcode/</link>
       <pubDate>Fri, 18 Mar 2022 21:47:41 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/notice-shortcode/</guid>
+      <guid>http://blog.zcoding.co/post/notice-shortcode/</guid>
       
         <description>The notice shortcode supports three different types of disclaimers.</description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Spring Bean Lifecycle</title>
-      <link>http://localhost:1313/post/spring-bean-lifecycle/</link>
+      <link>http://blog.zcoding.co/post/spring-bean-lifecycle/</link>
       <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/spring-bean-lifecycle/</guid>
+      <guid>http://blog.zcoding.co/post/spring-bean-lifecycle/</guid>
       
         <description>简介 Bean的生命周期主要包含实例化、属性注入、初始化、使用和销毁几个阶段。</description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title>Series Part 2</title>
-      <link>http://localhost:1313/post/series-part-2/</link>
+      <link>http://blog.zcoding.co/post/series-part-2/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/series-part-2/</guid>
+      <guid>http://blog.zcoding.co/post/series-part-2/</guid>
       
         <description>A brief guide to how to setup series part 2</description>
       
@@ -64,10 +64,10 @@
     
     <item>
       <title>Series Part 1</title>
-      <link>http://localhost:1313/post/series-part-1/</link>
+      <link>http://blog.zcoding.co/post/series-part-1/</link>
       <pubDate>Sat, 14 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/series-part-1/</guid>
+      <guid>http://blog.zcoding.co/post/series-part-1/</guid>
       
         <description>A brief guide to how to setup series part 1</description>
       
@@ -75,10 +75,10 @@
     
     <item>
       <title>Redirect</title>
-      <link>http://localhost:1313/post/redirect/</link>
+      <link>http://blog.zcoding.co/post/redirect/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/redirect/</guid>
+      <guid>http://blog.zcoding.co/post/redirect/</guid>
       
         <description>Usage of redirectUrl</description>
       
@@ -86,10 +86,10 @@
     
     <item>
       <title>The Figure Shortcode</title>
-      <link>http://localhost:1313/post/figure-shortcode/</link>
+      <link>http://blog.zcoding.co/post/figure-shortcode/</link>
       <pubDate>Sat, 13 Mar 2021 21:47:41 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/figure-shortcode/</guid>
+      <guid>http://blog.zcoding.co/post/figure-shortcode/</guid>
       
         <description>Hugo has figure shortcode built-in, so you can easily add figure captions or hyperlink rel attributes to images.</description>
       
@@ -97,10 +97,10 @@
     
     <item>
       <title>Sorting Algorithm</title>
-      <link>http://localhost:1313/post/sorting-algorithm/</link>
+      <link>http://blog.zcoding.co/post/sorting-algorithm/</link>
       <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/sorting-algorithm/</guid>
+      <guid>http://blog.zcoding.co/post/sorting-algorithm/</guid>
       
         <description>&lt;table&gt;
 &lt;thead&gt;
@@ -212,10 +212,10 @@
     
     <item>
       <title></title>
-      <link>http://localhost:1313/archives/</link>
+      <link>http://blog.zcoding.co/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/archives/</guid>
+      <guid>http://blog.zcoding.co/archives/</guid>
       
         <description></description>
       
@@ -223,10 +223,10 @@
     
     <item>
       <title>Markdown Syntax Guide</title>
-      <link>http://localhost:1313/post/markdown-syntax/</link>
+      <link>http://blog.zcoding.co/post/markdown-syntax/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/markdown-syntax/</guid>
+      <guid>http://blog.zcoding.co/post/markdown-syntax/</guid>
       
         <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
       
@@ -234,10 +234,10 @@
     
     <item>
       <title>Rich Content</title>
-      <link>http://localhost:1313/post/rich-content/</link>
+      <link>http://blog.zcoding.co/post/rich-content/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/rich-content/</guid>
+      <guid>http://blog.zcoding.co/post/rich-content/</guid>
       
         <description>A brief description of Hugo Shortcodes</description>
       
@@ -245,10 +245,10 @@
     
     <item>
       <title>Placeholder Text</title>
-      <link>http://localhost:1313/post/placeholder-text/</link>
+      <link>http://blog.zcoding.co/post/placeholder-text/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/placeholder-text/</guid>
+      <guid>http://blog.zcoding.co/post/placeholder-text/</guid>
       
         <description>Lorem Ipsum Dolor Si Amet</description>
       
@@ -256,10 +256,10 @@
     
     <item>
       <title>Contact</title>
-      <link>http://localhost:1313/contact/</link>
+      <link>http://blog.zcoding.co/contact/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/contact/</guid>
+      <guid>http://blog.zcoding.co/contact/</guid>
       
         <description>Contact Page</description>
       
@@ -267,10 +267,10 @@
     
     <item>
       <title>Math Typesetting</title>
-      <link>http://localhost:1313/post/math-typesetting/</link>
+      <link>http://blog.zcoding.co/post/math-typesetting/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/math-typesetting/</guid>
+      <guid>http://blog.zcoding.co/post/math-typesetting/</guid>
       
         <description>A brief guide to setup KaTeX</description>
       
@@ -278,10 +278,10 @@
     
     <item>
       <title>免责声明</title>
-      <link>http://localhost:1313/statement/</link>
+      <link>http://blog.zcoding.co/statement/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/statement/</guid>
+      <guid>http://blog.zcoding.co/statement/</guid>
       
         <description>本站提供的所有内容仅供学习、分享与交流，并且不保证内容绝对正确和不会过时。通过使用本站内容随之而来的风险与本站无关。当使用本站内容时，代表你已接受本站的免责声明条款。</description>
       
@@ -289,10 +289,10 @@
     
     <item>
       <title>Emoji Support</title>
-      <link>http://localhost:1313/post/emoji-support/</link>
+      <link>http://blog.zcoding.co/post/emoji-support/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/emoji-support/</guid>
+      <guid>http://blog.zcoding.co/post/emoji-support/</guid>
       
         <description>Guide to emoji usage in Hugo</description>
       
@@ -300,10 +300,10 @@
     
     <item>
       <title>Guide to Thumbnails in Hugo</title>
-      <link>http://localhost:1313/post/image-test/</link>
+      <link>http://blog.zcoding.co/post/image-test/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/image-test/</guid>
+      <guid>http://blog.zcoding.co/post/image-test/</guid>
       
         <description>Guide to Thumbnails in Hugo</description>
       
@@ -311,10 +311,10 @@
     
     <item>
       <title>关于</title>
-      <link>http://localhost:1313/about/</link>
+      <link>http://blog.zcoding.co/about/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>http://blog.zcoding.co/about/</guid>
       
         <description>Written in Go, Hugo is an open source static site generator available under the Apache License 2.</description>
       

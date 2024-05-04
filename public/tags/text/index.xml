@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Text on 小奇的站点</title>
-    <link>http://localhost:1313/tags/text/</link>
+    <link>http://blog.zcoding.co/tags/text/</link>
     <description>Recent content in Text on 小奇的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 09 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/text/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.zcoding.co/tags/text/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Placeholder Text</title>
-      <link>http://localhost:1313/post/placeholder-text/</link>
+      <link>http://blog.zcoding.co/post/placeholder-text/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/placeholder-text/</guid>
+      <guid>http://blog.zcoding.co/post/placeholder-text/</guid>
       
         <description>Lorem Ipsum Dolor Si Amet</description>
       

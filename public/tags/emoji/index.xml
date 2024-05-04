@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Emoji on 小奇的站点</title>
-    <link>http://localhost:1313/tags/emoji/</link>
+    <link>http://blog.zcoding.co/tags/emoji/</link>
     <description>Recent content in Emoji on 小奇的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/emoji/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.zcoding.co/tags/emoji/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emoji Support</title>
-      <link>http://localhost:1313/post/emoji-support/</link>
+      <link>http://blog.zcoding.co/post/emoji-support/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/emoji-support/</guid>
+      <guid>http://blog.zcoding.co/post/emoji-support/</guid>
       
         <description>Guide to emoji usage in Hugo</description>
       

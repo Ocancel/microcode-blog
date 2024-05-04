@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Xiaoqi&#39;s Site</title>
-    <link>http://localhost:1313/en/tags/</link>
+    <link>http://blog.zcoding.co/en/tags/</link>
     <description>Recent content in Tags on Xiaoqi&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Mar 2022 21:47:41 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 21:47:41 +0000</lastBuildDate><atom:link href="http://blog.zcoding.co/en/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Demo</title>
-      <link>http://localhost:1313/en/tags/demo/</link>
+      <link>http://blog.zcoding.co/en/tags/demo/</link>
       <pubDate>Fri, 18 Mar 2022 21:47:41 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/demo/</guid>
+      <guid>http://blog.zcoding.co/en/tags/demo/</guid>
       
         <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Index</title>
-      <link>http://localhost:1313/en/tags/index/</link>
+      <link>http://blog.zcoding.co/en/tags/index/</link>
       <pubDate>Fri, 18 Mar 2022 21:47:41 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/index/</guid>
+      <guid>http://blog.zcoding.co/en/tags/index/</guid>
       
         <description></description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>Shortcode</title>
-      <link>http://localhost:1313/en/tags/shortcode/</link>
+      <link>http://blog.zcoding.co/en/tags/shortcode/</link>
       <pubDate>Fri, 18 Mar 2022 21:47:41 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/shortcode/</guid>
+      <guid>http://blog.zcoding.co/en/tags/shortcode/</guid>
       
         <description></description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Redirect</title>
-      <link>http://localhost:1313/en/tags/redirect/</link>
+      <link>http://blog.zcoding.co/en/tags/redirect/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/redirect/</guid>
+      <guid>http://blog.zcoding.co/en/tags/redirect/</guid>
       
         <description></description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title>RedirectUrl</title>
-      <link>http://localhost:1313/en/tags/redirecturl/</link>
+      <link>http://blog.zcoding.co/en/tags/redirecturl/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/redirecturl/</guid>
+      <guid>http://blog.zcoding.co/en/tags/redirecturl/</guid>
       
         <description></description>
       
@@ -64,10 +64,10 @@
     
     <item>
       <title>Css</title>
-      <link>http://localhost:1313/en/tags/css/</link>
+      <link>http://blog.zcoding.co/en/tags/css/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/css/</guid>
+      <guid>http://blog.zcoding.co/en/tags/css/</guid>
       
         <description></description>
       
@@ -75,10 +75,10 @@
     
     <item>
       <title>Html</title>
-      <link>http://localhost:1313/en/tags/html/</link>
+      <link>http://blog.zcoding.co/en/tags/html/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/html/</guid>
+      <guid>http://blog.zcoding.co/en/tags/html/</guid>
       
         <description></description>
       
@@ -86,10 +86,10 @@
     
     <item>
       <title>Markdown</title>
-      <link>http://localhost:1313/en/tags/markdown/</link>
+      <link>http://blog.zcoding.co/en/tags/markdown/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/markdown/</guid>
+      <guid>http://blog.zcoding.co/en/tags/markdown/</guid>
       
         <description></description>
       
@@ -97,10 +97,10 @@
     
     <item>
       <title>Privacy</title>
-      <link>http://localhost:1313/en/tags/privacy/</link>
+      <link>http://blog.zcoding.co/en/tags/privacy/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/privacy/</guid>
+      <guid>http://blog.zcoding.co/en/tags/privacy/</guid>
       
         <description></description>
       
@@ -108,10 +108,10 @@
     
     <item>
       <title>Shortcodes</title>
-      <link>http://localhost:1313/en/tags/shortcodes/</link>
+      <link>http://blog.zcoding.co/en/tags/shortcodes/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/shortcodes/</guid>
+      <guid>http://blog.zcoding.co/en/tags/shortcodes/</guid>
       
         <description></description>
       
@@ -119,10 +119,10 @@
     
     <item>
       <title>Text</title>
-      <link>http://localhost:1313/en/tags/text/</link>
+      <link>http://blog.zcoding.co/en/tags/text/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/text/</guid>
+      <guid>http://blog.zcoding.co/en/tags/text/</guid>
       
         <description></description>
       
@@ -130,10 +130,10 @@
     
     <item>
       <title>Emoji</title>
-      <link>http://localhost:1313/en/tags/emoji/</link>
+      <link>http://blog.zcoding.co/en/tags/emoji/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/emoji/</guid>
+      <guid>http://blog.zcoding.co/en/tags/emoji/</guid>
       
         <description></description>
       
@@ -141,10 +141,10 @@
     
     <item>
       <title>Thumbnail</title>
-      <link>http://localhost:1313/en/tags/thumbnail/</link>
+      <link>http://blog.zcoding.co/en/tags/thumbnail/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/en/tags/thumbnail/</guid>
+      <guid>http://blog.zcoding.co/en/tags/thumbnail/</guid>
       
         <description></description>
       

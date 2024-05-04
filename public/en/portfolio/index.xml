@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Portfolio on Xiaoqi&#39;s Site</title>
-    <link>http://localhost:1313/en/portfolio/</link>
+    <link>http://blog.zcoding.co/en/portfolio/</link>
     <description>Recent content in Portfolio on Xiaoqi&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="http://localhost:1313/en/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="http://blog.zcoding.co/en/portfolio/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
