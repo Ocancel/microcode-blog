@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",e=>{const t=document.querySelectorAll("table");t.forEach(e=>{const t=document.createElement("div");t.className="table-wrapper",e.parentNode.insertBefore(t,e),t.appendChild(e)})})
