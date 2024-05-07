@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debian on Ocancel的站点</title>
+    <link>https://blog.zcoding.co/tags/debian/</link>
+    <description>Recent content in Debian on Ocancel的站点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debian 常用配置</title>
+      <link>https://blog.zcoding.co/post/debian-common-configuration/</link>
+      <pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/debian-common-configuration/</guid>
+      
+        <description>用户管理 新增管理员用户及配置 新增用户 0 sudo useradd admin 赋予sudo权限 0 sudo usermod -aG sudo ssh配置 使用vim编辑器打开ssh配置文件：</description>
+      
+    </item>
+    
+  </channel>
+</rss>

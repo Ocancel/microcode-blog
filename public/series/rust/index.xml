@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on Ocancel的站点</title>
+    <link>https://blog.zcoding.co/series/rust/</link>
+    <description>Recent content in Rust on Ocancel的站点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/series/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust variables and data types</title>
+      <link>https://blog.zcoding.co/post/rust-variables-and-data-types/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/rust-variables-and-data-types/</guid>
+      
+        <description>变量和可变性 变量 在Rust中，变量默认是不可变的，可以通过在变量前增加mut关键字使其可变。</description>
+      
+    </item>
+    
+    <item>
+      <title>Rust start</title>
+      <link>https://blog.zcoding.co/post/rust-start/</link>
+      <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/rust-start/</guid>
+      
+        <description>Cargo Cargo是Rust的构建系统和包管理器。</description>
+      
+    </item>
+    
+  </channel>
+</rss>

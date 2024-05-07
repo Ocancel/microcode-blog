@@ -2,523 +2,223 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://blog.zcoding.co/en/</loc>
+    <loc>https://blog.zcoding.co/en/</loc>
     <lastmod>2022-04-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/"
+                href="https://blog.zcoding.co/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/"
+                href="https://blog.zcoding.co/en/"
                 />
   </url><url>
-    <loc>http://blog.zcoding.co/en/awards/</loc>
+    <loc>https://blog.zcoding.co/en/awards/</loc>
     <lastmod>2022-04-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/awards/"
+                href="https://blog.zcoding.co/awards/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/awards/"
+                href="https://blog.zcoding.co/en/awards/"
                 />
   </url><url>
-    <loc>http://blog.zcoding.co/en/certifications/</loc>
+    <loc>https://blog.zcoding.co/en/certifications/</loc>
     <lastmod>2022-04-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/certifications/"
+                href="https://blog.zcoding.co/certifications/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/certifications/"
+                href="https://blog.zcoding.co/en/certifications/"
                 />
   </url><url>
-    <loc>http://blog.zcoding.co/en/tags/demo/</loc>
+    <loc>https://blog.zcoding.co/en/tags/index/</loc>
     <lastmod>2022-03-18T21:47:41+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/demo/"
+                href="https://blog.zcoding.co/tags/index/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/tags/demo/"
+                href="https://blog.zcoding.co/en/tags/index/"
                 />
   </url><url>
-    <loc>http://blog.zcoding.co/en/tags/index/</loc>
+    <loc>https://blog.zcoding.co/en/post/</loc>
     <lastmod>2022-03-18T21:47:41+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/index/"
+                href="https://blog.zcoding.co/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/tags/index/"
+                href="https://blog.zcoding.co/en/post/"
                 />
   </url><url>
-    <loc>http://blog.zcoding.co/en/post/</loc>
+    <loc>https://blog.zcoding.co/en/tags/shortcode/</loc>
+    <lastmod>2022-03-18T21:47:41+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.zcoding.co/en/tags/</loc>
     <lastmod>2022-03-18T21:47:41+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/post/"
+                href="https://blog.zcoding.co/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/post/"
+                href="https://blog.zcoding.co/en/tags/"
                 />
   </url><url>
-    <loc>http://blog.zcoding.co/en/tags/shortcode/</loc>
+    <loc>https://blog.zcoding.co/en/post/notice-shortcode/</loc>
     <lastmod>2022-03-18T21:47:41+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/shortcode/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/tags/shortcode/"
-                />
   </url><url>
-    <loc>http://blog.zcoding.co/en/tags/</loc>
-    <lastmod>2022-03-18T21:47:41+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/tags/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/post/notice-shortcode/</loc>
-    <lastmod>2022-03-18T21:47:41+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/post/notice-shortcode/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/post/notice-shortcode/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/series/</loc>
-    <lastmod>2021-08-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/series/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/post/series-part-2/</loc>
-    <lastmod>2021-08-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/post/series-part-2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/post/series-part-2/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/series/series-setup/</loc>
-    <lastmod>2021-08-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/series/series-setup/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/series/series-setup/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/post/series-part-1/</loc>
-    <lastmod>2021-08-14T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/post/series-part-1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/post/series-part-1/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/tags/redirect/</loc>
+    <loc>https://blog.zcoding.co/en/tags/redirect/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/redirect/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/tags/redirect/"
-                />
   </url><url>
-    <loc>http://blog.zcoding.co/en/post/redirect/</loc>
+    <loc>https://blog.zcoding.co/en/post/redirect/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/post/redirect/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/post/redirect/"
-                />
   </url><url>
-    <loc>http://blog.zcoding.co/en/tags/redirecturl/</loc>
+    <loc>https://blog.zcoding.co/en/tags/redirecturl/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/redirecturl/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/tags/redirecturl/"
-                />
   </url><url>
-    <loc>http://blog.zcoding.co/en/post/figure-shortcode/</loc>
+    <loc>https://blog.zcoding.co/en/post/figure-shortcode/</loc>
     <lastmod>2021-03-13T21:47:41+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.zcoding.co/en/about/</loc>
+    <lastmod>2020-02-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/post/figure-shortcode/"
+                href="https://blog.zcoding.co/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/post/figure-shortcode/"
+                href="https://blog.zcoding.co/en/about/"
                 />
   </url><url>
-    <loc>http://blog.zcoding.co/en/archives/</loc>
+    <loc>https://blog.zcoding.co/en/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/archives/"
+                href="https://blog.zcoding.co/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/archives/"
+                href="https://blog.zcoding.co/en/archives/"
                 />
   </url><url>
-    <loc>http://blog.zcoding.co/en/categories/</loc>
+    <loc>https://blog.zcoding.co/en/categories/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/categories/"
+                href="https://blog.zcoding.co/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/categories/"
+                href="https://blog.zcoding.co/en/categories/"
                 />
   </url><url>
-    <loc>http://blog.zcoding.co/en/tags/css/</loc>
+    <loc>https://blog.zcoding.co/en/tags/css/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.zcoding.co/en/tags/html/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.zcoding.co/en/tags/markdown/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.zcoding.co/en/post/markdown-syntax/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.zcoding.co/en/series/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/css/"
+                href="https://blog.zcoding.co/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/tags/css/"
+                href="https://blog.zcoding.co/en/series/"
                 />
   </url><url>
-    <loc>http://blog.zcoding.co/en/tags/html/</loc>
+    <loc>https://blog.zcoding.co/en/categories/syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/html/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/tags/html/"
-                />
   </url><url>
-    <loc>http://blog.zcoding.co/en/tags/markdown/</loc>
+    <loc>https://blog.zcoding.co/en/categories/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/tags/markdown/"
-                />
   </url><url>
-    <loc>http://blog.zcoding.co/en/post/markdown-syntax/</loc>
+    <loc>https://blog.zcoding.co/en/series/themes-guide/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/post/markdown-syntax/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/post/markdown-syntax/"
-                />
   </url><url>
-    <loc>http://blog.zcoding.co/en/categories/syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/categories/syntax/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/categories/syntax/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/categories/themes/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/categories/themes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/categories/themes/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/series/themes-guide/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/series/themes-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/series/themes-guide/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/tags/privacy/</loc>
+    <loc>https://blog.zcoding.co/en/tags/privacy/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/privacy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/tags/privacy/"
-                />
   </url><url>
-    <loc>http://blog.zcoding.co/en/post/rich-content/</loc>
+    <loc>https://blog.zcoding.co/en/post/rich-content/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/post/rich-content/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/post/rich-content/"
-                />
   </url><url>
-    <loc>http://blog.zcoding.co/en/tags/shortcodes/</loc>
+    <loc>https://blog.zcoding.co/en/tags/shortcodes/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/shortcodes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/tags/shortcodes/"
-                />
   </url><url>
-    <loc>http://blog.zcoding.co/en/post/placeholder-text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/post/placeholder-text/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/post/placeholder-text/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/tags/text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/text/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/tags/text/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/contact/</loc>
+    <loc>https://blog.zcoding.co/en/contact/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/contact/"
+                href="https://blog.zcoding.co/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/contact/"
+                href="https://blog.zcoding.co/en/contact/"
                 />
   </url><url>
-    <loc>http://blog.zcoding.co/en/statement/</loc>
+    <loc>https://blog.zcoding.co/en/statement/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/statement/"
+                href="https://blog.zcoding.co/statement/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/statement/"
+                href="https://blog.zcoding.co/en/statement/"
                 />
   </url><url>
-    <loc>http://blog.zcoding.co/en/post/math-typesetting/</loc>
+    <loc>https://blog.zcoding.co/en/post/math-typesetting/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/post/math-typesetting/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/post/math-typesetting/"
-                />
   </url><url>
-    <loc>http://blog.zcoding.co/en/tags/emoji/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
+    <loc>https://blog.zcoding.co/en/portfolio/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/emoji/"
+                href="https://blog.zcoding.co/portfolio/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://blog.zcoding.co/en/tags/emoji/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/post/emoji-support/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/post/emoji-support/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/post/emoji-support/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/post/image-test/</loc>
-    <lastmod>2019-03-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/post/image-test/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/post/image-test/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/tags/thumbnail/</loc>
-    <lastmod>2019-03-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/tags/thumbnail/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/tags/thumbnail/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/about/</loc>
-    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/about/"
-                />
-  </url><url>
-    <loc>http://blog.zcoding.co/en/portfolio/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://blog.zcoding.co/portfolio/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://blog.zcoding.co/en/portfolio/"
+                href="https://blog.zcoding.co/en/portfolio/"
                 />
   </url>
 </urlset>

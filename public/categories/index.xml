@@ -1,29 +1,117 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on 小奇的站点</title>
-    <link>http://blog.zcoding.co/categories/</link>
-    <description>Recent content in Categories on 小奇的站点</description>
+    <title>Categories on Ocancel的站点</title>
+    <link>https://blog.zcoding.co/categories/</link>
+    <description>Recent content in Categories on Ocancel的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.zcoding.co/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Syntax</title>
-      <link>http://blog.zcoding.co/categories/syntax/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <title>Linux</title>
+      <link>https://blog.zcoding.co/categories/linux/</link>
+      <pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.zcoding.co/categories/syntax/</guid>
+      <guid>https://blog.zcoding.co/categories/linux/</guid>
       
         <description></description>
       
     </item>
     
     <item>
-      <title>Themes</title>
-      <link>http://blog.zcoding.co/categories/themes/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <title>Framework</title>
+      <link>https://blog.zcoding.co/categories/framework/</link>
+      <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.zcoding.co/categories/themes/</guid>
+      <guid>https://blog.zcoding.co/categories/framework/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://blog.zcoding.co/categories/java/</link>
+      <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/categories/java/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://blog.zcoding.co/categories/rust/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/categories/rust/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://blog.zcoding.co/categories/javascript/</link>
+      <pubDate>Mon, 31 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/categories/javascript/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>https://blog.zcoding.co/categories/database/</link>
+      <pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/categories/database/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Apple</title>
+      <link>https://blog.zcoding.co/categories/apple/</link>
+      <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/categories/apple/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Algorithm</title>
+      <link>https://blog.zcoding.co/categories/algorithm/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/categories/algorithm/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>DataStructure</title>
+      <link>https://blog.zcoding.co/categories/datastructure/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/categories/datastructure/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>DesignPatterns</title>
+      <link>https://blog.zcoding.co/categories/designpatterns/</link>
+      <pubDate>Thu, 02 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/categories/designpatterns/</guid>
       
         <description></description>
       

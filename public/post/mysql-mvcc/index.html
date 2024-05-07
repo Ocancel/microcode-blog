@@ -1,0 +1,692 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh-cn"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        MySQL MVCC |
+      Ocancel
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.125.6"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Ocancel" />
+  <meta
+    name="description"
+    content="Whatever can happen will happen."
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.de8c8bfc976b7fef8060135e5891a0d0f7f082c1bb6a41a8ca87159355f35052.css"
+      integrity="sha256-3oyL/Jdrf&#43;&#43;AYBNeWJGg0PfwgsG7akGoyocVk1XzUFI="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.2028dce76dbdcf7f947846702ca81e0c963979a9aaf826e22d30454fb8c2b216.css"
+    integrity="sha256-ICjc5229z3&#43;UeEZwLKgeDJY5eamq&#43;CbiLTBFT7jCshY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.3dd08e9de925ffed91663f3adeaf91acc3d518649cae6ce8047cee6cac5fdac5.css"
+    integrity="sha256-PdCOnekl/&#43;2RZj863q&#43;RrMPVGGScrmzoBHzubKxf2sU="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.610646915ba4d89f4ad3d568db6f19d2b8f69f957479658357222d8085be8c6e.css"
+    integrity="sha256-YQZGkVuk2J9K09Vo228Z0rj2n5V0eWWDVyItgIW&#43;jG4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://blog.zcoding.co/post/mysql-mvcc/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/code-copy.min.972dc758da9327e4d3f980c2890560a73a7549c7716ee21f32ed88945eb0a4b4.js"
+    integrity="sha256-ly3HWNqTJ&#43;TT&#43;YDCiQVgpzp1ScdxbuIfMu2IlF6wpLQ="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/wrapper-table.min.0010559d9b8353a340f7502cfacc93c74b3639656176fc6c668ccf35d43c9714.js"
+    integrity="sha256-ABBVnZuDU6NA91As&#43;syTx0s2OWVhdvxsZozPNdQ8lxQ="
+    crossorigin="anonymous"
+  ></script>
+
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.zcoding.co/images/site-feature-image.png"><meta name="twitter:title" content="MySQL MVCC">
+<meta name="twitter:description" content="简介 MVCC全称Multi-Version Concurrency Control，即多版本并发控制。MVCC是一种并发控制的方法，一般在数据库管理系统中，实现对数据库的并发访问，在编程语言中实现事务内存。">
+
+
+
+  
+  <meta property="og:url" content="https://blog.zcoding.co/post/mysql-mvcc/">
+  <meta property="og:site_name" content="Ocancel的站点">
+  <meta property="og:title" content="MySQL MVCC">
+  <meta property="og:description" content="简介 MVCC全称Multi-Version Concurrency Control，即多版本并发控制。MVCC是一种并发控制的方法，一般在数据库管理系统中，实现对数据库的并发访问，在编程语言中实现事务内存。">
+  <meta property="og:locale" content="zh-cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2022-06-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-06-01T00:00:00+00:00">
+    <meta property="article:tag" content="MySQL">
+    <meta property="og:image" content="https://blog.zcoding.co/images/site-feature-image.png">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "MySQL MVCC",
+        "headline": "MySQL MVCC",
+        "alternativeHeadline": "",
+        "description": "
+      
+        简介 MVCC全称Multi-Version Concurrency Control，即多版本并发控制。MVCC是一种并发控制的方法，一般在数据库管理系统中，实现对数据库的并发访问，在编程语言中实现事务内存。
+
+
+      
+
+
+    ",
+        "inLanguage": "zh-cn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.zcoding.co\/post\/mysql-mvcc\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ocancel"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ocancel"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ocancel"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ocancel"
+        },
+        "copyrightYear" : "2022",
+        "dateCreated": "2022-06-01T00:00:00.00Z",
+        "datePublished": "2022-06-01T00:00:00.00Z",
+        "dateModified": "2022-06-01T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ocancel",
+            "url": "https://blog.zcoding.co/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.zcoding.co\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "https://blog.zcoding.co/images/site-feature-image.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "https:\/\/blog.zcoding.co\/post\/mysql-mvcc\/",
+        "wordCount" : "85",
+        "genre" : [ 
+      
+      "Database"
+
+    ],
+        "keywords" : [ 
+      
+      "MySQL"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="https://cdn.jsdelivr.net/gh/Ocancel/uPicRepo@main/uPic/avator-1685772455096.png"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Ocancel</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Whatever can happen will happen.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/Ocancel/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://twitter.com/Qimains"
+            target="_blank"
+            rel="noopener me"
+            aria-label="X"
+            title="X"
+          >
+            <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:jiaqi.gao.dev@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2020-2024
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/statement/"
+          
+          title=""
+        >
+          声明
+        </a>
+      </li>
+    
+  </ul>
+  <ul class="footer__list">
+    
+      <li class="footer__item">
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024061880号-1</a>
+      </li>
+    
+    
+      <li class="footer__item">
+        <img src="https://cdn.jsdelivr.net/gh/Ocancel/uPicRepo@main/uPic/mps-logo-1713767084704.png" alt="mps-logo">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054030" rel="noreferrer" target="_blank">
+          京公网安备11011402054030号
+        </a>
+      </li>
+    
+  </ul>  
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >主页</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >项目</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >关于</a
+            >
+          </li>
+        
+
+      
+        
+        
+
+          <li class="nav__list-item">
+            <div class="optionswitch">
+              <input class="optionswitch__picker" type="checkbox" id="4" hidden />
+
+              
+              
+                
+
+              
+                
+
+              
+
+
+              <label class="optionswitch__label" for="4"
+                >成就 <i class="fa fa-angle-down" aria-hidden="true"></i
+              ></label>
+
+              <div class="optionswitch__triangle"></div>
+              <ul class="optionswitch__list">
+                
+                  <li class="optionswitch__list-item">
+                    
+                    <a
+                      href="/awards/"
+                      
+                      title=""
+                      >奖项</a
+                    >
+                  </li>
+                
+                  <li class="optionswitch__list-item">
+                    
+                    <a
+                      href="/certifications/"
+                      
+                      title=""
+                      >认证</a
+                    >
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/contact/"
+              
+              title=""
+              >联系</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      <h1>MySQL MVCC</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Jun 01 2022
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">阅读时间 1 分钟</span>
+          </li>
+        </ul>
+      <h2 id="简介">简介</h2>
+<p>MVCC全称Multi-Version Concurrency Control，即<strong>多版本并发控制</strong>。MVCC是一种并发控制的方法，一般在数据库管理系统中，实现对数据库的并发访问，在编程语言中实现事务内存。</p>
+<p><strong>多版本并发控制</strong>：指的是一种高并发技术。最早的数据库系统，只有读读之间可以并发，读写，写读，写写都要阻塞。引入多版本之后，<strong>只有写写之间相互阻塞，其他三种操作都可以并行</strong>，这样大幅度提高了InnoDB的并发度。在内部实现中，InnoDB是基于<code>undo log</code>实现的，通过<code>undo log</code>可以找回数据的历史版本。找回的数据历史版本可以提供给用户读（按照隔离级别的定义，有些读请求只能看到比较老的数据版本），也可以在回滚的时候覆盖数据页上的数据。在InnoDB内部中，会记录一个全局的活跃读写事务数组，其主要用来判断事务的可见性。</p>
+<blockquote>
+<p>MVCC是一种多版本并发控制机制。</p>
+</blockquote>
+<h2 id="前置知识">前置知识</h2>
+<h4 id="innodb的当前读和快照读">InnoDB的当前读和快照读</h4>
+<ul>
+<li><strong>当前读</strong>：读取的记录是最新版本，读取时要保证其他事务不能修改当前记录，会对读取的记录进行加锁。</li>
+</ul>
+<blockquote>
+<p>当前读主要包含以下场景</p>
+<ul>
+<li>共享锁：<code>select ... lock in share mode</code></li>
+<li>排他锁：<code>select for update</code>，<code>insert</code>，<code>update</code>，<code>delete</code></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>快照读</strong>：<strong>不加锁</strong>的<code>select</code>操作属于快照读，即不加锁的非阻塞读。快照读基于多版本并发控制实现，即MVCC，正因为如此，可能导致快照读读取到的数据不是最新版本。</li>
+</ul>
+<blockquote>
+<p>快照读的前提是事务的隔离级别不是串行级别，串行级别下快照读会退化成当前读。</p>
+</blockquote>
+<p>MVCC就是为了实现读-写冲突不加锁，而这个读指的就是<strong>快照读</strong>，而非当前读，当前读实际上是一种加锁的操作，是悲观锁的实现。</p>
+<h4 id="数据库的并发场景">数据库的并发场景</h4>
+<ul>
+<li><code>读-读</code>：不存在线程安全问题，不需要并发控制。</li>
+<li><code>读-写</code>：存在线程安全问题，可能会造成事务隔离性问题，可能遇到脏读，幻读，不可重复读</li>
+<li><code>写-写</code>：存在线程安全问题，可能会存在更新丢失问题，如第一类更新丢失，第二类更新丢失</li>
+</ul>
+<blockquote>
+<ul>
+<li>第一类更新丢失：事务A撤销时，把已经提交的事务B的更新数据覆盖。</li>
+<li>第二类更新丢失：事务A覆盖事务B已经提交的数据，造成事务B所做的操作丢失。</li>
+</ul>
+</blockquote>
+<h2 id="实现原理">实现原理</h2>
+<p>MVCC主要依赖记录中的<strong>三个隐式字段</strong>、<strong>undo log</strong>、<strong>Read View</strong>来实现的。</p>
+<h3 id="隐式字段">隐式字段</h3>
+<p>每行记录除了我们自定义的字段外，还有数据库隐式定义的<code>DB_TRX_ID</code>，<code>DB_ROLL_PTR</code>，<code>DB_ROW_ID</code>等字段</p>
+<ul>
+<li><code>DB_TRX_ID</code>：<code>6byte</code>， 最后修改（插入/更新）的事务ID</li>
+<li><code>DB_ROLL_PTR</code>：<code>7byte</code>，回滚指针，配合<code>undo log</code>指向上一个版本的记录（存储于<code>rollback segment</code>）</li>
+<li><code>DB_ROW_ID</code>：<code>6byte</code>，隐含的自增ID（隐藏主键），如果数据表没有主键，InnoDB会自动以<code>DB_ROW_ID</code>产生一个聚簇索引</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Column1</th>
+<th style="text-align:center">Column2</th>
+<th style="text-align:center">DB_TRX_ID</th>
+<th style="text-align:center">DB_ROW_ID</th>
+<th style="text-align:center">DB_ROLL_PTR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">value1</td>
+<td style="text-align:center">value2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0x12446462</td>
+</tr>
+</tbody>
+</table>
+<h3 id="undo日志">undo日志</h3>
+<ul>
+<li><code>insert undo log</code>：事务在<code>insert</code>新记录时产生的<code>undo log</code>，只在事务回滚时需要，并且在事务提交后可以被立即丢弃。</li>
+<li><code>update undo log</code>：事务在进行<code>update</code>或<code>delete</code>时产生的<code>undo log</code>，不仅在事务回滚时需要，在快照读时也需要，所以不能随便删除，只有在快速读或事务回滚不涉及该日志时，对应的日志才会被<code>purge</code>线程统一清除。</li>
+</ul>
+<blockquote>
+<p><code>purge</code></p>
+<ul>
+<li>为了实现InnoDB的MVCC机制，更新或者删除操作都只是设置一下老记录的deleted_bit，并不真正将过时的记录删除。</li>
+<li>为了节省磁盘空间，InnoDB有专门的<code>purge</code>线程来清理<code>deleted_bit</code>为<code>true</code>的记录。为了不影响MVCC的正常工作，<code>purge</code>线程自己也维护了一个<code>read view</code>（这个<code>read view</code>相当于系统中最老活跃事务的<code>read view</code>），如果某个记录的<code>deleted_bit</code>为<code>true</code>，并且<code>DB_TRX_ID</code>相对于<code>purge</code>线程的<code>read view</code>可见，那么这条记录一定是可以被安全清除的。</li>
+</ul>
+</blockquote>
+<p>MVCC依赖于<code>update undo log</code>，<code>undo log</code>实际上就是存在<code>rollback segment</code>中旧记录链。</p>
+<h3 id="read-view">Read View</h3>
+<p><code>Read View</code>是事务进行快照读操作时生产的读视图<code>Read View</code>，在该事务执行快照读的那一刻，会生成数据库系统当前的一个快照，记录并维护系统当前活跃事务的ID（当每个事务开启时，都会被分配一个ID, 这个ID是递增的，所以最新的事务，ID值越大）。</p>
+<p><code>Read View</code>主要是用来做可见性判断，<code>Read View</code>遵循一个可见性算法，主要是将<strong>要被修改的数据</strong>的最新记录中的<code>DB_TRX_ID</code>（即当前事务ID）取出来，与系统当前其他活跃事务的ID去对比（由Read View维护），如果<code>DB_TRX_ID</code>跟<code>Read View</code>的属性做了某些比较，不符合可见性，那就通过<code>DB_ROLL_PTR</code>回滚指针去取出<code>undo Log</code>中的<code>DB_TRX_ID</code>再比较，即遍历链表的<code>DB_TRX_ID</code>（从链首到链尾，即从最近的一次修改查起），直到找到满足特定条件的<code>DB_TRX_ID</code>，那么这个<code>DB_TRX_ID</code>所在的旧记录就是当前事务能看见的最新<strong>老版本</strong>。</p>
+
+
+
+
+  <h3>相关文章</h3>
+  <ul>
+    
+      <li><a href="/post/postgresql-lock-table/">PostgreSQL lock table</a></li>
+    
+  </ul>
+
+</div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/database/">Database</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/mysql/">MySQL</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2020-2024
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/statement/"
+          
+          title=""
+        >
+          声明
+        </a>
+      </li>
+    
+  </ul>
+  <ul class="footer__list">
+    
+      <li class="footer__item">
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024061880号-1</a>
+      </li>
+    
+    
+      <li class="footer__item">
+        <img src="https://cdn.jsdelivr.net/gh/Ocancel/uPicRepo@main/uPic/mps-logo-1713767084704.png" alt="mps-logo">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054030" rel="noreferrer" target="_blank">
+          京公网安备11011402054030号
+        </a>
+      </li>
+    
+  </ul>  
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

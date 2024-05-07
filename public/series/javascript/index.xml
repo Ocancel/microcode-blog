@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on Ocancel的站点</title>
+    <link>https://blog.zcoding.co/series/javascript/</link>
+    <description>Recent content in JavaScript on Ocancel的站点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 31 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/series/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript function</title>
+      <link>https://blog.zcoding.co/post/javascript-function/</link>
+      <pubDate>Mon, 31 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/javascript-function/</guid>
+      
+        <description>函数与抽象 函数：函数是一段封装了特定功能的代码块，它可以接收输入参数（也称为参数或参数列表），并根据这些参数执行特定的操作，最后返回一个结果。函数可以看作是可重复使用的子程序或方法，它将代码模块化，提高代码的可读性和维护性。</description>
+      
+    </item>
+    
+    <item>
+      <title>Javascript basic</title>
+      <link>https://blog.zcoding.co/post/javascript-basic/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/javascript-basic/</guid>
+      
+        <description>JavaScript 概述 JavaScript是世界上最流行的脚本语言，简称JS，主要用来实现网页的交互逻辑，JavaScript是一种运行在浏览器中的解释型的编程语言。</description>
+      
+    </item>
+    
+  </channel>
+</rss>

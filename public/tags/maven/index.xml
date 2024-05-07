@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maven on Ocancel的站点</title>
+    <link>https://blog.zcoding.co/tags/maven/</link>
+    <description>Recent content in Maven on Ocancel的站点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 02 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maven 导入本地Jar包</title>
+      <link>https://blog.zcoding.co/post/maven-project-import-local-jar/</link>
+      <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/maven-project-import-local-jar/</guid>
+      
+        <description>导入Jar包 在maven项目根目录下新建名为lib的文件夹，将准备好的外部jar包移到该目录下。</description>
+      
+    </item>
+    
+    <item>
+      <title>Java util packaging</title>
+      <link>https://blog.zcoding.co/post/java-util-packaging/</link>
+      <pubDate>Tue, 20 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/java-util-packaging/</guid>
+      
+        <description>需求 将Java工具类打包成jar，方便其他项目导入依赖使用。</description>
+      
+    </item>
+    
+  </channel>
+</rss>

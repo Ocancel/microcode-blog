@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Framework on Ocancel的站点</title>
+    <link>https://blog.zcoding.co/categories/framework/</link>
+    <description>Recent content in Framework on Ocancel的站点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 02 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/categories/framework/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maven 导入本地Jar包</title>
+      <link>https://blog.zcoding.co/post/maven-project-import-local-jar/</link>
+      <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/maven-project-import-local-jar/</guid>
+      
+        <description>导入Jar包 在maven项目根目录下新建名为lib的文件夹，将准备好的外部jar包移到该目录下。</description>
+      
+    </item>
+    
+    <item>
+      <title>Springboot dynamic datasource</title>
+      <link>https://blog.zcoding.co/post/springboot-dynamic-datasource/</link>
+      <pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/springboot-dynamic-datasource/</guid>
+      
+        <description>Dynamic-Datasource 在pom.</description>
+      
+    </item>
+    
+    <item>
+      <title>Spring bean lifecycle</title>
+      <link>https://blog.zcoding.co/post/spring-bean-lifecycle/</link>
+      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/spring-bean-lifecycle/</guid>
+      
+        <description>简介 Bean的生命周期主要包含实例化、属性注入、初始化、使用和销毁几个阶段。</description>
+      
+    </item>
+    
+  </channel>
+</rss>

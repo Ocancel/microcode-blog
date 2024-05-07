@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database on Ocancel的站点</title>
+    <link>https://blog.zcoding.co/categories/database/</link>
+    <description>Recent content in Database on Ocancel的站点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 24 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/categories/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PostgreSQL lock table</title>
+      <link>https://blog.zcoding.co/post/postgresql-lock-table/</link>
+      <pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/postgresql-lock-table/</guid>
+      
+        <description>根据表名查询pid列表 0 1 2 3 4 select locks.</description>
+      
+    </item>
+    
+    <item>
+      <title>MySQL MVCC</title>
+      <link>https://blog.zcoding.co/post/mysql-mvcc/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/mysql-mvcc/</guid>
+      
+        <description>简介 MVCC全称Multi-Version Concurrency Control，即多版本并发控制。MVCC是一种并发控制的方法，一般在数据库管理系统中，实现对数据库的并发访问，在编程语言中实现事务内存。</description>
+      
+    </item>
+    
+  </channel>
+</rss>

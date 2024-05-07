@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LinuxCommand on Ocancel的站点</title>
+    <link>https://blog.zcoding.co/series/linuxcommand/</link>
+    <description>Recent content in LinuxCommand on Ocancel的站点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 04 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/series/linuxcommand/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux tail</title>
+      <link>https://blog.zcoding.co/post/linux-tail/</link>
+      <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/linux-tail/</guid>
+      
+        <description>简介 显示文件的最后一部分</description>
+      
+    </item>
+    
+    <item>
+      <title>Linux chmod</title>
+      <link>https://blog.zcoding.co/post/linux-chmod/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/linux-chmod/</guid>
+      
+        <description>权限说明 文件／目录 的权限包括： 权限 英文 缩写 数字代码 读 read r 4 写 write w 2 执行 execute x 1 文件／目录 的权限格式：-rwxrwxrwx 第一个符号代表文件类型，&amp;quot;-&amp;quot; 符号表示该文件是非目录类型，&amp;ldquo;d&amp;rdquo; 符号表示目录类型。</description>
+      
+    </item>
+    
+  </channel>
+</rss>

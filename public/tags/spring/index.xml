@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring on Ocancel的站点</title>
+    <link>https://blog.zcoding.co/tags/spring/</link>
+    <description>Recent content in Spring on Ocancel的站点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 05 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Springboot dynamic datasource</title>
+      <link>https://blog.zcoding.co/post/springboot-dynamic-datasource/</link>
+      <pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/springboot-dynamic-datasource/</guid>
+      
+        <description>Dynamic-Datasource 在pom.</description>
+      
+    </item>
+    
+    <item>
+      <title>Spring bean lifecycle</title>
+      <link>https://blog.zcoding.co/post/spring-bean-lifecycle/</link>
+      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/spring-bean-lifecycle/</guid>
+      
+        <description>简介 Bean的生命周期主要包含实例化、属性注入、初始化、使用和销毁几个阶段。</description>
+      
+    </item>
+    
+  </channel>
+</rss>
