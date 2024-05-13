@@ -131,7 +131,7 @@
 
   
   <meta name="twitter:card" content="summary"><meta name="twitter:title" content="MySQL MVCC">
-<meta name="twitter:description" content="简介 MVCC全称Multi-Version Concurrency Control，即多版本并发控制。MVCC是一种并发控制的方法，一般在数据库管理系统中，实现对数据库的并发访问，在编程语言中实现事务内存。">
+<meta name="twitter:description" content="">
 
 
 
@@ -139,7 +139,7 @@
   <meta property="og:url" content="https://blog.zcoding.co/post/mysql-mvcc/">
   <meta property="og:site_name" content="Ocancel的站点">
   <meta property="og:title" content="MySQL MVCC">
-  <meta property="og:description" content="简介 MVCC全称Multi-Version Concurrency Control，即多版本并发控制。MVCC是一种并发控制的方法，一般在数据库管理系统中，实现对数据库的并发访问，在编程语言中实现事务内存。">
+  <meta property="og:description" content="Whatever can happen will happen.">
   <meta property="og:locale" content="zh-cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -163,7 +163,7 @@
         "alternativeHeadline": "",
         "description": "
       
-        简介 MVCC全称Multi-Version Concurrency Control，即多版本并发控制。MVCC是一种并发控制的方法，一般在数据库管理系统中，实现对数据库的并发访问，在编程语言中实现事务内存。
+        
 
 
       
@@ -615,7 +615,6 @@
 <h3 id="read-view">Read View</h3>
 <p><code>Read View</code>是事务进行快照读操作时生产的读视图<code>Read View</code>，在该事务执行快照读的那一刻，会生成数据库系统当前的一个快照，记录并维护系统当前活跃事务的ID（当每个事务开启时，都会被分配一个ID, 这个ID是递增的，所以最新的事务，ID值越大）。</p>
 <p><code>Read View</code>主要是用来做可见性判断，<code>Read View</code>遵循一个可见性算法，主要是将<strong>要被修改的数据</strong>的最新记录中的<code>DB_TRX_ID</code>（即当前事务ID）取出来，与系统当前其他活跃事务的ID去对比（由Read View维护），如果<code>DB_TRX_ID</code>跟<code>Read View</code>的属性做了某些比较，不符合可见性，那就通过<code>DB_ROLL_PTR</code>回滚指针去取出<code>undo Log</code>中的<code>DB_TRX_ID</code>再比较，即遍历链表的<code>DB_TRX_ID</code>（从链首到链尾，即从最近的一次修改查起），直到找到满足特定条件的<code>DB_TRX_ID</code>，那么这个<code>DB_TRX_ID</code>所在的旧记录就是当前事务能看见的最新<strong>老版本</strong>。</p>
-
 
 
 

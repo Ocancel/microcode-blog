@@ -14,7 +14,7 @@
       
       <guid>https://blog.zcoding.co/post/debian-common-configuration/</guid>
       
-        <description>用户管理 新增管理员用户及配置 新增用户 0 sudo useradd admin 赋予sudo权限 0 sudo usermod -aG sudo ssh配置 使用vim编辑器打开ssh配置文件：</description>
+        <description></description>
       
     </item>
     
@@ -25,7 +25,7 @@
       
       <guid>https://blog.zcoding.co/post/maven-project-import-local-jar/</guid>
       
-        <description>导入Jar包 在maven项目根目录下新建名为lib的文件夹，将准备好的外部jar包移到该目录下。</description>
+        <description></description>
       
     </item>
     
@@ -36,7 +36,7 @@
       
       <guid>https://blog.zcoding.co/post/java-util-packaging/</guid>
       
-        <description>需求 将Java工具类打包成jar，方便其他项目导入依赖使用。</description>
+        <description></description>
       
     </item>
     
@@ -47,7 +47,7 @@
       
       <guid>https://blog.zcoding.co/post/rust-variables-and-data-types/</guid>
       
-        <description>变量和可变性 变量 在Rust中，变量默认是不可变的，可以通过在变量前增加mut关键字使其可变。</description>
+        <description></description>
       
     </item>
     
@@ -58,7 +58,7 @@
       
       <guid>https://blog.zcoding.co/post/rust-start/</guid>
       
-        <description>Cargo Cargo是Rust的构建系统和包管理器。</description>
+        <description></description>
       
     </item>
     
@@ -69,7 +69,7 @@
       
       <guid>https://blog.zcoding.co/post/javascript-function/</guid>
       
-        <description>函数与抽象 函数：函数是一段封装了特定功能的代码块，它可以接收输入参数（也称为参数或参数列表），并根据这些参数执行特定的操作，最后返回一个结果。函数可以看作是可重复使用的子程序或方法，它将代码模块化，提高代码的可读性和维护性。</description>
+        <description></description>
       
     </item>
     
@@ -80,7 +80,7 @@
       
       <guid>https://blog.zcoding.co/post/javascript-basic/</guid>
       
-        <description>JavaScript 概述 JavaScript是世界上最流行的脚本语言，简称JS，主要用来实现网页的交互逻辑，JavaScript是一种运行在浏览器中的解释型的编程语言。</description>
+        <description></description>
       
     </item>
     
@@ -91,7 +91,7 @@
       
       <guid>https://blog.zcoding.co/post/postgresql-lock-table/</guid>
       
-        <description>根据表名查询pid列表 0 1 2 3 4 select locks.</description>
+        <description></description>
       
     </item>
     
@@ -102,7 +102,7 @@
       
       <guid>https://blog.zcoding.co/post/springboot-dynamic-datasource/</guid>
       
-        <description>Dynamic-Datasource 在pom.</description>
+        <description></description>
       
     </item>
     
@@ -113,7 +113,7 @@
       
       <guid>https://blog.zcoding.co/post/mysql-mvcc/</guid>
       
-        <description>简介 MVCC全称Multi-Version Concurrency Control，即多版本并发控制。MVCC是一种并发控制的方法，一般在数据库管理系统中，实现对数据库的并发访问，在编程语言中实现事务内存。</description>
+        <description></description>
       
     </item>
     
@@ -124,7 +124,7 @@
       
       <guid>https://blog.zcoding.co/post/linux-tail/</guid>
       
-        <description>简介 显示文件的最后一部分</description>
+        <description></description>
       
     </item>
     
@@ -135,7 +135,7 @@
       
       <guid>https://blog.zcoding.co/post/spring-bean-lifecycle/</guid>
       
-        <description>简介 Bean的生命周期主要包含实例化、属性注入、初始化、使用和销毁几个阶段。</description>
+        <description></description>
       
     </item>
     
@@ -146,7 +146,7 @@
       
       <guid>https://blog.zcoding.co/post/java-hashmap/</guid>
       
-        <description>简介 HashMap根据键的hashCode值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以用 Collections的synchronizedMap方法使HashMap具有线程安全的能力，或者使用ConcurrentHashMap。</description>
+        <description></description>
       
     </item>
     
@@ -157,7 +157,7 @@
       
       <guid>https://blog.zcoding.co/post/macos-additional-attribute/</guid>
       
-        <description>当在命令行用ls -l命令查看文件列表的时候，看到文件权限后面有一个@符号，这说明该文件带有附加属性。</description>
+        <description></description>
       
     </item>
     
@@ -168,7 +168,7 @@
       
       <guid>https://blog.zcoding.co/post/macos-icon/</guid>
       
-        <description>准备一个1024 * 1024的png图片，假设名字为pic.</description>
+        <description></description>
       
     </item>
     
@@ -179,7 +179,7 @@
       
       <guid>https://blog.zcoding.co/post/linux-chmod/</guid>
       
-        <description>权限说明 文件／目录 的权限包括： 权限 英文 缩写 数字代码 读 read r 4 写 write w 2 执行 execute x 1 文件／目录 的权限格式：-rwxrwxrwx 第一个符号代表文件类型，&amp;quot;-&amp;quot; 符号表示该文件是非目录类型，&amp;ldquo;d&amp;rdquo; 符号表示目录类型。</description>
+        <description></description>
       
     </item>
     
@@ -190,111 +190,7 @@
       
       <guid>https://blog.zcoding.co/post/sorting-algorithm/</guid>
       
-        <description>&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;排序算法&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;平均时间复杂度&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;最好情况&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;最坏情况&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;空间复杂度&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;排序方式&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;稳定性&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;冒泡排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(1)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;内部排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;稳定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;选择排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(1)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;内部排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;不稳定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;插入排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(1)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;内部排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;稳定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;希尔排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(nlog&lt;sup&gt;2&lt;/sup&gt;n)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(nlog&lt;sup&gt;2&lt;/sup&gt;n)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(1)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;内部排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;不稳定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;归并排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;外部排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;稳定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;快速排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(logn)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;内部排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;不稳定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;堆排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(nlogn)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(1)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;内部排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;不稳定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;计数排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(k)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;外部排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;稳定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;桶排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;外部排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;稳定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;基数排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n*k)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n*k)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n*k)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;O(n+k)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;外部排序&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;稳定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</description>
+        <description></description>
       
     </item>
     
@@ -305,7 +201,7 @@
       
       <guid>https://blog.zcoding.co/post/design-principle/</guid>
       
-        <description>I. 开闭原则｜Open-Closed Principle｜OCP 对扩展开放，对修改关闭。</description>
+        <description></description>
       
     </item>
     

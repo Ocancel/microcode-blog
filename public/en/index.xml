@@ -36,7 +36,7 @@
       
       <guid>https://blog.zcoding.co/en/post/notice-shortcode/</guid>
       
-        <description>The notice shortcode supports three different types of disclaimers.</description>
+        <description>&lt;p&gt;The notice shortcode supports three different types of disclaimers. These are as following:&lt;/p&gt;</description>
       
     </item>
     
@@ -58,7 +58,7 @@
       
       <guid>https://blog.zcoding.co/en/post/figure-shortcode/</guid>
       
-        <description>Hugo has figure shortcode built-in, so you can easily add figure captions or hyperlink rel attributes to images.</description>
+        <description></description>
       
     </item>
     
@@ -69,7 +69,9 @@
       
       <guid>https://blog.zcoding.co/en/about/</guid>
       
-        <description>Whatever can happen will happen</description>
+        <description>Whatever can happen will happen
+Ocancel&amp;rsquo;s Blog Site Built with Hugo .
+Blog It is easy to build a blog, but it is rare to stick to it.</description>
       
     </item>
     

@@ -14,7 +14,7 @@
       
       <guid>https://blog.zcoding.co/post/maven-project-import-local-jar/</guid>
       
-        <description>导入Jar包 在maven项目根目录下新建名为lib的文件夹，将准备好的外部jar包移到该目录下。</description>
+        <description></description>
       
     </item>
     
@@ -25,7 +25,7 @@
       
       <guid>https://blog.zcoding.co/post/springboot-dynamic-datasource/</guid>
       
-        <description>Dynamic-Datasource 在pom.</description>
+        <description></description>
       
     </item>
     
@@ -36,7 +36,7 @@
       
       <guid>https://blog.zcoding.co/post/spring-bean-lifecycle/</guid>
       
-        <description>简介 Bean的生命周期主要包含实例化、属性注入、初始化、使用和销毁几个阶段。</description>
+        <description></description>
       
     </item>
     

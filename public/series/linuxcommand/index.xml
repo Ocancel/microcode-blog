@@ -14,7 +14,7 @@
       
       <guid>https://blog.zcoding.co/post/linux-tail/</guid>
       
-        <description>简介 显示文件的最后一部分</description>
+        <description></description>
       
     </item>
     
@@ -25,7 +25,7 @@
       
       <guid>https://blog.zcoding.co/post/linux-chmod/</guid>
       
-        <description>权限说明 文件／目录 的权限包括： 权限 英文 缩写 数字代码 读 read r 4 写 write w 2 执行 execute x 1 文件／目录 的权限格式：-rwxrwxrwx 第一个符号代表文件类型，&amp;quot;-&amp;quot; 符号表示该文件是非目录类型，&amp;ldquo;d&amp;rdquo; 符号表示目录类型。</description>
+        <description></description>
       
     </item>
     

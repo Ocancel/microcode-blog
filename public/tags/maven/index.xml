@@ -14,7 +14,7 @@
       
       <guid>https://blog.zcoding.co/post/maven-project-import-local-jar/</guid>
       
-        <description>导入Jar包 在maven项目根目录下新建名为lib的文件夹，将准备好的外部jar包移到该目录下。</description>
+        <description></description>
       
     </item>
     
@@ -25,7 +25,7 @@
       
       <guid>https://blog.zcoding.co/post/java-util-packaging/</guid>
       
-        <description>需求 将Java工具类打包成jar，方便其他项目导入依赖使用。</description>
+        <description></description>
       
     </item>
     

@@ -14,7 +14,7 @@
       
       <guid>https://blog.zcoding.co/post/debian-common-configuration/</guid>
       
-        <description>用户管理 新增管理员用户及配置 新增用户 0 sudo useradd admin 赋予sudo权限 0 sudo usermod -aG sudo ssh配置 使用vim编辑器打开ssh配置文件：</description>
+        <description></description>
       
     </item>
     

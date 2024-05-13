@@ -14,7 +14,7 @@
       
       <guid>https://blog.zcoding.co/en/post/notice-shortcode/</guid>
       
-        <description>The notice shortcode supports three different types of disclaimers.</description>
+        <description>&lt;p&gt;The notice shortcode supports three different types of disclaimers. These are as following:&lt;/p&gt;</description>
       
     </item>
     
@@ -25,7 +25,7 @@
       
       <guid>https://blog.zcoding.co/en/post/figure-shortcode/</guid>
       
-        <description>Hugo has figure shortcode built-in, so you can easily add figure captions or hyperlink rel attributes to images.</description>
+        <description></description>
       
     </item>
     

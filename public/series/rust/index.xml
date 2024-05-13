@@ -14,7 +14,7 @@
       
       <guid>https://blog.zcoding.co/post/rust-variables-and-data-types/</guid>
       
-        <description>变量和可变性 变量 在Rust中，变量默认是不可变的，可以通过在变量前增加mut关键字使其可变。</description>
+        <description></description>
       
     </item>
     
@@ -25,7 +25,7 @@
       
       <guid>https://blog.zcoding.co/post/rust-start/</guid>
       
-        <description>Cargo Cargo是Rust的构建系统和包管理器。</description>
+        <description></description>
       
     </item>
     

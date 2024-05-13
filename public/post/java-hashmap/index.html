@@ -131,7 +131,7 @@
 
   
   <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Java HashMap">
-<meta name="twitter:description" content="简介 HashMap根据键的hashCode值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以用 Collections的synchronizedMap方法使HashMap具有线程安全的能力，或者使用ConcurrentHashMap。">
+<meta name="twitter:description" content="">
 
 
 
@@ -139,7 +139,7 @@
   <meta property="og:url" content="https://blog.zcoding.co/post/java-hashmap/">
   <meta property="og:site_name" content="Ocancel的站点">
   <meta property="og:title" content="Java HashMap">
-  <meta property="og:description" content="简介 HashMap根据键的hashCode值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以用 Collections的synchronizedMap方法使HashMap具有线程安全的能力，或者使用ConcurrentHashMap。">
+  <meta property="og:description" content="Whatever can happen will happen.">
   <meta property="og:locale" content="zh-cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -163,7 +163,7 @@
         "alternativeHeadline": "",
         "description": "
       
-        简介 HashMap根据键的hashCode值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以用 Collections的synchronizedMap方法使HashMap具有线程安全的能力，或者使用ConcurrentHashMap。
+        
 
 
       
@@ -896,7 +896,6 @@
 </div>
 </div><h2 id="线程安全性">线程安全性</h2>
 <p>在多线程使用场景中，应该尽量避免使用线程不安全的HashMap，而使用线程安全的ConcurrentHashMap，在并发的多线程使用场景中使用HashMap可能造成死循环。</p>
-
 
 
 
