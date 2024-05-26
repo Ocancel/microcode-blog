@@ -28,8 +28,8 @@
     
     <link
       rel="stylesheet"
-      href="/scss/main.min.6d27bb58ca4a7137e9bfdb765c4687764deba904d102bcf199e380627c4505a0.css"
-      integrity="sha256-bSe7WMpKcTfpv9t2XEaHdk3rqQTRArzxmeOAYnxFBaA="
+      href="/scss/main.min.a9302c30af413888cfb7e2487453b360ab3d58018452079e74364253ecb3a90d.css"
+      integrity="sha256-qTAsMK9BOIjPt&#43;JIdFOzYKs9WAGEUgeedDZCU&#43;yzqQ0="
       crossorigin="anonymous"
       type="text/css"
     />
@@ -132,6 +132,17 @@
     integrity="sha256-4WL2uA/ry6dDSn7lwGjtnaosCHotjjck2mKddEjHn0A="
     crossorigin="anonymous"
   ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/toc-switcher.min.0c92979c495a65afca4bcacd65eb32866222cf2de1b7238a1e072546e7180294.js"
+      integrity="sha256-DJKXnElaZa/KS8rNZesyhmIizy3htyOKHgclRucYApQ="
+      crossorigin="anonymous">
+    </script>
+  
 
   
 
@@ -537,8 +548,18 @@
       animated fadeInDown
     "
   >
-    
-    <div class="post__content">
+    <div id="toc-button" class="toc-button">☰</div>
+<div id="toc-overlay" class="toc-overlay"></div>
+<div id="toc-window" class="toc-window">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#查看某文件的附加属性">查看某文件的附加属性</a></li>
+    <li><a href="#删除某文件的附加属性">删除某文件的附加属性</a></li>
+    <li><a href="#删除某目录下所有文件目录的附加属性">删除某目录下所有文件、目录的附加属性</a></li>
+  </ul>
+</nav>
+</div>
+<div class="post__content">
       <h1>MacOS 文件附加属性</h1>
       
         <ul class="post__meta">
@@ -576,15 +597,15 @@
 </span></span><span class="line"><span class="cl">drwx------@ <span class="m">4</span> user staff <span class="m">128</span> <span class="m">10</span> <span class="m">13</span> 09:18 Desktop
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="查看某文件的附加属性">查看某文件的附加属性</h4>
+</div><h2 id="查看某文件的附加属性">查看某文件的附加属性</h2>
 <ul>
 <li><code>xattr -l filename</code></li>
 </ul>
-<h4 id="删除某文件的附加属性">删除某文件的附加属性</h4>
+<h2 id="删除某文件的附加属性">删除某文件的附加属性</h2>
 <ul>
 <li><code>xattr -c filename</code></li>
 </ul>
-<h4 id="删除某目录下所有文件目录的附加属性">删除某目录下所有文件、目录的附加属性</h4>
+<h2 id="删除某目录下所有文件目录的附加属性">删除某目录下所有文件、目录的附加属性</h2>
 <ul>
 <li><code>xattr -c -r path</code></li>
 </ul>

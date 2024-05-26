@@ -28,8 +28,8 @@
     
     <link
       rel="stylesheet"
-      href="/scss/main.min.6d27bb58ca4a7137e9bfdb765c4687764deba904d102bcf199e380627c4505a0.css"
-      integrity="sha256-bSe7WMpKcTfpv9t2XEaHdk3rqQTRArzxmeOAYnxFBaA="
+      href="/scss/main.min.a9302c30af413888cfb7e2487453b360ab3d58018452079e74364253ecb3a90d.css"
+      integrity="sha256-qTAsMK9BOIjPt&#43;JIdFOzYKs9WAGEUgeedDZCU&#43;yzqQ0="
       crossorigin="anonymous"
       type="text/css"
     />
@@ -132,6 +132,17 @@
     integrity="sha256-4WL2uA/ry6dDSn7lwGjtnaosCHotjjck2mKddEjHn0A="
     crossorigin="anonymous"
   ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/toc-switcher.min.0c92979c495a65afca4bcacd65eb32866222cf2de1b7238a1e072546e7180294.js"
+      integrity="sha256-DJKXnElaZa/KS8rNZesyhmIizy3htyOKHgclRucYApQ="
+      crossorigin="anonymous">
+    </script>
+  
 
   
 
@@ -533,8 +544,43 @@
       animated fadeInDown
     "
   >
-    
-    <div class="post__content">
+    <div id="toc-button" class="toc-button">☰</div>
+<div id="toc-overlay" class="toc-overlay"></div>
+<div id="toc-window" class="toc-window">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#权限说明">权限说明</a>
+      <ul>
+        <li><a href="#文件目录-的权限包括"><strong>文件／目录</strong> 的权限包括：</a></li>
+        <li><a href="#文件目录-的权限格式-rwxrwxrwx"><strong>文件／目录</strong> 的权限格式：<code>-rwxrwxrwx</code></a></li>
+        <li><a href="#文件目录-的权限详解"><strong>文件／目录</strong> 的权限详解：</a></li>
+      </ul>
+    </li>
+    <li><a href="#修改权限">修改权限</a>
+      <ul>
+        <li><a href="#方法一chmod-用户操作权限-文件">方法一：<code>chmod 用户+操作+权限 文件</code></a>
+          <ul>
+            <li><a href="#用户部分">用户部分：</a></li>
+            <li><a href="#操作部分">操作部分：</a></li>
+            <li><a href="#权限部分">权限部分：</a></li>
+            <li><a href="#文件部分">文件部分：</a></li>
+            <li><a href="#注">注：</a></li>
+            <li><a href="#例">例：</a></li>
+          </ul>
+        </li>
+        <li><a href="#方法二chmod-xxx-文件-x为数字">方法二：<code>chmod xxx 文件</code> [x为数字]</a>
+          <ul>
+            <li><a href="#数字和权限对应关系">数字和权限对应关系：</a></li>
+            <li><a href="#数字-xxx-部分">数字 [xxx] 部分：</a></li>
+            <li><a href="#补充">补充：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<div class="post__content">
       <h1>Linux Chmod</h1>
       
         <ul class="post__meta">

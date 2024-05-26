@@ -28,8 +28,8 @@
     
     <link
       rel="stylesheet"
-      href="/scss/main.min.6d27bb58ca4a7137e9bfdb765c4687764deba904d102bcf199e380627c4505a0.css"
-      integrity="sha256-bSe7WMpKcTfpv9t2XEaHdk3rqQTRArzxmeOAYnxFBaA="
+      href="/scss/main.min.a9302c30af413888cfb7e2487453b360ab3d58018452079e74364253ecb3a90d.css"
+      integrity="sha256-qTAsMK9BOIjPt&#43;JIdFOzYKs9WAGEUgeedDZCU&#43;yzqQ0="
       crossorigin="anonymous"
       type="text/css"
     />
@@ -132,6 +132,17 @@
     integrity="sha256-4WL2uA/ry6dDSn7lwGjtnaosCHotjjck2mKddEjHn0A="
     crossorigin="anonymous"
   ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/toc-switcher.min.0c92979c495a65afca4bcacd65eb32866222cf2de1b7238a1e072546e7180294.js"
+      integrity="sha256-DJKXnElaZa/KS8rNZesyhmIizy3htyOKHgclRucYApQ="
+      crossorigin="anonymous">
+    </script>
+  
 
   
 
@@ -556,8 +567,71 @@
       animated fadeInDown
     "
   >
-    
-    <div class="post__content">
+    <div id="toc-button" class="toc-button">☰</div>
+<div id="toc-overlay" class="toc-overlay"></div>
+<div id="toc-window" class="toc-window">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#headings">Headings</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#h2">H2</a>
+      <ul>
+        <li><a href="#h3">H3</a>
+          <ul>
+            <li><a href="#h4">H4</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#paragraph">Paragraph</a></li>
+    <li><a href="#blockquotes">Blockquotes</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#blockquote-without-attribution">Blockquote without attribution</a></li>
+            <li><a href="#blockquote-with-attribution">Blockquote with attribution</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#tables">Tables</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#inline-markdown-within-tables">Inline Markdown within tables</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#code-blocks">Code Blocks</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#code-block-with-backticks">Code block with backticks</a></li>
+            <li><a href="#code-block-indented-with-four-spaces">Code block indented with four spaces</a></li>
+            <li><a href="#code-block-with-hugos-internal-highlight-shortcode">Code block with Hugo&rsquo;s internal highlight shortcode</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#list-types">List Types</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#ordered-list">Ordered List</a></li>
+            <li><a href="#unordered-list">Unordered List</a></li>
+            <li><a href="#nested-list">Nested list</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#other-elements--abbr-sub-sup-kbd-mark">Other Elements — abbr, sub, sup, kbd, mark</a></li>
+  </ul>
+</nav>
+</div>
+<div class="post__content">
       <h1>Markdown Syntax Guide</h1>
       
         <ul class="post__meta">
