@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Ocancel的站点</title>
+    <link>https://blog.zcoding.co/categories/docker/</link>
+    <description>Recent content in Docker on Ocancel的站点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 28 May 2024 13:34:05 +0800</lastBuildDate><atom:link href="https://blog.zcoding.co/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker 容器内更换软件源</title>
+      <link>https://blog.zcoding.co/post/docker-container-change-software-source/</link>
+      <pubDate>Tue, 28 May 2024 13:34:05 +0800</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/docker-container-change-software-source/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
