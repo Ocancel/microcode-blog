@@ -180,19 +180,6 @@
     <loc>https://blog.zcoding.co/en/tags/shortcodes/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/contact/</loc>
-    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://blog.zcoding.co/contact/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.zcoding.co/en/contact/"
-                />
-  </url><url>
     <loc>https://blog.zcoding.co/en/statement/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -221,6 +208,19 @@
   </url><url>
     <loc>https://blog.zcoding.co/en/post/math-typesetting/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.zcoding.co/en/statistics/</loc>
+    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://blog.zcoding.co/statistics/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.zcoding.co/en/statistics/"
+                />
   </url><url>
     <loc>https://blog.zcoding.co/en/portfolio/</loc>
     <xhtml:link

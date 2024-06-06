@@ -264,17 +264,6 @@ Ocancel 的博客 站点 本站使用 Hugo 搭建。
     </item>
     
     <item>
-      <title>Contact</title>
-      <link>https://blog.zcoding.co/contact/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.zcoding.co/contact/</guid>
-      
-        <description>Contact Page</description>
-      
-    </item>
-    
-    <item>
       <title>Link</title>
       <link>https://blog.zcoding.co/links/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
@@ -293,6 +282,17 @@ Ocancel 的博客 站点 本站使用 Hugo 搭建。
       <guid>https://blog.zcoding.co/statement/</guid>
       
         <description>本站提供的所有内容仅供学习、分享与交流，并且不保证内容绝对正确和不会过时。通过使用本站内容随之而来的风险与本站无关。当使用本站内容时，代表你已接受本站的免责声明条款。</description>
+      
+    </item>
+    
+    <item>
+      <title>统计</title>
+      <link>https://blog.zcoding.co/statistics/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/statistics/</guid>
+      
+        <description>Statistics Page</description>
       
     </item>
     

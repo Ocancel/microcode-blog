@@ -109,17 +109,6 @@ Blog It is easy to build a blog, but it is rare to stick to it.</description>
     </item>
     
     <item>
-      <title>Contact</title>
-      <link>https://blog.zcoding.co/en/contact/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.zcoding.co/en/contact/</guid>
-      
-        <description>Contact Page</description>
-      
-    </item>
-    
-    <item>
       <title>Disclaimer</title>
       <link>https://blog.zcoding.co/en/statement/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
@@ -149,6 +138,17 @@ Blog It is easy to build a blog, but it is rare to stick to it.</description>
       <guid>https://blog.zcoding.co/en/post/math-typesetting/</guid>
       
         <description>A brief guide to setup KaTeX</description>
+      
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>https://blog.zcoding.co/en/statistics/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/en/statistics/</guid>
+      
+        <description>Statistics Page</description>
       
     </item>
     
