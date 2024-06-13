@@ -230,7 +230,7 @@
 
     ,
         "url" : "https:\/\/blog.zcoding.co\/en\/post\/math-typesetting\/",
-        "wordCount" : "104",
+        "wordCount" : "123",
         "genre" : [ ],
         "keywords" : [ ]
     }
@@ -554,7 +554,15 @@
     <div id="toc-button" class="toc-button">☰</div>
 <div id="toc-overlay" class="toc-overlay"></div>
 <div id="toc-window" class="toc-window">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </div>
 <div class="post__content">
       <h1>Math Typesetting</h1>
@@ -603,10 +611,16 @@
 <li>To enable KaTex on a per page basis include the parameter <code>math: true</code> in content files</li>
 </ul>
 <p><strong>Note:</strong> Use the online reference of <a href="https://katex.org/docs/supported.html">Supported TeX Functions</a></p>
+<h3 id="examples">Examples</h3>
+<p>Inline math: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)</p>
+<p>Block math:</p>
+<p>$$
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+$$</p>
         <ul class="post__meta">
           <li class="post__meta-item">
             <em class="fas fa-file-word post__meta-icon"></em>
-            <span class="post__meta-text">104 words</span>
+            <span class="post__meta-text">123 words</span>
           </li>
           <li class="post__meta-item">
             <em class="fas fa-copyright post__meta-icon"></em>

@@ -155,32 +155,6 @@
     <loc>https://blog.zcoding.co/post/mysql-mvcc/</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/awards/</loc>
-    <lastmod>2022-04-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.zcoding.co/en/awards/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://blog.zcoding.co/awards/"
-                />
-  </url><url>
-    <loc>https://blog.zcoding.co/certifications/</loc>
-    <lastmod>2022-04-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.zcoding.co/en/certifications/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://blog.zcoding.co/certifications/"
-                />
-  </url><url>
     <loc>https://blog.zcoding.co/post/linux-tail/</loc>
     <lastmod>2022-03-04T00:00:00+00:00</lastmod>
   </url><url>
@@ -229,69 +203,28 @@
     <loc>https://blog.zcoding.co/categories/designpatterns/</loc>
     <lastmod>2020-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/about/</loc>
-    <lastmod>2020-02-28T00:00:00+00:00</lastmod>
+    <loc>https://blog.zcoding.co/awards/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/about/"
+                href="https://blog.zcoding.co/en/awards/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/about/"
+                href="https://blog.zcoding.co/awards/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <loc>https://blog.zcoding.co/certifications/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/archives/"
+                href="https://blog.zcoding.co/en/certifications/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/archives/"
-                />
-  </url><url>
-    <loc>https://blog.zcoding.co/links/</loc>
-    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.zcoding.co/en/links/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://blog.zcoding.co/links/"
-                />
-  </url><url>
-    <loc>https://blog.zcoding.co/statement/</loc>
-    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.zcoding.co/en/statement/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://blog.zcoding.co/statement/"
-                />
-  </url><url>
-    <loc>https://blog.zcoding.co/statistics/</loc>
-    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.zcoding.co/en/statistics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://blog.zcoding.co/statistics/"
+                href="https://blog.zcoding.co/certifications/"
                 />
   </url><url>
     <loc>https://blog.zcoding.co/portfolio/</loc>
@@ -304,6 +237,54 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://blog.zcoding.co/portfolio/"
+                />
+  </url><url>
+    <loc>https://blog.zcoding.co/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.zcoding.co/en/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://blog.zcoding.co/about/"
+                />
+  </url><url>
+    <loc>https://blog.zcoding.co/links/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.zcoding.co/en/links/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://blog.zcoding.co/links/"
+                />
+  </url><url>
+    <loc>https://blog.zcoding.co/statement/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.zcoding.co/en/statement/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://blog.zcoding.co/statement/"
+                />
+  </url><url>
+    <loc>https://blog.zcoding.co/statistics/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.zcoding.co/en/statistics/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://blog.zcoding.co/statistics/"
                 />
   </url>
 </urlset>

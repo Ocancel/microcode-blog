@@ -129,28 +129,6 @@
     </item>
     
     <item>
-      <title>Awards</title>
-      <link>https://blog.zcoding.co/awards/</link>
-      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.zcoding.co/awards/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Certifications</title>
-      <link>https://blog.zcoding.co/certifications/</link>
-      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.zcoding.co/certifications/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
       <title>Linux tail</title>
       <link>https://blog.zcoding.co/post/linux-tail/</link>
       <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
@@ -239,9 +217,31 @@
     </item>
     
     <item>
+      <title>Awards</title>
+      <link>https://blog.zcoding.co/awards/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/awards/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Certifications</title>
+      <link>https://blog.zcoding.co/certifications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/certifications/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
       <title>关于</title>
       <link>https://blog.zcoding.co/about/</link>
-      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.zcoding.co/about/</guid>
       
@@ -253,31 +253,20 @@ Ocancel 的博客 站点 本站使用 Hugo 搭建。
     </item>
     
     <item>
-      <title></title>
-      <link>https://blog.zcoding.co/archives/</link>
-      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      <title>链接</title>
+      <link>https://blog.zcoding.co/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/archives/</guid>
+      <guid>https://blog.zcoding.co/links/</guid>
       
         <description></description>
       
     </item>
     
     <item>
-      <title>Link</title>
-      <link>https://blog.zcoding.co/links/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.zcoding.co/links/</guid>
-      
-        <description>Friend link</description>
-      
-    </item>
-    
-    <item>
       <title>免责声明</title>
       <link>https://blog.zcoding.co/statement/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.zcoding.co/statement/</guid>
       
@@ -288,11 +277,11 @@ Ocancel 的博客 站点 本站使用 Hugo 搭建。
     <item>
       <title>统计</title>
       <link>https://blog.zcoding.co/statistics/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.zcoding.co/statistics/</guid>
       
-        <description>Statistics Page</description>
+        <description></description>
       
     </item>
     
