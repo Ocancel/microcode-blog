@@ -203,18 +203,6 @@
     <loc>https://blog.zcoding.co/categories/designpatterns/</loc>
     <lastmod>2020-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/awards/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.zcoding.co/en/awards/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://blog.zcoding.co/awards/"
-                />
-  </url><url>
     <loc>https://blog.zcoding.co/certifications/</loc>
     <xhtml:link
                 rel="alternate"
@@ -237,6 +225,18 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://blog.zcoding.co/portfolio/"
+                />
+  </url><url>
+    <loc>https://blog.zcoding.co/film/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.zcoding.co/en/film/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://blog.zcoding.co/film/"
                 />
   </url><url>
     <loc>https://blog.zcoding.co/about/</loc>

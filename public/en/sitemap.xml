@@ -143,18 +143,6 @@
                 href="https://blog.zcoding.co/en/about/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/awards/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://blog.zcoding.co/awards/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.zcoding.co/en/awards/"
-                />
-  </url><url>
     <loc>https://blog.zcoding.co/en/certifications/</loc>
     <xhtml:link
                 rel="alternate"
@@ -177,6 +165,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://blog.zcoding.co/en/statement/"
+                />
+  </url><url>
+    <loc>https://blog.zcoding.co/en/film/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://blog.zcoding.co/film/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.zcoding.co/en/film/"
                 />
   </url><url>
     <loc>https://blog.zcoding.co/en/links/</loc>

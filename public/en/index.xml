@@ -87,17 +87,6 @@ Blog It is easy to build a blog, but it is rare to stick to it.</description>
     </item>
     
     <item>
-      <title>Awards</title>
-      <link>https://blog.zcoding.co/en/awards/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.zcoding.co/en/awards/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
       <title>Certifications</title>
       <link>https://blog.zcoding.co/en/certifications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -116,6 +105,17 @@ Blog It is easy to build a blog, but it is rare to stick to it.</description>
       <guid>https://blog.zcoding.co/en/statement/</guid>
       
         <description>All the content provided by this site is for learning, sharing and communication only, and there is no guarantee that the content is absolutely correct and will not be out of date.</description>
+      
+    </item>
+    
+    <item>
+      <title>Film</title>
+      <link>https://blog.zcoding.co/en/film/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/en/film/</guid>
+      
+        <description></description>
       
     </item>
     
