@@ -6,7 +6,18 @@
     <description>Recent content in Categories on Ocancel的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 28 May 2024 13:34:05 +0800</lastBuildDate><atom:link href="https://blog.zcoding.co/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust</title>
+      <link>https://blog.zcoding.co/categories/rust/</link>
+      <pubDate>Mon, 19 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/categories/rust/</guid>
+      
+        <description></description>
+      
+    </item>
+    
     <item>
       <title>Docker</title>
       <link>https://blog.zcoding.co/categories/docker/</link>
@@ -46,17 +57,6 @@
       <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.zcoding.co/categories/java/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Rust</title>
-      <link>https://blog.zcoding.co/categories/rust/</link>
-      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.zcoding.co/categories/rust/</guid>
       
         <description></description>
       

@@ -6,7 +6,18 @@
     <description>Recent content on Ocancel的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 28 May 2024 13:34:05 +0800</lastBuildDate><atom:link href="https://blog.zcoding.co/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust Common Trait</title>
+      <link>https://blog.zcoding.co/post/rust-common-trait/</link>
+      <pubDate>Mon, 19 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zcoding.co/post/rust-common-trait/</guid>
+      
+        <description>介绍Rust中的一些基础的Trait及其作用</description>
+      
+    </item>
+    
     <item>
       <title>Docker 容器内更换软件源</title>
       <link>https://blog.zcoding.co/post/docker-container-change-software-source/</link>

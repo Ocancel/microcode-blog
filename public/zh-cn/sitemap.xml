@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.zcoding.co/</loc>
-    <lastmod>2024-05-28T13:34:05+08:00</lastmod>
+    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://blog.zcoding.co/categories/</loc>
-    <lastmod>2024-05-28T13:34:05+08:00</lastmod>
+    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -28,14 +28,8 @@
                 href="https://blog.zcoding.co/categories/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/categories/docker/</loc>
-    <lastmod>2024-05-28T13:34:05+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.zcoding.co/post/docker-container-change-software-source/</loc>
-    <lastmod>2024-05-28T13:34:05+08:00</lastmod>
-  </url><url>
     <loc>https://blog.zcoding.co/tags/index/</loc>
-    <lastmod>2024-05-28T13:34:05+08:00</lastmod>
+    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -48,7 +42,7 @@
                 />
   </url><url>
     <loc>https://blog.zcoding.co/post/</loc>
-    <lastmod>2024-05-28T13:34:05+08:00</lastmod>
+    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -60,8 +54,14 @@
                 href="https://blog.zcoding.co/post/"
                 />
   </url><url>
+    <loc>https://blog.zcoding.co/categories/rust/</loc>
+    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.zcoding.co/post/rust-common-trait/</loc>
+    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.zcoding.co/tags/</loc>
-    <lastmod>2024-05-28T13:34:05+08:00</lastmod>
+    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -72,6 +72,15 @@
                 hreflang="zh-cn"
                 href="https://blog.zcoding.co/tags/"
                 />
+  </url><url>
+    <loc>https://blog.zcoding.co/tags/trait/</loc>
+    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.zcoding.co/categories/docker/</loc>
+    <lastmod>2024-05-28T13:34:05+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.zcoding.co/post/docker-container-change-software-source/</loc>
+    <lastmod>2024-05-28T13:34:05+08:00</lastmod>
   </url><url>
     <loc>https://blog.zcoding.co/tags/debian/</loc>
     <lastmod>2024-04-17T00:00:00+00:00</lastmod>
@@ -98,9 +107,6 @@
     <lastmod>2024-02-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.zcoding.co/series/rust/</loc>
-    <lastmod>2024-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.zcoding.co/categories/rust/</loc>
     <lastmod>2024-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.zcoding.co/post/rust-variables-and-data-types/</loc>
