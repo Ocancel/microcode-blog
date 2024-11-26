@@ -16,7 +16,7 @@
 
   </title>
 
-  <meta name="generator" content="Hugo 0.131.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="generator" content="Hugo 0.139.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="referrer" content="no-referrer">
   <meta name="author" content="Ocancel" />
   <meta
@@ -290,7 +290,7 @@
             aria-label="MiniatureCode"
             title="MiniatureCode"
           >
-            <i class="fa fa-circle-notch fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-compass fa-2x" aria-hidden="true"></i>
           </a>
         </li>
       
@@ -314,7 +314,7 @@
             aria-label="e-mail"
             title="e-mail"
           >
-            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+            <i class="fas fa-at fa-2x" aria-hidden="true"></i>
           </a>
         </li>
       
@@ -667,45 +667,45 @@
 <h4 id="整型">整型</h4>
 <p>整型是指没有小数的数字类型，Rust的整型分为有符号整型和无符号整型，分别以<code>i</code>和<code>u</code>表示。</p>
 <table>
-<thead>
-<tr>
-<th>长度</th>
-<th>有符号类型</th>
-<th style="text-align:left">无符号类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>8 bit</td>
-<td><code>i8</code></td>
-<td style="text-align:left"><code>u8</code></td>
-</tr>
-<tr>
-<td>16 bit</td>
-<td><code>i16</code></td>
-<td style="text-align:left"><code>u16</code></td>
-</tr>
-<tr>
-<td>32 bit</td>
-<td><code>i32</code></td>
-<td style="text-align:left"><code>u32</code></td>
-</tr>
-<tr>
-<td>64 bit</td>
-<td><code>i64</code></td>
-<td style="text-align:left"><code>u64</code></td>
-</tr>
-<tr>
-<td>128 bit</td>
-<td><code>i128</code></td>
-<td style="text-align:left"><code>u128</code></td>
-</tr>
-<tr>
-<td>arch</td>
-<td><code>isize</code></td>
-<td style="text-align:left"><code>usize</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>长度</th>
+          <th>有符号类型</th>
+          <th style="text-align: left">无符号类型</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>8 bit</td>
+          <td><code>i8</code></td>
+          <td style="text-align: left"><code>u8</code></td>
+      </tr>
+      <tr>
+          <td>16 bit</td>
+          <td><code>i16</code></td>
+          <td style="text-align: left"><code>u16</code></td>
+      </tr>
+      <tr>
+          <td>32 bit</td>
+          <td><code>i32</code></td>
+          <td style="text-align: left"><code>u32</code></td>
+      </tr>
+      <tr>
+          <td>64 bit</td>
+          <td><code>i64</code></td>
+          <td style="text-align: left"><code>u64</code></td>
+      </tr>
+      <tr>
+          <td>128 bit</td>
+          <td><code>i128</code></td>
+          <td style="text-align: left"><code>u128</code></td>
+      </tr>
+      <tr>
+          <td>arch</td>
+          <td><code>isize</code></td>
+          <td style="text-align: left"><code>usize</code></td>
+      </tr>
+  </tbody>
 </table>
 <blockquote>
 <p>数字范围</p>
@@ -721,34 +721,34 @@
 <li>可以使用 <code>_</code> 作为可视分隔符以方便阅读。</li>
 </ul>
 <table>
-<thead>
-<tr>
-<th>数字字面量</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>二进制</td>
-<td><code>0b1111_0000</code></td>
-</tr>
-<tr>
-<td>八进制</td>
-<td><code>0o77</code></td>
-</tr>
-<tr>
-<td>十进制</td>
-<td><code>10_000</code></td>
-</tr>
-<tr>
-<td>十六进制</td>
-<td><code>0xff</code></td>
-</tr>
-<tr>
-<td>字节（仅限于<code>u8</code>）</td>
-<td><code>b'A'</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>数字字面量</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>二进制</td>
+          <td><code>0b1111_0000</code></td>
+      </tr>
+      <tr>
+          <td>八进制</td>
+          <td><code>0o77</code></td>
+      </tr>
+      <tr>
+          <td>十进制</td>
+          <td><code>10_000</code></td>
+      </tr>
+      <tr>
+          <td>十六进制</td>
+          <td><code>0xff</code></td>
+      </tr>
+      <tr>
+          <td>字节（仅限于<code>u8</code>）</td>
+          <td><code>b'A'</code></td>
+      </tr>
+  </tbody>
 </table>
 <h4 id="浮点类型">浮点类型</h4>
 <p>Rust 的浮点型有两种，<code>f32</code>和默认的<code>f64</code>，它们的大小分别为32位和64位，所有的浮点型都是有符号的。</p>
@@ -890,7 +890,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>参考链接：<a href="https://rustwiki.org/zh-CN/book/ch03-00-common-programming-concepts.html">Rust 通用编程概念</a></p>
+</div><p>参考链接：<a href="https://doc.rust-lang.org/book/ch03-00-common-programming-concepts.html">Rust 通用编程概念</a></p>
 
 
   <h3>这个系列的帖子</h3>

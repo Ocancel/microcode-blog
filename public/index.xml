@@ -256,10 +256,22 @@
       
       <guid>https://blog.zcoding.co/about/</guid>
       
-        <description>该发生的总会发生
-Ocancel 的博客 站点 本站使用 Hugo 搭建。
-博客 搭一个博客很容易，难得的是坚持。 这里写下的不仅是技术，更是青春。
-博主 时而躺平时而努力的开发工程师。 电影爱好者：星际穿越、创：战纪。 致谢 在此向给予我帮助的人表示感谢！</description>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;该发生的总会发生&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;ocancel-的博客&#34;&gt;Ocancel 的博客&lt;/h2&gt;
+&lt;h3 id=&#34;站点&#34;&gt;站点&lt;/h3&gt;
+&lt;p&gt;本站使用 &lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/a&gt; 搭建。&lt;/p&gt;
+&lt;h3 id=&#34;博客&#34;&gt;博客&lt;/h3&gt;
+&lt;p&gt;搭一个博客很容易，难得的是坚持。
+这里写下的不仅是技术，更是青春。&lt;/p&gt;
+&lt;h3 id=&#34;博主&#34;&gt;博主&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;时而躺平时而努力的开发工程师。&lt;/li&gt;
+&lt;li&gt;电影爱好者：&lt;em&gt;&lt;strong&gt;星际穿越&lt;/strong&gt;&lt;/em&gt;、&lt;em&gt;&lt;strong&gt;创：战纪&lt;/strong&gt;&lt;/em&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;致谢&#34;&gt;致谢&lt;/h3&gt;
+&lt;p&gt;在此向给予我帮助的人表示感谢！&lt;/p&gt;</description>
       
     </item>
     
@@ -281,7 +293,7 @@ Ocancel 的博客 站点 本站使用 Hugo 搭建。
       
       <guid>https://blog.zcoding.co/statement/</guid>
       
-        <description>本站提供的所有内容仅供学习、分享与交流，并且不保证内容绝对正确和不会过时。通过使用本站内容随之而来的风险与本站无关。当使用本站内容时，代表你已接受本站的免责声明条款。</description>
+        <description>&lt;p&gt;&lt;strong&gt;本站提供的所有内容仅供学习、分享与交流，并且不保证内容绝对正确和不会过时。通过使用本站内容随之而来的风险与本站无关。当使用本站内容时，代表你已接受本站的免责声明条款。&lt;/strong&gt;&lt;/p&gt;</description>
       
     </item>
     
