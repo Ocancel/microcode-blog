@@ -1,7 +1,7 @@
 <!doctype html>
 <html
   dir="ltr"
-  lang="en"
+  lang="zh-cn"
   data-theme=""
   
     class="html theme--light"
@@ -10,8 +10,6 @@
   <meta charset="utf-8" />
   <title>
     
-      
-        Redirect |
       Ocancel
 
   </title>
@@ -83,10 +81,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
 
-  <link rel="canonical" href="https://blog.zcoding.co/en/tags/redirect/" />
+  <link rel="canonical" href="https://blog.zcoding.co/" />
 
   
-  <link rel="alternate" type="application/rss+xml" href="/en/tags/redirect/index.xml" title="Ocancel's Site" />
+  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Ocancel的站点" />
   
   
   
@@ -148,23 +146,32 @@
   
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Redirect">
-  <meta name="twitter:description" content="Whatever can happen will happen.">
+  <meta name="twitter:title" content="Ocancel的站点">
 
 
 
   
-  <meta property="og:url" content="https://blog.zcoding.co/en/tags/redirect/">
-  <meta property="og:site_name" content="Ocancel&#39;s Site">
-  <meta property="og:title" content="Redirect">
-  <meta property="og:description" content="Whatever can happen will happen.">
-  <meta property="og:locale" content="en">
+  <meta property="og:url" content="https://blog.zcoding.co/">
+  <meta property="og:site_name" content="Ocancel的站点">
+  <meta property="og:title" content="Ocancel的站点">
+  <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="website">
 
 
 
   
-  
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Ocancel的站点",
+      "url": "https:\/\/blog.zcoding.co\/",
+      "description": "Whatever can happen will happen.",
+      "thumbnailUrl": "https:\/\/blog.zcoding.co\/",
+      "license": "2020"
+    }
+  </script>
+
 
 </head>
 <body class="body">
@@ -186,11 +193,11 @@
         alt="profile picture"
       />
       
-        <div class="sidebar__introduction-title">
+        <h1 class="sidebar__introduction-title">
           <div class="glitch">
-            <a href="/en">Ocancel</a>
+            <a href="/">Ocancel</a>
           </div>
-        </div>
+        </h1>
       
       <div id="brief" class="sidebar__introduction-description">
         <p>Whatever can happen will happen.</p>
@@ -252,11 +259,11 @@
       <li class="footer__item">
         <a
           class="link"
-          href="/en/statement/"
+          href="/statement/"
           
           title=""
         >
-          Statement
+          声明
         </a>
       </li>
     
@@ -333,10 +340,12 @@
             
             <a
               
-              href="/en/"
+                class="nav__link--active"
+              
+              href="/"
               
               title=""
-              >Home</a
+              >主页</a
             >
           </li>
         
@@ -347,10 +356,10 @@
             
             <a
               
-              href="/en/post/"
+              href="/post/"
               
               title=""
-              >Posts</a
+              >文章</a
             >
           </li>
         
@@ -361,10 +370,10 @@
             
             <a
               
-              href="/en/portfolio/"
+              href="/portfolio/"
               
               title=""
-              >Experience</a
+              >历程</a
             >
           </li>
         
@@ -383,7 +392,7 @@
               
 
               <label class="optionswitch__label" for="3"
-                >Featured <i class="fa fa-angle-down" aria-hidden="true"></i
+                >精选 <i class="fa fa-angle-down" aria-hidden="true"></i
               ></label>
 
               <div class="optionswitch__triangle"></div>
@@ -392,10 +401,10 @@
                   <li class="optionswitch__list-item">
                     
                     <a
-                      href="/en/film/"
+                      href="/film/"
                       
                       title=""
-                      >Film</a
+                      >电影</a
                     >
                   </li>
                 
@@ -410,10 +419,10 @@
             
             <a
               
-              href="/en/statistics/"
+              href="/statistics/"
               
               title=""
-              >Statistics</a
+              >统计</a
             >
           </li>
         
@@ -424,10 +433,10 @@
             
             <a
               
-              href="/en/links/"
+              href="/links/"
               
               title=""
-              >Links</a
+              >链接</a
             >
           </li>
         
@@ -438,16 +447,24 @@
             
             <a
               
-              href="/en/about/"
+              href="/about/"
               
               title=""
-              >About</a
+              >关于</a
             >
           </li>
         
       
     </ul>
     <ul class="nav__list nav__list--end">
+      
+        <li class="nav__list-item">
+          
+              <a href="/en/" title="EN">
+                EN
+              </a>
+          
+        </li>
       
       
         <li class="nav__list-item">
@@ -463,29 +480,224 @@
 </div>
 </header>
   <div
-    class="archive 
+    class="post 
       animated fadeInDown
     "
   >
-    
-      <div class="archive__heading">2021</div>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            <a class="archive__list-title" href="/en/post/redirect/" title="Redirect Hugo">Redirect Hugo</a>
-            <div class="archive__list-date">
-              
-                
-                  2021-06-20
-                
+    <div class="post__content">
+      <!--
+This file is left intentionally empty by default to be backwards compatible with the initial theme setup.
 
-              
-            </div>
-          </li>
-        </ul>
+Although the theme has advanced a little bit and it now allows to specify the content on the main page (even if the list of posts/articles is not intended).
+This can be:
+- with the list of posts/articles (default: `mainSections = ["post"]) or
+- without the list of posts/articles (by setting `mainSections = [""]`)
+
+Markdown supported, ie:
+
+```
+# Welcome
+
+- Hugo :rocket:
+- Hugo theme :rocket:
+
+Don't forget to check the README.md file!
+```
+
+Remember that you can also specify a section header for the posts below by configuring the `mainSectionsTitle` parameter in the front matter of this file.
+-->
+
+    </div>
+
+    
+  </div>
+
+  
+
+  
+  
+    <div
+      class="post 
+        animated fadeInDown
+      "
+    >
+      
+      <div class="post__content">
+        <h3><a href="/post/macos-icon/">MACOS ICON</a></h3>
+        
+          <p></p>
+        
+        </div>
+
+      
+      <div class="post__footer">
+        <em class="fas fa-calendar-day"></em>
+        <span class="post__footer-date"
+          >
+            
+              Aug 30 2020
+            
+
+          </span
+        >
+        
+          <span><a class="category" href="/categories/apple/">Apple</a></span>
+
+
+        
+
+        
+          <span><a class="tag" href="/tags/macos/">macOS</a></span>
+
+
+        
+      </div>
+    </div>
+  
+    <div
+      class="post 
+        animated fadeInDown
+      "
+    >
+      
+      <div class="post__content">
+        <h3><a href="/post/linux-chmod/">LINUX CHMOD</a></h3>
+        
+          <p></p>
+        
+        </div>
+
+      
+      <div class="post__footer">
+        <em class="fas fa-calendar-day"></em>
+        <span class="post__footer-date"
+          >
+            
+              Aug 20 2020
+            
+
+          </span
+        >
+        
+          <span><a class="category" href="/categories/linux/">Linux</a></span>
+
+
+        
+
+        
+      </div>
+    </div>
+  
+    <div
+      class="post 
+        animated fadeInDown
+      "
+    >
+      
+      <div class="post__content">
+        <h3><a href="/post/sorting-algorithm/">SORTING ALGORITHM</a></h3>
+        
+          <p></p>
+        
+        </div>
+
+      
+      <div class="post__footer">
+        <em class="fas fa-calendar-day"></em>
+        <span class="post__footer-date"
+          >
+            
+              Aug 09 2020
+            
+
+          </span
+        >
+        
+          <span><a class="category" href="/categories/algorithm/">Algorithm</a><a class="category" href="/categories/datastructure/">DataStructure</a></span>
+
+
+        
+
+        
+          <span><a class="tag" href="/tags/sort/">Sort</a></span>
+
+
+        
+      </div>
+    </div>
+  
+    <div
+      class="post 
+        animated fadeInDown
+      "
+    >
+      
+      <div class="post__content">
+        <h3><a href="/post/design-principle/">DESIGN PRINCIPLE</a></h3>
+        
+          <p></p>
+        
+        </div>
+
+      
+      <div class="post__footer">
+        <em class="fas fa-calendar-day"></em>
+        <span class="post__footer-date"
+          >
+            
+              Jul 02 2020
+            
+
+          </span
+        >
+        
+          <span><a class="category" href="/categories/designpatterns/">DesignPatterns</a></span>
+
+
+        
+
+        
+      </div>
+    </div>
+  
+  <div class="pagination">
+    
+  <ul class="pagination__list">
+    
+    
+    
+      <li class="pagination__list-item">
+        <a class="page-link" href="/page/2/">
+          <i class="fa fa-angle-left" aria-label="Previous"></i>
+        </a>
+      </li>
+    
+    
+      
+        <li class="pagination__list-item">
+          <a class="page-link" href="/">1</a>
+        </li>
       
 
     
+      
+        <li class="pagination__list-item">
+          <a class="page-link" href="/page/2/">2</a>
+        </li>
+      
+
+    
+      
+        <li class="pagination__list-item">
+          <span class="page-link current">3</span>
+        </li>
+      
+
+    
+    
+  </ul>
+
+
   </div>
 
       </main>
@@ -501,11 +713,11 @@
       <li class="footer__item">
         <a
           class="link"
-          href="/en/statement/"
+          href="/statement/"
           
           title=""
         >
-          Statement
+          声明
         </a>
       </li>
     
