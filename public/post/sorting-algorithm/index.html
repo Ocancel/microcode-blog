@@ -16,7 +16,7 @@
 
   </title>
 
-  <meta name="generator" content="Hugo 0.139.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="generator" content="Hugo 0.143.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="referrer" content="no-referrer">
   <meta name="author" content="Ocancel" />
   <meta
@@ -340,7 +340,7 @@
     <li class="footer__item">
       &copy;
       
-        2020 - 2024
+        2020 - 2025
       
     </li>
     
@@ -734,8 +734,7 @@
 <li>比较相邻两个元素，如果前面的元素大于后面的元素，就将这两个元素交换。</li>
 <li>对数组的第<code>0</code>个元素到<code>N-1</code>个元素进行一次遍历后，最大的一个元素就移动到数组第<code>N-1</code>个位置。</li>
 <li><code>N=N-1</code>，如果<code>N</code>不为<code>0</code>就重复前面二步，否则排序完成。</li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p><strong>实现</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -776,8 +775,7 @@
 </div><h4 id="优化算法">优化算法</h4>
 <p><strong>思想</strong></p>
 <blockquote>
-<p>基于基础算法，若有一次遍历中未发生数据交换，则排序已经完成。</p>
-</blockquote>
+<p>基于基础算法，若有一次遍历中未发生数据交换，则排序已经完成。</p></blockquote>
 <p><strong>实现</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -829,8 +827,7 @@
 <ol>
 <li>对数组进行一次遍历，找到最小元素，并与待排序序列首个元素交换。</li>
 <li><code>N=N-1</code>，若<code>N&gt;0</code>，重复第一步，若<code>N=0</code>，排序完成。</li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p><strong>实现</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -876,8 +873,7 @@
 <ol>
 <li>在待排序序列中取出一个元素，遍历已排序序列，将元素插入到合适位置。</li>
 <li><code>N=N-1</code>，若<code>N&gt;0</code>，重复第一步，若<code>N=0</code>，排序完成。</li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p><strong>实现</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -914,8 +910,7 @@
 </div><h3 id="希尔排序shell-sort">希尔排序｜Shell Sort</h3>
 <p><strong>思想</strong></p>
 <blockquote>
-<p>希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。</p>
-</blockquote>
+<p>希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。</p></blockquote>
 <p><strong>实现</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -966,8 +961,7 @@
 <ul>
 <li>分割：递归地把当前序列平均分割成两半。</li>
 <li>集成：在保持元素顺序的同时将上一步得到的子序列集成到一起（归并）。</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p><strong>实现</strong></p>
 <ul>
 <li>递归版</li>
@@ -1093,8 +1087,7 @@
 <li>挑选基准值：从数列中挑出一个元素，称为“基准”。</li>
 <li>分割：重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（与基准值相等的数可以到任何一边）。</li>
 <li>递归排序子序列：递归地将小于基准值元素的子序列和大于基准值元素的子序列排序。</li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p><strong>实现</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1168,8 +1161,7 @@
 <li>把堆首（最大值）和堆尾互换。</li>
 <li>把堆的尺寸缩小<code>1</code>，把新的数组顶端数据调整到相应位置。</li>
 <li>重复步骤<code>2</code>，直到堆的尺寸为<code>1</code>。</li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p><strong>实现</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1245,8 +1237,7 @@
 <li>统计数组中每个值为<code>i</code> 的元素出现的次数，存入计数数组<code>C</code>的第<code>i-minValue</code>项。</li>
 <li>对所有的计数累加。</li>
 <li>反向填充数组：将每个元素<code>i</code>放在新数组的第<code>C[i]</code>项，每放一个元素就将<code>C[i]</code>减去<code>1</code>。</li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p><strong>实现</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1318,8 +1309,7 @@
 <li>遍历序列，并把元素放到对应的桶去。</li>
 <li>对每一个非空桶进行排序。</li>
 <li>再将非空桶中元素放回原队列。</li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p><strong>实现</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1424,8 +1414,7 @@
 <li>将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。</li>
 <li>从最低位开始，依次进行一次排序。</li>
 <li>排序完成以后，数列就变成一个有序序列。</li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p><strong>实现</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1543,7 +1532,7 @@
     <li class="footer__item">
       &copy;
       
-        2020 - 2024
+        2020 - 2025
       
     </li>
     

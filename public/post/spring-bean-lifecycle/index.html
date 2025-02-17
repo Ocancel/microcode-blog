@@ -16,7 +16,7 @@
 
   </title>
 
-  <meta name="generator" content="Hugo 0.139.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="generator" content="Hugo 0.143.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="referrer" content="no-referrer">
   <meta name="author" content="Ocancel" />
   <meta
@@ -333,7 +333,7 @@
     <li class="footer__item">
       &copy;
       
-        2020 - 2024
+        2020 - 2025
       
     </li>
     
@@ -621,7 +621,7 @@
 <li>如果bean使用了<code>destroy-method</code>声明销毁方法，该方法也会被调用。</li>
 </ol>
 <h3 id="完整的生命周期">完整的生命周期</h3>
-<p><img alt="Bean的生命周期" src="https://gitee.com/ocancel/oss/raw/main/uPic/Bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-1718763663854.png"></p>
+<p><img src="https://gitee.com/ocancel/oss/raw/main/uPic/Bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-1718763663854.png" alt="Bean的生命周期"></p>
 <h4 id="初始化">初始化</h4>
 <ul>
 <li><code>BeanNameAware.setBeanName()</code>：在创建此Bean的Bean工厂中设置Bean的名称，在普通属性设置之后调用，在<code>InitializinngBean.afterPropertiesSet()</code>方法之前调用。</li>
@@ -636,8 +636,7 @@
 <li><code>ServletContextAware.setServletContext()</code>：运行时设置<code>ServletContext</code>，在普通Bean初始化后调用，在<code>InitializingBean.afterPropertiesSet</code>之前调用，在 <code>ApplicationContextAware</code> 之后调用。</li>
 </ul>
 <blockquote>
-<p><strong>注：是在WebApplicationContext 运行时</strong></p>
-</blockquote>
+<p><strong>注：是在WebApplicationContext 运行时</strong></p></blockquote>
 <ul>
 <li><code>BeanPostProcessor.postProcessBeforeInitialization()</code>：将此<code>BeanPostProcessor</code>应用于给定的新Bean实例，在任何Bean初始化回调方法（像是<code>InitializingBean.afterPropertiesSet</code>或者自定义的初始化方法）之前调用。这个Bean将要准备填充属性的值。返回的Bean示例可能被普通对象包装，默认实现返回是一个Bean。</li>
 <li><code>BeanPostProcessor.postProcessAfterInitialization()</code>： 将此<code>BeanPostProcessor</code>应用于给定的新Bean实例，在任何Bean初始化回调方法（像是<code>InitializingBean.afterPropertiesSet</code>或者自定义的初始化方法）之后调用。这个Bean将要准备填充属性的值。返回的Bean示例可能被普通对象包装。</li>
@@ -700,7 +699,7 @@
     <li class="footer__item">
       &copy;
       
-        2020 - 2024
+        2020 - 2025
       
     </li>
     
