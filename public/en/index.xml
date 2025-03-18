@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ocancel&#39;s Site</title>
-    <link>https://blog.zcoding.co/en/</link>
+    <link>https://blog.microcode.site/en/</link>
     <description>Recent content on Ocancel&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Mar 2022 21:47:41 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 21:47:41 +0000</lastBuildDate><atom:link href="https://blog.microcode.site/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Notice Shortcode</title>
-      <link>https://blog.zcoding.co/en/post/notice-shortcode/</link>
+      <link>https://blog.microcode.site/en/post/notice-shortcode/</link>
       <pubDate>Fri, 18 Mar 2022 21:47:41 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/en/post/notice-shortcode/</guid>
+      <guid>https://blog.microcode.site/en/post/notice-shortcode/</guid>
       
         <description>&lt;p&gt;The notice shortcode supports three different types of disclaimers. These are as following:&lt;/p&gt;</description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Redirect Hugo</title>
-      <link>https://blog.zcoding.co/en/post/redirect/</link>
+      <link>https://blog.microcode.site/en/post/redirect/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/en/post/redirect/</guid>
+      <guid>https://blog.microcode.site/en/post/redirect/</guid>
       
         <description>Usage of redirectUrl</description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>The Figure Shortcode</title>
-      <link>https://blog.zcoding.co/en/post/figure-shortcode/</link>
+      <link>https://blog.microcode.site/en/post/figure-shortcode/</link>
       <pubDate>Sat, 13 Mar 2021 21:47:41 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/en/post/figure-shortcode/</guid>
+      <guid>https://blog.microcode.site/en/post/figure-shortcode/</guid>
       
         <description></description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Markdown Syntax Guide</title>
-      <link>https://blog.zcoding.co/en/post/markdown-syntax/</link>
+      <link>https://blog.microcode.site/en/post/markdown-syntax/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/en/post/markdown-syntax/</guid>
+      <guid>https://blog.microcode.site/en/post/markdown-syntax/</guid>
       
         <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title>Rich Content</title>
-      <link>https://blog.zcoding.co/en/post/rich-content/</link>
+      <link>https://blog.microcode.site/en/post/rich-content/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/en/post/rich-content/</guid>
+      <guid>https://blog.microcode.site/en/post/rich-content/</guid>
       
         <description>A brief description of Hugo Shortcodes</description>
       
@@ -64,10 +64,10 @@
     
     <item>
       <title>Math Typesetting</title>
-      <link>https://blog.zcoding.co/en/post/math-typesetting/</link>
+      <link>https://blog.microcode.site/en/post/math-typesetting/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/en/post/math-typesetting/</guid>
+      <guid>https://blog.microcode.site/en/post/math-typesetting/</guid>
       
         <description>A brief guide to setup KaTeX</description>
       
@@ -75,10 +75,10 @@
     
     <item>
       <title>About</title>
-      <link>https://blog.zcoding.co/en/about/</link>
+      <link>https://blog.microcode.site/en/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/en/about/</guid>
+      <guid>https://blog.microcode.site/en/about/</guid>
       
         <description>&lt;blockquote&gt;
 &lt;p&gt;Whatever can happen will happen&lt;/p&gt;&lt;/blockquote&gt;
@@ -100,10 +100,10 @@ What is written here is not only technology, but also youth.&lt;/p&gt;
     
     <item>
       <title>Certifications</title>
-      <link>https://blog.zcoding.co/en/certifications/</link>
+      <link>https://blog.microcode.site/en/certifications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/en/certifications/</guid>
+      <guid>https://blog.microcode.site/en/certifications/</guid>
       
         <description></description>
       
@@ -111,10 +111,10 @@ What is written here is not only technology, but also youth.&lt;/p&gt;
     
     <item>
       <title>Disclaimer</title>
-      <link>https://blog.zcoding.co/en/statement/</link>
+      <link>https://blog.microcode.site/en/statement/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/en/statement/</guid>
+      <guid>https://blog.microcode.site/en/statement/</guid>
       
         <description>&lt;p&gt;&lt;strong&gt;All the content provided by this site is for learning, sharing and communication only, and there is no guarantee that the content is absolutely correct and will not be out of date. The risks that follow through the use of the content of this site have nothing to do with this site. When using the content of this site, it means that you have accepted the disclaimer terms of this site.&lt;/strong&gt;&lt;/p&gt;</description>
       
@@ -122,10 +122,10 @@ What is written here is not only technology, but also youth.&lt;/p&gt;
     
     <item>
       <title>Film</title>
-      <link>https://blog.zcoding.co/en/film/</link>
+      <link>https://blog.microcode.site/en/film/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/en/film/</guid>
+      <guid>https://blog.microcode.site/en/film/</guid>
       
         <description></description>
       
@@ -133,10 +133,10 @@ What is written here is not only technology, but also youth.&lt;/p&gt;
     
     <item>
       <title>Links</title>
-      <link>https://blog.zcoding.co/en/links/</link>
+      <link>https://blog.microcode.site/en/links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/en/links/</guid>
+      <guid>https://blog.microcode.site/en/links/</guid>
       
         <description></description>
       
@@ -144,10 +144,10 @@ What is written here is not only technology, but also youth.&lt;/p&gt;
     
     <item>
       <title>Statistics</title>
-      <link>https://blog.zcoding.co/en/statistics/</link>
+      <link>https://blog.microcode.site/en/statistics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/en/statistics/</guid>
+      <guid>https://blog.microcode.site/en/statistics/</guid>
       
         <description></description>
       

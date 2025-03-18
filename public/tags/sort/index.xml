@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sort on Ocancel的站点</title>
-    <link>https://blog.zcoding.co/tags/sort/</link>
+    <link>https://blog.microcode.site/tags/sort/</link>
     <description>Recent content in Sort on Ocancel的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 09 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.microcode.site/tags/sort/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sorting algorithm</title>
-      <link>https://blog.zcoding.co/post/sorting-algorithm/</link>
+      <link>https://blog.microcode.site/post/sorting-algorithm/</link>
       <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/sorting-algorithm/</guid>
+      <guid>https://blog.microcode.site/post/sorting-algorithm/</guid>
       
         <description></description>
       

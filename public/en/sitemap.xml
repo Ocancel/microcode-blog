@@ -2,217 +2,217 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.zcoding.co/en/</loc>
+    <loc>https://blog.microcode.site/en/</loc>
     <lastmod>2022-03-18T21:47:41+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/"
+                href="https://blog.microcode.site/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/"
+                href="https://blog.microcode.site/en/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/tags/index/</loc>
+    <loc>https://blog.microcode.site/en/tags/index/</loc>
     <lastmod>2022-03-18T21:47:41+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/tags/index/"
+                href="https://blog.microcode.site/tags/index/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/tags/index/"
+                href="https://blog.microcode.site/en/tags/index/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/post/</loc>
+    <loc>https://blog.microcode.site/en/post/</loc>
     <lastmod>2022-03-18T21:47:41+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/post/"
+                href="https://blog.microcode.site/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/post/"
+                href="https://blog.microcode.site/en/post/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/tags/shortcode/</loc>
+    <loc>https://blog.microcode.site/en/tags/shortcode/</loc>
     <lastmod>2022-03-18T21:47:41+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/tags/</loc>
+    <loc>https://blog.microcode.site/en/tags/</loc>
     <lastmod>2022-03-18T21:47:41+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/tags/"
+                href="https://blog.microcode.site/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/tags/"
+                href="https://blog.microcode.site/en/tags/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/post/notice-shortcode/</loc>
+    <loc>https://blog.microcode.site/en/post/notice-shortcode/</loc>
     <lastmod>2022-03-18T21:47:41+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/tags/redirect/</loc>
+    <loc>https://blog.microcode.site/en/tags/redirect/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/post/redirect/</loc>
+    <loc>https://blog.microcode.site/en/post/redirect/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/tags/redirecturl/</loc>
+    <loc>https://blog.microcode.site/en/tags/redirecturl/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/post/figure-shortcode/</loc>
+    <loc>https://blog.microcode.site/en/post/figure-shortcode/</loc>
     <lastmod>2021-03-13T21:47:41+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/categories/</loc>
+    <loc>https://blog.microcode.site/en/categories/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/categories/"
+                href="https://blog.microcode.site/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/categories/"
+                href="https://blog.microcode.site/en/categories/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/tags/css/</loc>
+    <loc>https://blog.microcode.site/en/tags/css/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/tags/html/</loc>
+    <loc>https://blog.microcode.site/en/tags/html/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/tags/markdown/</loc>
+    <loc>https://blog.microcode.site/en/tags/markdown/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/post/markdown-syntax/</loc>
+    <loc>https://blog.microcode.site/en/post/markdown-syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/series/</loc>
+    <loc>https://blog.microcode.site/en/series/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/series/"
+                href="https://blog.microcode.site/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/series/"
+                href="https://blog.microcode.site/en/series/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/categories/syntax/</loc>
+    <loc>https://blog.microcode.site/en/categories/syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/categories/themes/</loc>
+    <loc>https://blog.microcode.site/en/categories/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/series/themes-guide/</loc>
+    <loc>https://blog.microcode.site/en/series/themes-guide/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/tags/privacy/</loc>
+    <loc>https://blog.microcode.site/en/tags/privacy/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/post/rich-content/</loc>
+    <loc>https://blog.microcode.site/en/post/rich-content/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/tags/shortcodes/</loc>
+    <loc>https://blog.microcode.site/en/tags/shortcodes/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/post/math-typesetting/</loc>
+    <loc>https://blog.microcode.site/en/post/math-typesetting/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/en/about/</loc>
+    <loc>https://blog.microcode.site/en/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/about/"
+                href="https://blog.microcode.site/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/about/"
+                href="https://blog.microcode.site/en/about/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/certifications/</loc>
+    <loc>https://blog.microcode.site/en/certifications/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/certifications/"
+                href="https://blog.microcode.site/certifications/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/certifications/"
+                href="https://blog.microcode.site/en/certifications/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/statement/</loc>
+    <loc>https://blog.microcode.site/en/statement/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/statement/"
+                href="https://blog.microcode.site/statement/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/statement/"
+                href="https://blog.microcode.site/en/statement/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/film/</loc>
+    <loc>https://blog.microcode.site/en/film/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/film/"
+                href="https://blog.microcode.site/film/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/film/"
+                href="https://blog.microcode.site/en/film/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/links/</loc>
+    <loc>https://blog.microcode.site/en/links/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/links/"
+                href="https://blog.microcode.site/links/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/links/"
+                href="https://blog.microcode.site/en/links/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/portfolio/</loc>
+    <loc>https://blog.microcode.site/en/portfolio/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/portfolio/"
+                href="https://blog.microcode.site/portfolio/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/portfolio/"
+                href="https://blog.microcode.site/en/portfolio/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/en/statistics/</loc>
+    <loc>https://blog.microcode.site/en/statistics/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/statistics/"
+                href="https://blog.microcode.site/statistics/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/statistics/"
+                href="https://blog.microcode.site/en/statistics/"
                 />
   </url>
 </urlset>

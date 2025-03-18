@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MacOS on Ocancel的站点</title>
-    <link>https://blog.zcoding.co/tags/macos/</link>
+    <link>https://blog.microcode.site/tags/macos/</link>
     <description>Recent content in MacOS on Ocancel的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.microcode.site/tags/macos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>macOS 文件附加属性</title>
-      <link>https://blog.zcoding.co/post/macos-additional-attribute/</link>
+      <link>https://blog.microcode.site/post/macos-additional-attribute/</link>
       <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/macos-additional-attribute/</guid>
+      <guid>https://blog.microcode.site/post/macos-additional-attribute/</guid>
       
         <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>macOS icon</title>
-      <link>https://blog.zcoding.co/post/macos-icon/</link>
+      <link>https://blog.microcode.site/post/macos-icon/</link>
       <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/macos-icon/</guid>
+      <guid>https://blog.microcode.site/post/macos-icon/</guid>
       
         <description></description>
       

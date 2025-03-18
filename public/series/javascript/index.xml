@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript on Ocancel的站点</title>
-    <link>https://blog.zcoding.co/series/javascript/</link>
+    <link>https://blog.microcode.site/series/javascript/</link>
     <description>Recent content in JavaScript on Ocancel的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 31 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/series/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.microcode.site/series/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Javascript function</title>
-      <link>https://blog.zcoding.co/post/javascript-function/</link>
+      <link>https://blog.microcode.site/post/javascript-function/</link>
       <pubDate>Mon, 31 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/javascript-function/</guid>
+      <guid>https://blog.microcode.site/post/javascript-function/</guid>
       
         <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Javascript basic</title>
-      <link>https://blog.zcoding.co/post/javascript-basic/</link>
+      <link>https://blog.microcode.site/post/javascript-basic/</link>
       <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/javascript-basic/</guid>
+      <guid>https://blog.microcode.site/post/javascript-basic/</guid>
       
         <description></description>
       

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rust on Ocancel的站点</title>
-    <link>https://blog.zcoding.co/series/rust/</link>
+    <link>https://blog.microcode.site/series/rust/</link>
     <description>Recent content in Rust on Ocancel的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/series/rust/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.microcode.site/series/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust variables and data types</title>
-      <link>https://blog.zcoding.co/post/rust-variables-and-data-types/</link>
+      <link>https://blog.microcode.site/post/rust-variables-and-data-types/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/rust-variables-and-data-types/</guid>
+      <guid>https://blog.microcode.site/post/rust-variables-and-data-types/</guid>
       
         <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Rust start</title>
-      <link>https://blog.zcoding.co/post/rust-start/</link>
+      <link>https://blog.microcode.site/post/rust-start/</link>
       <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/rust-start/</guid>
+      <guid>https://blog.microcode.site/post/rust-start/</guid>
       
         <description></description>
       

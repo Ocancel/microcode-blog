@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Ocancel的站点</title>
-    <link>https://blog.zcoding.co/post/</link>
+    <link>https://blog.microcode.site/post/</link>
     <description>Recent content in Posts on Ocancel的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.microcode.site/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust Common Trait</title>
-      <link>https://blog.zcoding.co/post/rust-common-trait/</link>
+      <link>https://blog.microcode.site/post/rust-common-trait/</link>
       <pubDate>Mon, 19 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/rust-common-trait/</guid>
+      <guid>https://blog.microcode.site/post/rust-common-trait/</guid>
       
         <description>介绍Rust中的一些基础的Trait及其作用</description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Docker 容器内更换软件源</title>
-      <link>https://blog.zcoding.co/post/docker-container-change-software-source/</link>
+      <link>https://blog.microcode.site/post/docker-container-change-software-source/</link>
       <pubDate>Tue, 28 May 2024 13:34:05 +0800</pubDate>
       
-      <guid>https://blog.zcoding.co/post/docker-container-change-software-source/</guid>
+      <guid>https://blog.microcode.site/post/docker-container-change-software-source/</guid>
       
         <description></description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>Debian 常用配置</title>
-      <link>https://blog.zcoding.co/post/debian-common-configuration/</link>
+      <link>https://blog.microcode.site/post/debian-common-configuration/</link>
       <pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/debian-common-configuration/</guid>
+      <guid>https://blog.microcode.site/post/debian-common-configuration/</guid>
       
         <description></description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Maven 导入本地Jar包</title>
-      <link>https://blog.zcoding.co/post/maven-project-import-local-jar/</link>
+      <link>https://blog.microcode.site/post/maven-project-import-local-jar/</link>
       <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/maven-project-import-local-jar/</guid>
+      <guid>https://blog.microcode.site/post/maven-project-import-local-jar/</guid>
       
         <description></description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title>Java util packaging</title>
-      <link>https://blog.zcoding.co/post/java-util-packaging/</link>
+      <link>https://blog.microcode.site/post/java-util-packaging/</link>
       <pubDate>Tue, 20 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/java-util-packaging/</guid>
+      <guid>https://blog.microcode.site/post/java-util-packaging/</guid>
       
         <description></description>
       
@@ -64,10 +64,10 @@
     
     <item>
       <title>Rust variables and data types</title>
-      <link>https://blog.zcoding.co/post/rust-variables-and-data-types/</link>
+      <link>https://blog.microcode.site/post/rust-variables-and-data-types/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/rust-variables-and-data-types/</guid>
+      <guid>https://blog.microcode.site/post/rust-variables-and-data-types/</guid>
       
         <description></description>
       
@@ -75,10 +75,10 @@
     
     <item>
       <title>Rust start</title>
-      <link>https://blog.zcoding.co/post/rust-start/</link>
+      <link>https://blog.microcode.site/post/rust-start/</link>
       <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/rust-start/</guid>
+      <guid>https://blog.microcode.site/post/rust-start/</guid>
       
         <description></description>
       
@@ -86,10 +86,10 @@
     
     <item>
       <title>Javascript function</title>
-      <link>https://blog.zcoding.co/post/javascript-function/</link>
+      <link>https://blog.microcode.site/post/javascript-function/</link>
       <pubDate>Mon, 31 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/javascript-function/</guid>
+      <guid>https://blog.microcode.site/post/javascript-function/</guid>
       
         <description></description>
       
@@ -97,10 +97,10 @@
     
     <item>
       <title>Javascript basic</title>
-      <link>https://blog.zcoding.co/post/javascript-basic/</link>
+      <link>https://blog.microcode.site/post/javascript-basic/</link>
       <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/javascript-basic/</guid>
+      <guid>https://blog.microcode.site/post/javascript-basic/</guid>
       
         <description></description>
       
@@ -108,10 +108,10 @@
     
     <item>
       <title>PostgreSQL lock table</title>
-      <link>https://blog.zcoding.co/post/postgresql-lock-table/</link>
+      <link>https://blog.microcode.site/post/postgresql-lock-table/</link>
       <pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/postgresql-lock-table/</guid>
+      <guid>https://blog.microcode.site/post/postgresql-lock-table/</guid>
       
         <description></description>
       
@@ -119,10 +119,10 @@
     
     <item>
       <title>Springboot dynamic datasource</title>
-      <link>https://blog.zcoding.co/post/springboot-dynamic-datasource/</link>
+      <link>https://blog.microcode.site/post/springboot-dynamic-datasource/</link>
       <pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/springboot-dynamic-datasource/</guid>
+      <guid>https://blog.microcode.site/post/springboot-dynamic-datasource/</guid>
       
         <description></description>
       
@@ -130,10 +130,10 @@
     
     <item>
       <title>MySQL MVCC</title>
-      <link>https://blog.zcoding.co/post/mysql-mvcc/</link>
+      <link>https://blog.microcode.site/post/mysql-mvcc/</link>
       <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/mysql-mvcc/</guid>
+      <guid>https://blog.microcode.site/post/mysql-mvcc/</guid>
       
         <description></description>
       
@@ -141,10 +141,10 @@
     
     <item>
       <title>Linux tail</title>
-      <link>https://blog.zcoding.co/post/linux-tail/</link>
+      <link>https://blog.microcode.site/post/linux-tail/</link>
       <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/linux-tail/</guid>
+      <guid>https://blog.microcode.site/post/linux-tail/</guid>
       
         <description></description>
       
@@ -152,10 +152,10 @@
     
     <item>
       <title>Spring bean lifecycle</title>
-      <link>https://blog.zcoding.co/post/spring-bean-lifecycle/</link>
+      <link>https://blog.microcode.site/post/spring-bean-lifecycle/</link>
       <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/spring-bean-lifecycle/</guid>
+      <guid>https://blog.microcode.site/post/spring-bean-lifecycle/</guid>
       
         <description></description>
       
@@ -163,10 +163,10 @@
     
     <item>
       <title>Java HashMap</title>
-      <link>https://blog.zcoding.co/post/java-hashmap/</link>
+      <link>https://blog.microcode.site/post/java-hashmap/</link>
       <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/java-hashmap/</guid>
+      <guid>https://blog.microcode.site/post/java-hashmap/</guid>
       
         <description></description>
       
@@ -174,10 +174,10 @@
     
     <item>
       <title>macOS 文件附加属性</title>
-      <link>https://blog.zcoding.co/post/macos-additional-attribute/</link>
+      <link>https://blog.microcode.site/post/macos-additional-attribute/</link>
       <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/macos-additional-attribute/</guid>
+      <guid>https://blog.microcode.site/post/macos-additional-attribute/</guid>
       
         <description></description>
       
@@ -185,10 +185,10 @@
     
     <item>
       <title>macOS icon</title>
-      <link>https://blog.zcoding.co/post/macos-icon/</link>
+      <link>https://blog.microcode.site/post/macos-icon/</link>
       <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/macos-icon/</guid>
+      <guid>https://blog.microcode.site/post/macos-icon/</guid>
       
         <description></description>
       
@@ -196,10 +196,10 @@
     
     <item>
       <title>Linux chmod</title>
-      <link>https://blog.zcoding.co/post/linux-chmod/</link>
+      <link>https://blog.microcode.site/post/linux-chmod/</link>
       <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/linux-chmod/</guid>
+      <guid>https://blog.microcode.site/post/linux-chmod/</guid>
       
         <description></description>
       
@@ -207,10 +207,10 @@
     
     <item>
       <title>Sorting algorithm</title>
-      <link>https://blog.zcoding.co/post/sorting-algorithm/</link>
+      <link>https://blog.microcode.site/post/sorting-algorithm/</link>
       <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/sorting-algorithm/</guid>
+      <guid>https://blog.microcode.site/post/sorting-algorithm/</guid>
       
         <description></description>
       
@@ -218,10 +218,10 @@
     
     <item>
       <title>Design principle</title>
-      <link>https://blog.zcoding.co/post/design-principle/</link>
+      <link>https://blog.microcode.site/post/design-principle/</link>
       <pubDate>Thu, 02 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/design-principle/</guid>
+      <guid>https://blog.microcode.site/post/design-principle/</guid>
       
         <description></description>
       

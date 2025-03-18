@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Framework on Ocancel的站点</title>
-    <link>https://blog.zcoding.co/categories/framework/</link>
+    <link>https://blog.microcode.site/categories/framework/</link>
     <description>Recent content in Framework on Ocancel的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 02 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/categories/framework/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.microcode.site/categories/framework/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Maven 导入本地Jar包</title>
-      <link>https://blog.zcoding.co/post/maven-project-import-local-jar/</link>
+      <link>https://blog.microcode.site/post/maven-project-import-local-jar/</link>
       <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/maven-project-import-local-jar/</guid>
+      <guid>https://blog.microcode.site/post/maven-project-import-local-jar/</guid>
       
         <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Springboot dynamic datasource</title>
-      <link>https://blog.zcoding.co/post/springboot-dynamic-datasource/</link>
+      <link>https://blog.microcode.site/post/springboot-dynamic-datasource/</link>
       <pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/springboot-dynamic-datasource/</guid>
+      <guid>https://blog.microcode.site/post/springboot-dynamic-datasource/</guid>
       
         <description></description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>Spring bean lifecycle</title>
-      <link>https://blog.zcoding.co/post/spring-bean-lifecycle/</link>
+      <link>https://blog.microcode.site/post/spring-bean-lifecycle/</link>
       <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/post/spring-bean-lifecycle/</guid>
+      <guid>https://blog.microcode.site/post/spring-bean-lifecycle/</guid>
       
         <description></description>
       

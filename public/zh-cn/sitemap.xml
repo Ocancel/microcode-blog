@@ -2,295 +2,295 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.zcoding.co/</loc>
+    <loc>https://blog.microcode.site/</loc>
     <lastmod>2024-08-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/"
+                href="https://blog.microcode.site/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/"
+                href="https://blog.microcode.site/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/categories/</loc>
+    <loc>https://blog.microcode.site/categories/</loc>
     <lastmod>2024-08-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/categories/"
+                href="https://blog.microcode.site/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/categories/"
+                href="https://blog.microcode.site/categories/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/tags/index/</loc>
+    <loc>https://blog.microcode.site/tags/index/</loc>
     <lastmod>2024-08-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/tags/index/"
+                href="https://blog.microcode.site/en/tags/index/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/tags/index/"
+                href="https://blog.microcode.site/tags/index/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/post/</loc>
+    <loc>https://blog.microcode.site/post/</loc>
     <lastmod>2024-08-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/post/"
+                href="https://blog.microcode.site/en/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/post/"
+                href="https://blog.microcode.site/post/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/categories/rust/</loc>
+    <loc>https://blog.microcode.site/categories/rust/</loc>
     <lastmod>2024-08-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/rust-common-trait/</loc>
+    <loc>https://blog.microcode.site/post/rust-common-trait/</loc>
     <lastmod>2024-08-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/tags/</loc>
+    <loc>https://blog.microcode.site/tags/</loc>
     <lastmod>2024-08-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/tags/"
+                href="https://blog.microcode.site/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/tags/"
+                href="https://blog.microcode.site/tags/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/tags/trait/</loc>
+    <loc>https://blog.microcode.site/tags/trait/</loc>
     <lastmod>2024-08-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/categories/docker/</loc>
+    <loc>https://blog.microcode.site/categories/docker/</loc>
     <lastmod>2024-05-28T13:34:05+08:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/docker-container-change-software-source/</loc>
+    <loc>https://blog.microcode.site/post/docker-container-change-software-source/</loc>
     <lastmod>2024-05-28T13:34:05+08:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/tags/debian/</loc>
+    <loc>https://blog.microcode.site/tags/debian/</loc>
     <lastmod>2024-04-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/debian-common-configuration/</loc>
+    <loc>https://blog.microcode.site/post/debian-common-configuration/</loc>
     <lastmod>2024-04-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/categories/linux/</loc>
+    <loc>https://blog.microcode.site/categories/linux/</loc>
     <lastmod>2024-04-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/categories/framework/</loc>
+    <loc>https://blog.microcode.site/categories/framework/</loc>
     <lastmod>2024-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/categories/java/</loc>
+    <loc>https://blog.microcode.site/categories/java/</loc>
     <lastmod>2024-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/tags/maven/</loc>
+    <loc>https://blog.microcode.site/tags/maven/</loc>
     <lastmod>2024-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/maven-project-import-local-jar/</loc>
+    <loc>https://blog.microcode.site/post/maven-project-import-local-jar/</loc>
     <lastmod>2024-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/java-util-packaging/</loc>
+    <loc>https://blog.microcode.site/post/java-util-packaging/</loc>
     <lastmod>2024-02-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/series/rust/</loc>
+    <loc>https://blog.microcode.site/series/rust/</loc>
     <lastmod>2024-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/rust-variables-and-data-types/</loc>
+    <loc>https://blog.microcode.site/post/rust-variables-and-data-types/</loc>
     <lastmod>2024-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/series/</loc>
+    <loc>https://blog.microcode.site/series/</loc>
     <lastmod>2024-02-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/series/"
+                href="https://blog.microcode.site/en/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/series/"
+                href="https://blog.microcode.site/series/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/post/rust-start/</loc>
+    <loc>https://blog.microcode.site/post/rust-start/</loc>
     <lastmod>2023-08-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/series/javascript/</loc>
+    <loc>https://blog.microcode.site/categories/javascript/</loc>
     <lastmod>2023-07-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/categories/javascript/</loc>
+    <loc>https://blog.microcode.site/series/javascript/</loc>
     <lastmod>2023-07-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/javascript-function/</loc>
+    <loc>https://blog.microcode.site/post/javascript-function/</loc>
     <lastmod>2023-07-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/javascript-basic/</loc>
+    <loc>https://blog.microcode.site/post/javascript-basic/</loc>
     <lastmod>2023-07-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/categories/database/</loc>
+    <loc>https://blog.microcode.site/categories/database/</loc>
     <lastmod>2023-05-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/tags/postgresql/</loc>
+    <loc>https://blog.microcode.site/tags/postgresql/</loc>
     <lastmod>2023-05-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/postgresql-lock-table/</loc>
+    <loc>https://blog.microcode.site/post/postgresql-lock-table/</loc>
     <lastmod>2023-05-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/tags/spring/</loc>
+    <loc>https://blog.microcode.site/tags/spring/</loc>
     <lastmod>2023-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/springboot-dynamic-datasource/</loc>
+    <loc>https://blog.microcode.site/post/springboot-dynamic-datasource/</loc>
     <lastmod>2023-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/tags/mysql/</loc>
+    <loc>https://blog.microcode.site/tags/mysql/</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/mysql-mvcc/</loc>
+    <loc>https://blog.microcode.site/post/mysql-mvcc/</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/linux-tail/</loc>
+    <loc>https://blog.microcode.site/post/linux-tail/</loc>
     <lastmod>2022-03-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/series/linuxcommand/</loc>
+    <loc>https://blog.microcode.site/series/linuxcommand/</loc>
     <lastmod>2022-03-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/spring-bean-lifecycle/</loc>
+    <loc>https://blog.microcode.site/post/spring-bean-lifecycle/</loc>
     <lastmod>2021-09-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/tags/hashmap/</loc>
+    <loc>https://blog.microcode.site/tags/hashmap/</loc>
     <lastmod>2021-01-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/java-hashmap/</loc>
+    <loc>https://blog.microcode.site/post/java-hashmap/</loc>
     <lastmod>2021-01-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/categories/apple/</loc>
+    <loc>https://blog.microcode.site/categories/apple/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/tags/macos/</loc>
+    <loc>https://blog.microcode.site/tags/macos/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/macos-additional-attribute/</loc>
+    <loc>https://blog.microcode.site/post/macos-additional-attribute/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/macos-icon/</loc>
+    <loc>https://blog.microcode.site/post/macos-icon/</loc>
     <lastmod>2020-08-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/linux-chmod/</loc>
+    <loc>https://blog.microcode.site/post/linux-chmod/</loc>
     <lastmod>2020-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/categories/algorithm/</loc>
+    <loc>https://blog.microcode.site/categories/algorithm/</loc>
     <lastmod>2020-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/categories/datastructure/</loc>
+    <loc>https://blog.microcode.site/categories/datastructure/</loc>
     <lastmod>2020-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/tags/sort/</loc>
+    <loc>https://blog.microcode.site/tags/sort/</loc>
     <lastmod>2020-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/sorting-algorithm/</loc>
+    <loc>https://blog.microcode.site/post/sorting-algorithm/</loc>
     <lastmod>2020-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/post/design-principle/</loc>
+    <loc>https://blog.microcode.site/post/design-principle/</loc>
     <lastmod>2020-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/categories/designpatterns/</loc>
+    <loc>https://blog.microcode.site/categories/designpatterns/</loc>
     <lastmod>2020-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.zcoding.co/certifications/</loc>
+    <loc>https://blog.microcode.site/certifications/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/certifications/"
+                href="https://blog.microcode.site/en/certifications/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/certifications/"
+                href="https://blog.microcode.site/certifications/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/portfolio/</loc>
+    <loc>https://blog.microcode.site/portfolio/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/portfolio/"
+                href="https://blog.microcode.site/en/portfolio/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/portfolio/"
+                href="https://blog.microcode.site/portfolio/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/film/</loc>
+    <loc>https://blog.microcode.site/film/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/film/"
+                href="https://blog.microcode.site/en/film/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/film/"
+                href="https://blog.microcode.site/film/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/about/</loc>
+    <loc>https://blog.microcode.site/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/about/"
+                href="https://blog.microcode.site/en/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/about/"
+                href="https://blog.microcode.site/about/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/links/</loc>
+    <loc>https://blog.microcode.site/links/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/links/"
+                href="https://blog.microcode.site/en/links/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/links/"
+                href="https://blog.microcode.site/links/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/statement/</loc>
+    <loc>https://blog.microcode.site/statement/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/statement/"
+                href="https://blog.microcode.site/en/statement/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/statement/"
+                href="https://blog.microcode.site/statement/"
                 />
   </url><url>
-    <loc>https://blog.zcoding.co/statistics/</loc>
+    <loc>https://blog.microcode.site/statistics/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.zcoding.co/en/statistics/"
+                href="https://blog.microcode.site/en/statistics/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.zcoding.co/statistics/"
+                href="https://blog.microcode.site/statistics/"
                 />
   </url>
 </urlset>

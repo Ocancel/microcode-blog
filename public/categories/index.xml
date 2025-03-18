@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Ocancel的站点</title>
-    <link>https://blog.zcoding.co/categories/</link>
+    <link>https://blog.microcode.site/categories/</link>
     <description>Recent content in Categories on Ocancel的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zcoding.co/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.microcode.site/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust</title>
-      <link>https://blog.zcoding.co/categories/rust/</link>
+      <link>https://blog.microcode.site/categories/rust/</link>
       <pubDate>Mon, 19 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/categories/rust/</guid>
+      <guid>https://blog.microcode.site/categories/rust/</guid>
       
         <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Docker</title>
-      <link>https://blog.zcoding.co/categories/docker/</link>
+      <link>https://blog.microcode.site/categories/docker/</link>
       <pubDate>Tue, 28 May 2024 13:34:05 +0800</pubDate>
       
-      <guid>https://blog.zcoding.co/categories/docker/</guid>
+      <guid>https://blog.microcode.site/categories/docker/</guid>
       
         <description></description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>Linux</title>
-      <link>https://blog.zcoding.co/categories/linux/</link>
+      <link>https://blog.microcode.site/categories/linux/</link>
       <pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/categories/linux/</guid>
+      <guid>https://blog.microcode.site/categories/linux/</guid>
       
         <description></description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Framework</title>
-      <link>https://blog.zcoding.co/categories/framework/</link>
+      <link>https://blog.microcode.site/categories/framework/</link>
       <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/categories/framework/</guid>
+      <guid>https://blog.microcode.site/categories/framework/</guid>
       
         <description></description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title>Java</title>
-      <link>https://blog.zcoding.co/categories/java/</link>
+      <link>https://blog.microcode.site/categories/java/</link>
       <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/categories/java/</guid>
+      <guid>https://blog.microcode.site/categories/java/</guid>
       
         <description></description>
       
@@ -64,10 +64,10 @@
     
     <item>
       <title>JavaScript</title>
-      <link>https://blog.zcoding.co/categories/javascript/</link>
+      <link>https://blog.microcode.site/categories/javascript/</link>
       <pubDate>Mon, 31 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/categories/javascript/</guid>
+      <guid>https://blog.microcode.site/categories/javascript/</guid>
       
         <description></description>
       
@@ -75,10 +75,10 @@
     
     <item>
       <title>Database</title>
-      <link>https://blog.zcoding.co/categories/database/</link>
+      <link>https://blog.microcode.site/categories/database/</link>
       <pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/categories/database/</guid>
+      <guid>https://blog.microcode.site/categories/database/</guid>
       
         <description></description>
       
@@ -86,10 +86,10 @@
     
     <item>
       <title>Apple</title>
-      <link>https://blog.zcoding.co/categories/apple/</link>
+      <link>https://blog.microcode.site/categories/apple/</link>
       <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/categories/apple/</guid>
+      <guid>https://blog.microcode.site/categories/apple/</guid>
       
         <description></description>
       
@@ -97,10 +97,10 @@
     
     <item>
       <title>Algorithm</title>
-      <link>https://blog.zcoding.co/categories/algorithm/</link>
+      <link>https://blog.microcode.site/categories/algorithm/</link>
       <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/categories/algorithm/</guid>
+      <guid>https://blog.microcode.site/categories/algorithm/</guid>
       
         <description></description>
       
@@ -108,10 +108,10 @@
     
     <item>
       <title>DataStructure</title>
-      <link>https://blog.zcoding.co/categories/datastructure/</link>
+      <link>https://blog.microcode.site/categories/datastructure/</link>
       <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/categories/datastructure/</guid>
+      <guid>https://blog.microcode.site/categories/datastructure/</guid>
       
         <description></description>
       
@@ -119,10 +119,10 @@
     
     <item>
       <title>DesignPatterns</title>
-      <link>https://blog.zcoding.co/categories/designpatterns/</link>
+      <link>https://blog.microcode.site/categories/designpatterns/</link>
       <pubDate>Thu, 02 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zcoding.co/categories/designpatterns/</guid>
+      <guid>https://blog.microcode.site/categories/designpatterns/</guid>
       
         <description></description>
       
