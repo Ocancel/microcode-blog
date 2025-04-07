@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.microcode.site/</loc>
-    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-07T15:09:01+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://blog.microcode.site/categories/</loc>
-    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-07T15:09:01+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://blog.microcode.site/tags/index/</loc>
-    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-07T15:09:01+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -42,7 +42,7 @@
                 />
   </url><url>
     <loc>https://blog.microcode.site/post/</loc>
-    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-07T15:09:01+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -55,13 +55,10 @@
                 />
   </url><url>
     <loc>https://blog.microcode.site/categories/rust/</loc>
-    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.microcode.site/post/rust-common-trait/</loc>
-    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-07T15:09:01+08:00</lastmod>
   </url><url>
     <loc>https://blog.microcode.site/tags/</loc>
-    <lastmod>2024-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-07T15:09:01+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -74,6 +71,12 @@
                 />
   </url><url>
     <loc>https://blog.microcode.site/tags/trait/</loc>
+    <lastmod>2024-09-07T15:09:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.microcode.site/post/partially-derivable-traits/</loc>
+    <lastmod>2024-09-07T15:09:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.microcode.site/post/rust-common-trait/</loc>
     <lastmod>2024-08-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.microcode.site/categories/docker/</loc>

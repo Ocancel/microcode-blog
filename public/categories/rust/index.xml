@@ -6,7 +6,18 @@
     <description>Recent content in Rust on Ocancel的站点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.microcode.site/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Sep 2024 15:09:01 +0800</lastBuildDate><atom:link href="https://blog.microcode.site/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>部分可派生 Trait</title>
+      <link>https://blog.microcode.site/post/partially-derivable-traits/</link>
+      <pubDate>Sat, 07 Sep 2024 15:09:01 +0800</pubDate>
+      
+      <guid>https://blog.microcode.site/post/partially-derivable-traits/</guid>
+      
+        <description>部分可派生Trait以及它们之间的区别</description>
+      
+    </item>
+    
     <item>
       <title>Rust Common Trait</title>
       <link>https://blog.microcode.site/post/rust-common-trait/</link>
