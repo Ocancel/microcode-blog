@@ -16,7 +16,7 @@
 
   </title>
 
-  <meta name="generator" content="Hugo 0.147.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="generator" content="Hugo 0.147.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="referrer" content="no-referrer">
   <meta name="author" content="Ocancel" />
   <meta
@@ -29,8 +29,8 @@
     
     <link
       rel="stylesheet"
-      href="/scss/main.min.324aa7cd960fd8bd7b6520dad33331b9d7bbc7be8b255af664b7b8a50c6913e4.css"
-      integrity="sha256-MkqnzZYP2L17ZSDa0zMxude7x76LJVr2ZLe4pQxpE&#43;Q="
+      href="/scss/main.min.8c46d4754735d058db0973fb9d6642a2c073d23ed79b52860a9117cda212b1bc.css"
+      integrity="sha256-jEbUdUc10FjbCXP7nWZCosBz0j7Xm1KGCpEXzaISsbw="
       crossorigin="anonymous"
       type="text/css"
     />
@@ -587,25 +587,25 @@
         <li><a href="#数学性质的区别">数学性质的区别</a>
           <ul>
             <li><a href="#1-partialeq-部分相等">1. <code>PartialEq</code> （部分相等）</a></li>
-            <li><a href="#2-eq完全相等">2. <code>Eq</code>（完全相等）​</a></li>
+            <li><a href="#2-eq完全相等">2. <code>Eq</code>（完全相等）</a></li>
           </ul>
         </li>
-        <li><a href="#应用场景的差异">应用场景的差异​​</a>
+        <li><a href="#应用场景的差异">应用场景的差异</a>
           <ul>
-            <li><a href="#1-partialeq的典型用例">1. <code>PartialEq</code> 的典型用例​​</a></li>
-            <li><a href="#2-eq的强制要求">2. <code>Eq</code> 的强制要求​​</a></li>
+            <li><a href="#1-partialeq-的典型用例">1. <code>PartialEq</code> 的典型用例</a></li>
+            <li><a href="#2-eq-的强制要求">2. <code>Eq</code> 的强制要求</a></li>
           </ul>
         </li>
-        <li><a href="#实现方式与编译器支持">实现方式与编译器支持​​</a>
+        <li><a href="#实现方式与编译器支持">实现方式与编译器支持</a>
           <ul>
-            <li><a href="#1-partialeq的实现">1. <code>PartialEq</code> 的实现​​</a></li>
+            <li><a href="#1-partialeq-的实现">1. <code>PartialEq</code> 的实现</a></li>
           </ul>
         </li>
-        <li><a href="#2-eq的实现">2. <code>Eq</code> 的实现​​</a></li>
-        <li><a href="#示例对比">示例对比​​​</a>
+        <li><a href="#2-eq-的实现">2. <code>Eq</code> 的实现</a></li>
+        <li><a href="#示例对比">示例对比</a>
           <ul>
-            <li><a href="#1-浮点数的实现">1. 浮点数的实现​​</a></li>
-            <li><a href="#2-自定义类型的选择">2. 自定义类型的选择​​</a></li>
+            <li><a href="#1-浮点数的实现">1. 浮点数的实现</a></li>
+            <li><a href="#2-自定义类型的选择">2. 自定义类型的选择</a></li>
           </ul>
         </li>
         <li><a href="#总结">总结</a></li>
@@ -613,28 +613,28 @@
     </li>
     <li><a href="#次序比较-partialord-与-ord">次序比较 PartialOrd 与 Ord</a>
       <ul>
-        <li><a href="#数学性质的区别-1">数学性质的区别​​</a>
+        <li><a href="#数学性质的区别-1">数学性质的区别</a>
           <ul>
-            <li><a href="#1-partialord部分顺序">1. <code>PartialOrd</code>（部分顺序）​​</a></li>
-            <li><a href="#2-ord完全顺序">2. <code>Ord</code>（完全顺序）​​</a></li>
+            <li><a href="#1-partialord部分顺序">1. <code>PartialOrd</code>（部分顺序）</a></li>
+            <li><a href="#2-ord完全顺序">2. <code>Ord</code>（完全顺序）</a></li>
           </ul>
         </li>
-        <li><a href="#应用场景的差异-1">应用场景的差异​​</a>
+        <li><a href="#应用场景的差异-1">应用场景的差异</a>
           <ul>
-            <li><a href="#1-partialord的典型用例">1. <code>PartialOrd</code> 的典型用例​​</a></li>
-            <li><a href="#2-ord的强制要求">2. <code>Ord</code> 的强制要求​​</a></li>
+            <li><a href="#1-partialord-的典型用例">1. <code>PartialOrd</code> 的典型用例</a></li>
+            <li><a href="#2-ord-的强制要求">2. <code>Ord</code> 的强制要求</a></li>
           </ul>
         </li>
-        <li><a href="#实现方式与依赖关系">实现方式与依赖关系​​</a>
+        <li><a href="#实现方式与依赖关系">实现方式与依赖关系</a>
           <ul>
-            <li><a href="#1-partialord的实现">1. <code>PartialOrd</code> 的实现​​</a></li>
-            <li><a href="#2-ord的实现">2. <code>Ord</code> 的实现​​</a></li>
+            <li><a href="#1-partialord-的实现">1. <code>PartialOrd</code> 的实现</a></li>
+            <li><a href="#2-ord-的实现">2. <code>Ord</code> 的实现</a></li>
           </ul>
         </li>
         <li><a href="#示例对比-1">示例对比</a>
           <ul>
-            <li><a href="#1-浮点数的实现-1">1. 浮点数的实现​​</a></li>
-            <li><a href="#2-自定义类型的排序">2. 自定义类型的排序​​</a></li>
+            <li><a href="#1-浮点数的实现-1">1. 浮点数的实现</a></li>
+            <li><a href="#2-自定义类型的排序">2. 自定义类型的排序</a></li>
           </ul>
         </li>
         <li><a href="#总结-1">总结</a></li>
@@ -645,8 +645,8 @@
         <li><a href="#语义与行为差异">语义与行为差异</a></li>
         <li><a href="#实现约束与依赖">实现约束与依赖</a>
           <ul>
-            <li><a href="#1-copy-的实现条件">1. ​​Copy 的实现条件​​</a></li>
-            <li><a href="#2-clone-的灵活性">2. Clone 的灵活性​​</a></li>
+            <li><a href="#1-copy-的实现条件">1. Copy 的实现条件</a></li>
+            <li><a href="#2-clone-的灵活性">2. Clone 的灵活性</a></li>
           </ul>
         </li>
         <li><a href="#性能与应用场景">性能与应用场景</a></li>
@@ -682,30 +682,30 @@
 <p>表示类型支持<strong>部分等价关系</strong>，满足以下性质：</p>
 <ul>
 <li><strong>对称性</strong>：若 <code>a == b</code> ，则 <code>b == a</code>；</li>
-<li><strong>传递性​</strong>​：若 <code>a == b</code> 且 <code>b == c</code>，则 <code>a == c</code>。</li>
-<li>​<strong>​不要求自反性​</strong>​（即 <code>a == a</code> 不一定成立）。 例如，浮点数中的 <code>NaN</code> 与自身比较返回 <code>false</code>，因此 <code>f32</code>/<code>f64</code> 仅实现 <code>PartialEq</code>。</li>
+<li><strong>传递性</strong>：若 <code>a == b</code> 且 <code>b == c</code>，则 <code>a == c</code>。</li>
+<li><strong>不要求自反性</strong>（即 <code>a == a</code> 不一定成立）。 例如，浮点数中的 <code>NaN</code> 与自身比较返回 <code>false</code>，因此 <code>f32</code>/<code>f64</code> 仅实现 <code>PartialEq</code>。</li>
 </ul>
-<h4 id="2-eq完全相等">2. <code>Eq</code>（完全相等）​</h4>
-<p><code>PartialEq</code> 的扩展，要求满足​<strong>​全等价关系</strong>，即额外满足以下性质：</p>
+<h4 id="2-eq完全相等">2. <code>Eq</code>（完全相等）</h4>
+<p><code>PartialEq</code> 的扩展，要求满足<strong>全等价关系</strong>，即额外满足以下性质：</p>
 <ul>
-<li>​<strong>​自反性​</strong>​：<code>a == a</code> 必须为 <code>true</code>。</li>
+<li><strong>自反性</strong>：<code>a == a</code> 必须为 <code>true</code>。</li>
 </ul>
-<p>只有所有值都能确定相等性的类型（如整数、字符串）才适合实现 <code>Eq</code>。</p>
-<h3 id="应用场景的差异">应用场景的差异​​</h3>
-<h4 id="1-partialeq的典型用例">1. <code>PartialEq</code> 的典型用例​​</h4>
+<p>只有所有值都能确定相等性的类型（如整数、字符串）才适合实现 <code>Eq</code>。</p>
+<h3 id="应用场景的差异">应用场景的差异</h3>
+<h4 id="1-partialeq-的典型用例">1. <code>PartialEq</code> 的典型用例</h4>
 <ul>
-<li>浮点数（<code>f32</code>/<code>f64</code>）：因 <code>NaN</code> 的存在无法满足自反性；</li>
-<li>自定义逻辑中部分字段参与比较（如仅比较 <code>Book</code> 结构体的 <code>isbn</code> 字段）；</li>
-<li>需要允许某些值无法比较的场景（如学生 <code>id</code> 为 0 时禁止比较）。</li>
+<li>浮点数（<code>f32</code>/<code>f64</code>）：因 <code>NaN</code> 的存在无法满足自反性；</li>
+<li>自定义逻辑中部分字段参与比较（如仅比较 <code>Book</code> 结构体的 <code>isbn</code> 字段）；</li>
+<li>需要允许某些值无法比较的场景（如学生 <code>id</code> 为 0 时禁止比较）。</li>
 </ul>
-<h4 id="2-eq的强制要求">2. <code>Eq</code> 的强制要求​​</h4>
+<h4 id="2-eq-的强制要求">2. <code>Eq</code> 的强制要求</h4>
 <ul>
-<li>当类型需要作为哈希容器（如 <code>HashMap</code>）的键时，必须实现 <code>Eq</code>，因为哈希要求相等的键必须有相同的哈希值；</li>
+<li>当类型需要作为哈希容器（如 <code>HashMap</code>）的键时，必须实现 <code>Eq</code>，因为哈希要求相等的键必须有相同的哈希值；</li>
 <li>需要严格全序比较的类型（如整数、字符串）。</li>
 </ul>
-<h3 id="实现方式与编译器支持">实现方式与编译器支持​​</h3>
-<h4 id="1-partialeq的实现">1. <code>PartialEq</code> 的实现​​</h4>
-<p>需手动定义 <code>eq</code> 方法（<code>ne</code> 有默认实现）。</p>
+<h3 id="实现方式与编译器支持">实现方式与编译器支持</h3>
+<h4 id="1-partialeq-的实现">1. <code>PartialEq</code> 的实现</h4>
+<p>需手动定义 <code>eq</code> 方法（<code>ne</code> 有默认实现）。</p>
 <p>示例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -723,11 +723,11 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>若所有字段都参与比较，可通过 <code>#[derive(PartialEq)]</code> 自动派生。</p>
-<h3 id="2-eq的实现">2. <code>Eq</code> 的实现​​</h3>
-<p>仅需在 <code>PartialEq</code> 基础上添加空实现的标记 trait（<code>impl Eq for Book {}</code>），无额外逻辑。编译器通过标记确保类型满足自反性。</p>
-<h3 id="示例对比">示例对比​​​</h3>
-<h4 id="1-浮点数的实现">1. 浮点数的实现​​</h4>
+</div><p>若所有字段都参与比较，可通过 <code>#[derive(PartialEq)]</code> 自动派生。</p>
+<h3 id="2-eq-的实现">2. <code>Eq</code> 的实现</h3>
+<p>仅需在 <code>PartialEq</code> 基础上添加空实现的标记 trait（<code>impl Eq for Book {}</code>），无额外逻辑。编译器通过标记确保类型满足自反性。</p>
+<h3 id="示例对比">示例对比</h3>
+<h4 id="1-浮点数的实现">1. 浮点数的实现</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">0
@@ -738,69 +738,69 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">assert!</span><span class="p">(</span><span class="n">nan</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">nan</span><span class="p">);</span><span class="w">  </span><span class="c1">// 合法，因 f32 仅实现 PartialEq
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="2-自定义类型的选择">2. 自定义类型的选择​​</h4>
-<p>若某个结构体的 <code>id</code> 字段可能为 0（表示无效值），则仅实现 <code>PartialEq</code>，避免无效值的错误相等性判断。</p>
+</div><h4 id="2-自定义类型的选择">2. 自定义类型的选择</h4>
+<p>若某个结构体的 <code>id</code> 字段可能为 0（表示无效值），则仅实现 <code>PartialEq</code>，避免无效值的错误相等性判断。</p>
 <hr>
 <h3 id="总结">总结</h3>
 <table>
   <thead>
       <tr>
-          <th><strong>特性​</strong>​</th>
-          <th>​<strong>​数学要求​</strong>​</th>
-          <th>​<strong>​适用场景​</strong>​</th>
-          <th>​<strong>​编译器支持​</strong>​</th>
+          <th><strong>特性</strong></th>
+          <th><strong>数学要求</strong></th>
+          <th><strong>适用场景</strong></th>
+          <th><strong>编译器支持</strong></th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td><code>PartialEq</code></td>
           <td>对称性、传递性</td>
-          <td>允许部分值不可比较（如 <code>NaN</code>）</td>
+          <td>允许部分值不可比较（如 <code>NaN</code>）</td>
           <td>可派生或手动实现</td>
       </tr>
       <tr>
           <td><code>Eq</code></td>
           <td>全等价关系（含自反性）</td>
           <td>哈希键、严格全序比较的类型</td>
-          <td>需手动标记，依赖 <code>PartialEq</code> 实现</td>
+          <td>需手动标记，依赖 <code>PartialEq</code> 实现</td>
       </tr>
   </tbody>
 </table>
 <h2 id="次序比较-partialord-与-ord">次序比较 PartialOrd 与 Ord</h2>
-<h3 id="数学性质的区别-1">数学性质的区别​​</h3>
-<h4 id="1-partialord部分顺序">1. <code>PartialOrd</code>（部分顺序）​​</h4>
-<p>表示类型支持​<strong>​部分顺序关系​</strong>​，满足以下性质：</p>
+<h3 id="数学性质的区别-1">数学性质的区别</h3>
+<h4 id="1-partialord部分顺序">1. <code>PartialOrd</code>（部分顺序）</h4>
+<p>表示类型支持<strong>部分顺序关系</strong>，满足以下性质：</p>
 <ul>
-<li><strong>自反性​</strong>​：<code>a &lt;= a</code> 必须成立；</li>
-<li>​<strong>​反对称性​</strong>​：若 <code>a &lt;= b</code> 且 <code>b &lt;= a</code>，则 <code>a == b</code>；</li>
-<li>​<strong>​传递性​</strong>​：若 <code>a &lt;= b</code> 且 <code>b &lt;= c</code>，则 <code>a &lt;= c</code>。</li>
-<li>​<strong>​不要求所有值都可比较​</strong>​。例如，浮点数中的 <code>NaN</code> 无法与任何值（包括自身）比较，因此 <code>f32</code>/<code>f64</code> 仅实现 <code>PartialOrd</code>。</li>
+<li><strong>自反性</strong>：<code>a &lt;= a</code> 必须成立；</li>
+<li><strong>反对称性</strong>：若 <code>a &lt;= b</code> 且 <code>b &lt;= a</code>，则 <code>a == b</code>；</li>
+<li><strong>传递性</strong>：若 <code>a &lt;= b</code> 且 <code>b &lt;= c</code>，则 <code>a &lt;= c</code>。</li>
+<li><strong>不要求所有值都可比较</strong>。例如，浮点数中的 <code>NaN</code> 无法与任何值（包括自身）比较，因此 <code>f32</code>/<code>f64</code> 仅实现 <code>PartialOrd</code>。</li>
 </ul>
-<h4 id="2-ord完全顺序">2. <code>Ord</code>（完全顺序）​​</h4>
-<p><code>PartialOrd</code> 的扩展，要求满足​<strong>​全序关系​</strong>，即额外满足以下性质：</p>
+<h4 id="2-ord完全顺序">2. <code>Ord</code>（完全顺序）</h4>
+<p><code>PartialOrd</code> 的扩展，要求满足<strong>全序关系</strong>，即额外满足以下性质：</p>
 <ul>
-<li><strong>所有值必须可比较​</strong>​，即任意两个值 <code>a</code> 和 <code>b</code> 必须满足 <code>a &lt;= b</code> 或 <code>b &lt;= a</code>。例如，整数类型（<code>i32</code>、<code>u64</code> 等）必须实现 <code>Ord</code>。​</li>
+<li><strong>所有值必须可比较</strong>，即任意两个值 <code>a</code> 和 <code>b</code> 必须满足 <code>a &lt;= b</code> 或 <code>b &lt;= a</code>。例如，整数类型（<code>i32</code>、<code>u64</code> 等）必须实现 <code>Ord</code>。</li>
 </ul>
-<h3 id="应用场景的差异-1">应用场景的差异​​</h3>
-<h4 id="1-partialord的典型用例">1. <code>PartialOrd</code> 的典型用例​​</h4>
+<h3 id="应用场景的差异-1">应用场景的差异</h3>
+<h4 id="1-partialord-的典型用例">1. <code>PartialOrd</code> 的典型用例</h4>
 <ul>
-<li><strong>浮点数​</strong>​：<code>NaN</code> 的存在导致无法全序比较；</li>
-<li>​<strong>​自定义类型存在不可比字段​</strong>​：如学生成绩可能因缺考而无法排序；</li>
-<li>​<strong>​部分逻辑排序​</strong>​：如仅根据优先级字段排序，其他字段不参与。</li>
+<li><strong>浮点数</strong>：<code>NaN</code> 的存在导致无法全序比较；</li>
+<li><strong>自定义类型存在不可比字段</strong>：如学生成绩可能因缺考而无法排序；</li>
+<li><strong>部分逻辑排序</strong>：如仅根据优先级字段排序，其他字段不参与。</li>
 </ul>
-<h4 id="2-ord的强制要求">2. <code>Ord</code> 的强制要求​​</h4>
+<h4 id="2-ord-的强制要求">2. <code>Ord</code> 的强制要求</h4>
 <ul>
-<li>类型需要作为排序容器（如 <code>BTreeMap</code>）的键时；</li>
-<li>需要稳定排序或哈希一致性（如 <code>HashMap</code> 的键需实现 <code>Ord</code>）；</li>
+<li>类型需要作为排序容器（如 <code>BTreeMap</code>）的键时；</li>
+<li>需要稳定排序或哈希一致性（如 <code>HashMap</code> 的键需实现 <code>Ord</code>）；</li>
 <li>需要严格全序的场景（如整数、字符串的字典序）。</li>
 </ul>
-<h3 id="实现方式与依赖关系">实现方式与依赖关系​​</h3>
-<h4 id="1-partialord的实现">1. <code>PartialOrd</code> 的实现​​</h4>
+<h3 id="实现方式与依赖关系">实现方式与依赖关系</h3>
+<h4 id="1-partialord-的实现">1. <code>PartialOrd</code> 的实现</h4>
 <ul>
-<li>​<strong>依赖</strong>​​：必须已实现 <code>PartialEq</code>；</li>
-<li>​​<strong>方法</strong>​​：需定义 <code>partial_cmp</code>，返回 <code>Option&lt;Ordering&gt;</code>（可能为 <code>None</code>）；</li>
+<li><strong>依赖</strong>：必须已实现 <code>PartialEq</code>；</li>
+<li><strong>方法</strong>：需定义 <code>partial_cmp</code>，返回 <code>Option&lt;Ordering&gt;</code>（可能为 <code>None</code>）；</li>
 </ul>
-<p>​示例​​：</p>
+<p>示例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">0
@@ -817,11 +817,11 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>若所有字段参与比较，可通过 <code>#[derive(PartialOrd)]</code> 自动派生。</p>
-<h4 id="2-ord的实现">2. <code>Ord</code> 的实现​​</h4>
+</div><p>若所有字段参与比较，可通过 <code>#[derive(PartialOrd)]</code> 自动派生。</p>
+<h4 id="2-ord-的实现">2. <code>Ord</code> 的实现</h4>
 <ul>
-<li>​<strong>​依赖​</strong>​：必须已实现 <code>Eq</code> 和 <code>PartialOrd&lt;Self&gt;</code>；</li>
-<li>​<strong>​方法​</strong>​：需定义 <code>cmp</code>，返回确定的 <code>Ordering</code>；</li>
+<li><strong>依赖</strong>：必须已实现 <code>Eq</code> 和 <code>PartialOrd&lt;Self&gt;</code>；</li>
+<li><strong>方法</strong>：需定义 <code>cmp</code>，返回确定的 <code>Ordering</code>；</li>
 </ul>
 <p>示例：</p>
 <div class="highlight"><div class="chroma">
@@ -840,9 +840,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>手动实现需确保逻辑与 <code>PartialOrd</code> 一致。</p>
+</div><p>手动实现需确保逻辑与 <code>PartialOrd</code> 一致。</p>
 <h3 id="示例对比-1">示例对比</h3>
-<h4 id="1-浮点数的实现-1">1. 浮点数的实现​​</h4>
+<h4 id="1-浮点数的实现-1">1. 浮点数的实现</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">0
@@ -855,7 +855,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">assert!</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">partial_cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">b</span><span class="p">).</span><span class="n">is_none</span><span class="p">());</span><span class="w">  </span><span class="c1">// 合法，因 PartialOrd 允许不可比
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="2-自定义类型的排序">2. 自定义类型的排序​​</h4>
+</div><h4 id="2-自定义类型的排序">2. 自定义类型的排序</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">0
@@ -883,10 +883,10 @@
 <table>
   <thead>
       <tr>
-          <th>​<strong>​特性​</strong>​</th>
-          <th>​<strong>​数学要求​</strong>​</th>
-          <th>​<strong>​适用场景​</strong>​</th>
-          <th>​<strong>​实现依赖​</strong>​</th>
+          <th><strong>特性</strong></th>
+          <th><strong>数学要求</strong></th>
+          <th><strong>适用场景</strong></th>
+          <th><strong>实现依赖</strong></th>
       </tr>
   </thead>
   <tbody>
@@ -894,13 +894,13 @@
           <td><code>PartialOrd</code></td>
           <td>部分顺序（允许不可比）</td>
           <td>浮点数、部分字段排序、不可比类型</td>
-          <td>需实现 <code>PartialEq</code></td>
+          <td>需实现 <code>PartialEq</code></td>
       </tr>
       <tr>
           <td><code>Ord</code></td>
           <td>全序（所有值可比）</td>
           <td>哈希键、稳定排序、严格全序类型</td>
-          <td>需实现 <code>Eq</code> + <code>PartialOrd</code></td>
+          <td>需实现 <code>Eq</code> + <code>PartialOrd</code></td>
       </tr>
   </tbody>
 </table>
@@ -909,30 +909,30 @@
 <table>
   <thead>
       <tr>
-          <th>​<strong>​特性​</strong>​</th>
-          <th>​<strong>​Copy​</strong>​</th>
-          <th>​<strong>​Clone​</strong>​</th>
+          <th><strong>特性</strong></th>
+          <th><strong>Copy</strong></th>
+          <th><strong>Clone</strong></th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>​<strong>​复制方式​</strong>​</td>
+          <td><strong>复制方式</strong></td>
           <td>隐式按位复制（bitwise copy），浅拷贝</td>
-          <td>显式调用 <code>clone()</code>，可能是深拷贝</td>
+          <td>显式调用 <code>clone()</code>，可能是深拷贝</td>
       </tr>
       <tr>
-          <td>​<strong>​所有权影响​</strong>​</td>
+          <td><strong>所有权影响</strong></td>
           <td>保留原变量所有权（无移动）</td>
           <td>保留原变量所有权，但需显式复制避免移动</td>
       </tr>
       <tr>
-          <td>​<strong>​数学性质​</strong>​</td>
+          <td><strong>数学性质</strong></td>
           <td>仅适用于简单值类型，满足按位复制的安全性</td>
           <td>适用于任意类型，允许自定义复制逻辑</td>
       </tr>
   </tbody>
 </table>
-<p><strong>示例对比</strong>​​</p>
+<p><strong>示例对比</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">0
@@ -958,11 +958,11 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="实现约束与依赖">实现约束与依赖</h3>
-<h4 id="1-copy-的实现条件">1. ​​Copy 的实现条件​​</h4>
+<h4 id="1-copy-的实现条件">1. Copy 的实现条件</h4>
 <ul>
-<li>所有字段必须实现 <code>Copy</code>；</li>
-<li>类型不能包含析构函数（如 <code>Drop</code> trait）；</li>
-<li>必须同时实现 <code>Clone</code>（自动派生时编译器处理）。</li>
+<li>所有字段必须实现 <code>Copy</code>；</li>
+<li>类型不能包含析构函数（如 <code>Drop</code> trait）；</li>
+<li>必须同时实现 <code>Clone</code>（自动派生时编译器处理）。</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -974,9 +974,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kt">i32</span> <span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="2-clone-的灵活性">2. Clone 的灵活性​​</h4>
+</div><h4 id="2-clone-的灵活性">2. Clone 的灵活性</h4>
 <ul>
-<li>无字段类型限制，可包含堆数据（如 <code>String</code>、<code>Vec</code>）；</li>
+<li>无字段类型限制，可包含堆数据（如 <code>String</code>、<code>Vec</code>）；</li>
 <li>允许自定义深拷贝逻辑（如克隆时重置引用计数）。</li>
 </ul>
 <div class="highlight"><div class="chroma">
@@ -993,39 +993,39 @@
 <table>
   <thead>
       <tr>
-          <th>​<strong>​场景​</strong>​</th>
-          <th>​<strong>​Copy​</strong>​</th>
-          <th>​<strong>​Clone​</strong>​</th>
+          <th><strong>场景</strong></th>
+          <th><strong>Copy</strong></th>
+          <th><strong>Clone</strong></th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>​<strong>​适用类型​</strong>​</td>
+          <td><strong>适用类型</strong></td>
           <td>基本类型（<code>i32</code>、<code>f64</code>）、简单结构体</td>
           <td>堆分配类型（<code>String</code>、<code>Vec</code>）、复杂结构体</td>
       </tr>
       <tr>
-          <td>​<strong>​性能特征​</strong>​</td>
+          <td><strong>性能特征</strong></td>
           <td>零成本复制（栈内存操作）</td>
           <td>可能高开销（深拷贝堆数据）</td>
       </tr>
       <tr>
-          <td>​<strong>​典型用途​</strong>​</td>
+          <td><strong>典型用途</strong></td>
           <td>高频复制的轻量级数据（如坐标、配置项）</td>
           <td>需要保留原对象的深拷贝场景</td>
       </tr>
   </tbody>
 </table>
-<p><strong>性能优化建议​</strong></p>
+<p><strong>性能优化建议</strong></p>
 <ul>
-<li>小尺寸类型（如 &lt;= 16 字节）优先考虑 <code>Copy</code>；</li>
-<li>避免为大型结构体实现 <code>Copy</code>（可能引发意外内存复制）​。</li>
+<li>小尺寸类型（如 &lt;= 16 字节）优先考虑 <code>Copy</code>；</li>
+<li>避免为大型结构体实现 <code>Copy</code>（可能引发意外内存复制）。</li>
 </ul>
 <hr>
 <h3 id="总结-2">总结</h3>
 <ul>
-<li><strong><code>Copy</code>​</strong>​：当数据简单且复制无副作用时（如基本类型）。</li>
-<li>​<strong>​<code>Clone</code>​</strong>​：当数据复杂或需显式控制复制行为时（如包含堆内存的类型）。</li>
+<li><strong><code>Copy</code></strong>：当数据简单且复制无副作用时（如基本类型）。</li>
+<li><strong><code>Clone</code></strong>：当数据复杂或需显式控制复制行为时（如包含堆内存的类型）。</li>
 </ul>
 
 

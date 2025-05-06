@@ -16,7 +16,7 @@
 
   </title>
 
-  <meta name="generator" content="Hugo 0.147.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="generator" content="Hugo 0.147.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="referrer" content="no-referrer">
   <meta name="author" content="Ocancel" />
   <meta
@@ -29,8 +29,8 @@
     
     <link
       rel="stylesheet"
-      href="/scss/main.min.324aa7cd960fd8bd7b6520dad33331b9d7bbc7be8b255af664b7b8a50c6913e4.css"
-      integrity="sha256-MkqnzZYP2L17ZSDa0zMxude7x76LJVr2ZLe4pQxpE&#43;Q="
+      href="/scss/main.min.8c46d4754735d058db0973fb9d6642a2c073d23ed79b52860a9117cda212b1bc.css"
+      integrity="sha256-jEbUdUc10FjbCXP7nWZCosBz0j7Xm1KGCpEXzaISsbw="
       crossorigin="anonymous"
       type="text/css"
     />
@@ -621,11 +621,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">locks</span><span class="p">.</span><span class="n">pid</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">pg_locks</span><span class="w"> </span><span class="n">locks</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">pg_class</span><span class="w"> </span><span class="k">class</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">on</span><span class="w"> </span><span class="n">locks</span><span class="p">.</span><span class="n">relation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">class</span><span class="p">.</span><span class="n">oid</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="k">class</span><span class="p">.</span><span class="n">relname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;table_name&#39;</span><span class="p">;</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">locks</span><span class="p">.</span><span class="n">pid</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">pg_locks</span><span class="w"> </span><span class="n">locks</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">pg_class</span><span class="w"> </span><span class="k">class</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">ON</span><span class="w"> </span><span class="n">locks</span><span class="p">.</span><span class="n">relation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">class</span><span class="p">.</span><span class="n">oid</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="k">class</span><span class="p">.</span><span class="n">relname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;table_name&#39;</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="使用终止函数终止pid">使用终止函数终止<code>pid</code></h2>
@@ -634,7 +634,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">0
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">pg_terminate_backend</span><span class="p">(</span><span class="n">pid</span><span class="p">);</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">pg_terminate_backend</span><span class="p">(</span><span class="n">pid</span><span class="p">);</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div>
