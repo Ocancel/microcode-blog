@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ocancel的站点</title>
+    <title>Corin 的博客</title>
     <link>https://blog.microcode.site/</link>
-    <description>Recent content on Ocancel的站点</description>
+    <description>Recent content on Corin 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 07 Sep 2024 15:09:01 +0800</lastBuildDate><atom:link href="https://blog.microcode.site/index.xml" rel="self" type="application/rss+xml" />
@@ -268,7 +268,8 @@
       <guid>https://blog.microcode.site/about/</guid>
       
         <description>&lt;blockquote&gt;
-&lt;p&gt;该发生的总会发生&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;该发生的总会发生&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;ocancel-的博客&#34;&gt;Ocancel 的博客&lt;/h2&gt;
 &lt;h3 id=&#34;站点&#34;&gt;站点&lt;/h3&gt;
 &lt;p&gt;本站使用 &lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/a&gt; 搭建。&lt;/p&gt;

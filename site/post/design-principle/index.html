@@ -12,13 +12,13 @@
     
       
         Design principle |
-      Ocancel
+      Corin
 
   </title>
 
-  <meta name="generator" content="Hugo 0.147.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="generator" content="Hugo 0.151.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="referrer" content="no-referrer">
-  <meta name="author" content="Ocancel" />
+  <meta name="author" content="Corin" />
   <meta
     name="description"
     content="Whatever can happen will happen."
@@ -29,8 +29,8 @@
     
     <link
       rel="stylesheet"
-      href="/scss/main.min.8c46d4754735d058db0973fb9d6642a2c073d23ed79b52860a9117cda212b1bc.css"
-      integrity="sha256-jEbUdUc10FjbCXP7nWZCosBz0j7Xm1KGCpEXzaISsbw="
+      href="/scss/main.min.747154d16190e6c3ee47ecaab9ea900aada600ca19768d2fabc7f35c958c20d1.css"
+      integrity="sha256-dHFU0WGQ5sPuR&#43;yqueqQCq2mAMoZdo0vq8fzXJWMINE="
       crossorigin="anonymous"
       type="text/css"
     />
@@ -163,7 +163,7 @@
 
   
   <meta property="og:url" content="https://blog.microcode.site/post/design-principle/">
-  <meta property="og:site_name" content="Ocancel的站点">
+  <meta property="og:site_name" content="Corin 的博客">
   <meta property="og:title" content="Design principle">
   <meta property="og:description" content="Whatever can happen will happen.">
   <meta property="og:locale" content="zh_cn">
@@ -271,7 +271,7 @@
       
         <div class="sidebar__introduction-title">
           <div class="glitch">
-            <a href="/">Ocancel</a>
+            <a href="/">Corin.dev</a>
           </div>
         </div>
       
@@ -397,8 +397,8 @@
       async
       onload="initSakanaWidget()"
       type="text/javascript"
-      src="/js/sakana-2.7.0.min.5adf3f167ded2e2baa62dfe9ccf81af0e782a6f3755fa0c4bfc6954ce80cf2b5.js"
-      integrity="sha256-Wt8/Fn3tLiuqYt/pzPga8OeCpvN1X6DEv8aVTOgM8rU="
+      src="/js/sakana-2.7.0.min.3a6416e000efeb774e85c37fe96f81033d63d6509957422e844e25532c211bc2.js"
+      integrity="sha256-OmQW4ADv63dOhcN/6W&#43;BAz1j1lCZV0IuhE4lUywhG8I="
       crossorigin="anonymous"
     ></script>
   
@@ -406,8 +406,8 @@
   
   <script
     type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
     crossorigin="anonymous"
   ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
       defer
@@ -621,32 +621,40 @@
       警告：这篇文章创作时长大于 730 天，其内容可能已经过时。
     </div><h3 id="i-开闭原则open-closed-principleocp">I. 开闭原则｜Open-Closed Principle｜OCP</h3>
 <blockquote>
-<p>对扩展开放，对修改关闭。</p></blockquote>
+<p>对扩展开放，对修改关闭。</p>
+</blockquote>
 <h3 id="ii-依赖倒置原则dependence-inversion-principledip">II. 依赖倒置原则｜Dependence Inversion Principle｜DIP</h3>
 <blockquote>
 <p>高层模块不应该依赖底层模块，二者都应该依赖其抽象。
-抽象不应该依赖细节，细节应该依赖抽象。</p></blockquote>
+抽象不应该依赖细节，细节应该依赖抽象。</p>
+</blockquote>
 <h3 id="iii-单一职责原则simple-responsibility-pinciplesrp">III. 单一职责原则｜Simple Responsibility Pinciple｜SRP</h3>
 <blockquote>
-<p>不要存在多于一个导致类变更的原因。</p></blockquote>
+<p>不要存在多于一个导致类变更的原因。</p>
+</blockquote>
 <h3 id="iv-接口隔离原则interface-segregation-principleisp">IV. 接口隔离原则｜Interface Segregation Principle｜ISP</h3>
 <blockquote>
-<p>使用多个专用接口，不使用单一的总接口。</p></blockquote>
+<p>使用多个专用接口，不使用单一的总接口。</p>
+</blockquote>
 <h3 id="v-最少知道原则least-knowledge-principlelkp">V. 最少知道原则｜Least Knowledge Principle｜LKP</h3>
 <blockquote>
-<p>一个对象应该对其他对象保持最少的了解。</p></blockquote>
+<p>一个对象应该对其他对象保持最少的了解。</p>
+</blockquote>
 <h3 id="vi-里氏替换原则liskov-substitution-principlelsp">VI. 里氏替换原则｜Liskov Substitution Principle｜LSP</h3>
 <blockquote>
 <p>若对于任意的类型为<code>T1</code>的对象<code>O1</code>，都有类型为<code>T2</code>的对象<code>O2</code>，使得以<code>T1</code>定义的所有程序<code>P</code>在所有的对象<code>O1</code>都替换成<code>O2</code>时，程序
-<code>P</code>的行为没有发生变化，则类型<code>T2</code>是类型<code>T1</code>的子类型。</p></blockquote>
+<code>P</code>的行为没有发生变化，则类型<code>T2</code>是类型<code>T1</code>的子类型。</p>
+</blockquote>
 <p><strong>引申含义：</strong></p>
 <blockquote>
-<p>子类可以扩展父类的功能，但不能改变父类原有的功能。</p></blockquote>
+<p>子类可以扩展父类的功能，但不能改变父类原有的功能。</p>
+</blockquote>
 <h3 id="vii-合成复用原则composite--aggregate-reuse-principlecarp">VII. 合成复用原则｜Composite / Aggregate Reuse Principle｜CARP</h3>
 <blockquote>
 <p>尽量使用对象组合/聚合而不是继承关系达到软件复用的目的。
 <strong>白箱复用：</strong> 指继承，把所有的实现细节暴露给子类。
-<strong>黑箱复用：</strong> 指组合/聚合，无法获取类以外的实现细节。</p></blockquote>
+<strong>黑箱复用：</strong> 指组合/聚合，无法获取类以外的实现细节。</p>
+</blockquote>
 <h3 id="总结">总结</h3>
 <p><strong>设计原则是设计模式的基础，不要求代码完全遵循设计原则，适当的使用设计原则，不要刻意追求完美。</strong></p>
 
@@ -741,8 +749,8 @@
       async
       onload="initSakanaWidget()"
       type="text/javascript"
-      src="/js/sakana-2.7.0.min.5adf3f167ded2e2baa62dfe9ccf81af0e782a6f3755fa0c4bfc6954ce80cf2b5.js"
-      integrity="sha256-Wt8/Fn3tLiuqYt/pzPga8OeCpvN1X6DEv8aVTOgM8rU="
+      src="/js/sakana-2.7.0.min.3a6416e000efeb774e85c37fe96f81033d63d6509957422e844e25532c211bc2.js"
+      integrity="sha256-OmQW4ADv63dOhcN/6W&#43;BAz1j1lCZV0IuhE4lUywhG8I="
       crossorigin="anonymous"
     ></script>
   
@@ -750,8 +758,8 @@
   
   <script
     type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
     crossorigin="anonymous"
   ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
       defer

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ocancel&#39;s Site</title>
+    <title>Corin&#39;s Blog</title>
     <link>https://blog.microcode.site/en/</link>
-    <description>Recent content on Ocancel&#39;s Site</description>
+    <description>Recent content on Corin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 18 Mar 2022 21:47:41 +0000</lastBuildDate><atom:link href="https://blog.microcode.site/en/index.xml" rel="self" type="application/rss+xml" />
@@ -81,7 +81,8 @@
       <guid>https://blog.microcode.site/en/about/</guid>
       
         <description>&lt;blockquote&gt;
-&lt;p&gt;Whatever can happen will happen&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Whatever can happen will happen&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;ocancels-blog&#34;&gt;Ocancel&amp;rsquo;s Blog&lt;/h2&gt;
 &lt;h3 id=&#34;site&#34;&gt;Site&lt;/h3&gt;
 &lt;p&gt;Built with &lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;strong&gt;Hugo.&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;

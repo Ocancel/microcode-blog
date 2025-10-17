@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on Ocancel的站点</title>
+    <title>Docker on Corin 的博客</title>
     <link>https://blog.microcode.site/categories/docker/</link>
-    <description>Recent content in Docker on Ocancel的站点</description>
+    <description>Recent content in Docker on Corin 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 28 May 2024 13:34:05 +0800</lastBuildDate><atom:link href="https://blog.microcode.site/categories/docker/index.xml" rel="self" type="application/rss+xml" />
