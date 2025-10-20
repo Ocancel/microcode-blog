@@ -118,6 +118,17 @@
     </item>
     
     <item>
+      <title>OpenEuler 安装 PostgreSQL</title>
+      <link>https://blog.microcode.site/post/openeuler-install-postgresql/</link>
+      <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.microcode.site/post/openeuler-install-postgresql/</guid>
+      
+        <description>OpenEuler 安装 PostgreSQL</description>
+      
+    </item>
+    
+    <item>
       <title>PostgreSQL lock table</title>
       <link>https://blog.microcode.site/post/postgresql-lock-table/</link>
       <pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>

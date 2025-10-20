@@ -11,7 +11,7 @@
   <title>
     
       
-        MySQL MVCC |
+        OpenEuler |
       Corin
 
   </title>
@@ -83,9 +83,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
 
-  <link rel="canonical" href="https://blog.microcode.site/post/mysql-mvcc/" />
+  <link rel="canonical" href="https://blog.microcode.site/tags/openeuler/" />
 
   
+  <link rel="alternate" type="application/rss+xml" href="/tags/openeuler/index.xml" title="Corin 的博客" />
   
   
   
@@ -134,15 +135,6 @@
     crossorigin="anonymous"
   ></script>
 
-  
-    
-    
-    <script
-      type="text/javascript"
-      src="/js/toc-switcher.min.0c92979c495a65afca4bcacd65eb32866222cf2de1b7238a1e072546e7180294.js"
-      integrity="sha256-DJKXnElaZa/KS8rNZesyhmIizy3htyOKHgclRucYApQ="
-      crossorigin="anonymous">
-    </script>
   <script 
       async 
       src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
@@ -156,103 +148,23 @@
   
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="MySQL MVCC">
+  <meta name="twitter:title" content="OpenEuler">
   <meta name="twitter:description" content="Whatever can happen will happen.">
 
 
 
   
-  <meta property="og:url" content="https://blog.microcode.site/post/mysql-mvcc/">
+  <meta property="og:url" content="https://blog.microcode.site/tags/openeuler/">
   <meta property="og:site_name" content="Corin 的博客">
-  <meta property="og:title" content="MySQL MVCC">
+  <meta property="og:title" content="OpenEuler">
   <meta property="og:description" content="Whatever can happen will happen.">
   <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2022-06-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2022-06-01T00:00:00+00:00">
-    <meta property="article:tag" content="MySQL">
+  <meta property="og:type" content="website">
 
 
 
   
   
-  
-  
-  <script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "articleSection": "post",
-        "name": "MySQL MVCC",
-        "headline": "MySQL MVCC",
-        "alternativeHeadline": "",
-        "description": "
-      
-        
-
-
-      
-
-
-    ",
-        "inLanguage": "zh-cn",
-        "isFamilyFriendly": "true",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/blog.microcode.site\/post\/mysql-mvcc\/"
-        },
-        "author" : {
-            "@type": "Person",
-            "name": "Corin"
-        },
-        "creator" : {
-            "@type": "Person",
-            "name": "Corin"
-        },
-        "accountablePerson" : {
-            "@type": "Person",
-            "name": "Corin"
-        },
-        "copyrightHolder" : {
-            "@type": "Person",
-            "name": "Corin"
-        },
-        "copyrightYear" : "2022",
-        "dateCreated": "2022-06-01T00:00:00.00Z",
-        "datePublished": "2022-06-01T00:00:00.00Z",
-        "dateModified": "2022-06-01T00:00:00.00Z",
-        "publisher":{
-            "@type":"Organization",
-            "name": "Corin",
-            "url": "https://blog.microcode.site/",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https:\/\/blog.microcode.site\/favicons\/favicon-32x32.png",
-                "width":"32",
-                "height":"32"
-            }
-        },
-        "image": 
-      [
-      ]
-
-    ,
-        "url" : "https:\/\/blog.microcode.site\/post\/mysql-mvcc\/",
-        "wordCount" : "85",
-        "genre" : [ 
-      
-      "Database"
-
-    ],
-        "keywords" : [ 
-      
-      "MySQL"
-
-    ]
-    }
-  </script>
-
 
 </head>
 <body class="body">
@@ -577,183 +489,27 @@
 </div>
 </header>
   <div
-    class="post 
+    class="archive 
       animated fadeInDown
     "
   >
-    <div id="toc-button" class="toc-button">☰</div>
-<div id="toc-overlay" class="toc-overlay"></div>
-<div id="toc-window" class="toc-window">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#简介">简介</a></li>
-    <li><a href="#前置知识">前置知识</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#innodb的当前读和快照读">InnoDB的当前读和快照读</a></li>
-            <li><a href="#数据库的并发场景">数据库的并发场景</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#实现原理">实现原理</a>
-      <ul>
-        <li><a href="#隐式字段">隐式字段</a></li>
-        <li><a href="#undo日志">undo日志</a></li>
-        <li><a href="#read-view">Read View</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-</div>
-<div class="post__content">
-      <h1>MySQL MVCC</h1>
+    
+      <div class="archive__heading">2023</div>
       
-        <ul class="post__meta">
-          <li class="post__meta-item">
-            <em class="fas fa-calendar-day post__meta-icon"></em>
-            <span class="post__meta-text"
-              >
+        <ul class="archive__list">
+          <li class="archive__list-item">
+            <a class="archive__list-title" href="/post/openeuler-install-postgresql/" title="OpenEuler 安装 PostgreSQL">OpenEuler 安装 PostgreSQL</a>
+            <div class="archive__list-date">
+              
                 
-                  Jun 01 2022
+                  2023-06-05
                 
 
               
-            </span>
-          </li>
-          <li class="post__meta-item">
-            <em class="fas fa-stopwatch post__meta-icon"></em>
-            <span class="post__meta-text">阅读时间 1 分钟</span>
-          </li>
-        </ul>
-      <div class="alert">
-      <div class="alert__indicator">!</div>
-      警告：这篇文章创作时长大于 730 天，其内容可能已经过时。
-    </div><h2 id="简介">简介</h2>
-<p>MVCC全称Multi-Version Concurrency Control，即<strong>多版本并发控制</strong>。MVCC是一种并发控制的方法，一般在数据库管理系统中，实现对数据库的并发访问，在编程语言中实现事务内存。</p>
-<p><strong>多版本并发控制</strong>：指的是一种高并发技术。最早的数据库系统，只有读读之间可以并发，读写，写读，写写都要阻塞。引入多版本之后，<strong>只有写写之间相互阻塞，其他三种操作都可以并行</strong>，这样大幅度提高了InnoDB的并发度。在内部实现中，InnoDB是基于<code>undo log</code>实现的，通过<code>undo log</code>可以找回数据的历史版本。找回的数据历史版本可以提供给用户读（按照隔离级别的定义，有些读请求只能看到比较老的数据版本），也可以在回滚的时候覆盖数据页上的数据。在InnoDB内部中，会记录一个全局的活跃读写事务数组，其主要用来判断事务的可见性。</p>
-<blockquote>
-<p>MVCC是一种多版本并发控制机制。</p>
-</blockquote>
-<h2 id="前置知识">前置知识</h2>
-<h4 id="innodb的当前读和快照读">InnoDB的当前读和快照读</h4>
-<ul>
-<li><strong>当前读</strong>：读取的记录是最新版本，读取时要保证其他事务不能修改当前记录，会对读取的记录进行加锁。</li>
-</ul>
-<blockquote>
-<p>当前读主要包含以下场景</p>
-<ul>
-<li>共享锁：<code>select ... lock in share mode</code></li>
-<li>排他锁：<code>select for update</code>，<code>insert</code>，<code>update</code>，<code>delete</code></li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>快照读</strong>：<strong>不加锁</strong>的<code>select</code>操作属于快照读，即不加锁的非阻塞读。快照读基于多版本并发控制实现，即MVCC，正因为如此，可能导致快照读读取到的数据不是最新版本。</li>
-</ul>
-<blockquote>
-<p>快照读的前提是事务的隔离级别不是串行级别，串行级别下快照读会退化成当前读。</p>
-</blockquote>
-<p>MVCC就是为了实现读-写冲突不加锁，而这个读指的就是<strong>快照读</strong>，而非当前读，当前读实际上是一种加锁的操作，是悲观锁的实现。</p>
-<h4 id="数据库的并发场景">数据库的并发场景</h4>
-<ul>
-<li><code>读-读</code>：不存在线程安全问题，不需要并发控制。</li>
-<li><code>读-写</code>：存在线程安全问题，可能会造成事务隔离性问题，可能遇到脏读，幻读，不可重复读</li>
-<li><code>写-写</code>：存在线程安全问题，可能会存在更新丢失问题，如第一类更新丢失，第二类更新丢失</li>
-</ul>
-<blockquote>
-<ul>
-<li>第一类更新丢失：事务A撤销时，把已经提交的事务B的更新数据覆盖。</li>
-<li>第二类更新丢失：事务A覆盖事务B已经提交的数据，造成事务B所做的操作丢失。</li>
-</ul>
-</blockquote>
-<h2 id="实现原理">实现原理</h2>
-<p>MVCC主要依赖记录中的<strong>三个隐式字段</strong>、<strong>undo log</strong>、<strong>Read View</strong>来实现的。</p>
-<h3 id="隐式字段">隐式字段</h3>
-<p>每行记录除了我们自定义的字段外，还有数据库隐式定义的<code>DB_TRX_ID</code>，<code>DB_ROLL_PTR</code>，<code>DB_ROW_ID</code>等字段</p>
-<ul>
-<li><code>DB_TRX_ID</code>：<code>6byte</code>， 最后修改（插入/更新）的事务ID</li>
-<li><code>DB_ROLL_PTR</code>：<code>7byte</code>，回滚指针，配合<code>undo log</code>指向上一个版本的记录（存储于<code>rollback segment</code>）</li>
-<li><code>DB_ROW_ID</code>：<code>6byte</code>，隐含的自增ID（隐藏主键），如果数据表没有主键，InnoDB会自动以<code>DB_ROW_ID</code>产生一个聚簇索引</li>
-</ul>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Column1</th>
-          <th style="text-align: center">Column2</th>
-          <th style="text-align: center">DB_TRX_ID</th>
-          <th style="text-align: center">DB_ROW_ID</th>
-          <th style="text-align: center">DB_ROLL_PTR</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">value1</td>
-          <td style="text-align: center">value2</td>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center">0x12446462</td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="undo日志">undo日志</h3>
-<ul>
-<li><code>insert undo log</code>：事务在<code>insert</code>新记录时产生的<code>undo log</code>，只在事务回滚时需要，并且在事务提交后可以被立即丢弃。</li>
-<li><code>update undo log</code>：事务在进行<code>update</code>或<code>delete</code>时产生的<code>undo log</code>，不仅在事务回滚时需要，在快照读时也需要，所以不能随便删除，只有在快速读或事务回滚不涉及该日志时，对应的日志才会被<code>purge</code>线程统一清除。</li>
-</ul>
-<blockquote>
-<p><code>purge</code></p>
-<ul>
-<li>为了实现InnoDB的MVCC机制，更新或者删除操作都只是设置一下老记录的deleted_bit，并不真正将过时的记录删除。</li>
-<li>为了节省磁盘空间，InnoDB有专门的<code>purge</code>线程来清理<code>deleted_bit</code>为<code>true</code>的记录。为了不影响MVCC的正常工作，<code>purge</code>线程自己也维护了一个<code>read view</code>（这个<code>read view</code>相当于系统中最老活跃事务的<code>read view</code>），如果某个记录的<code>deleted_bit</code>为<code>true</code>，并且<code>DB_TRX_ID</code>相对于<code>purge</code>线程的<code>read view</code>可见，那么这条记录一定是可以被安全清除的。</li>
-</ul>
-</blockquote>
-<p>MVCC依赖于<code>update undo log</code>，<code>undo log</code>实际上就是存在<code>rollback segment</code>中旧记录链。</p>
-<h3 id="read-view">Read View</h3>
-<p><code>Read View</code>是事务进行快照读操作时生产的读视图<code>Read View</code>，在该事务执行快照读的那一刻，会生成数据库系统当前的一个快照，记录并维护系统当前活跃事务的ID（当每个事务开启时，都会被分配一个ID, 这个ID是递增的，所以最新的事务，ID值越大）。</p>
-<p><code>Read View</code>主要是用来做可见性判断，<code>Read View</code>遵循一个可见性算法，主要是将<strong>要被修改的数据</strong>的最新记录中的<code>DB_TRX_ID</code>（即当前事务ID）取出来，与系统当前其他活跃事务的ID去对比（由Read View维护），如果<code>DB_TRX_ID</code>跟<code>Read View</code>的属性做了某些比较，不符合可见性，那就通过<code>DB_ROLL_PTR</code>回滚指针去取出<code>undo Log</code>中的<code>DB_TRX_ID</code>再比较，即遍历链表的<code>DB_TRX_ID</code>（从链首到链尾，即从最近的一次修改查起），直到找到满足特定条件的<code>DB_TRX_ID</code>，那么这个<code>DB_TRX_ID</code>所在的旧记录就是当前事务能看见的最新<strong>老版本</strong>。</p>
-
-
-
-  <h3>相关文章</h3>
-  <ul>
-    
-      <li><a href="/post/openeuler-install-postgresql/">OpenEuler 安装 PostgreSQL</a></li>
-    
-      <li><a href="/post/postgresql-lock-table/">PostgreSQL lock table</a></li>
-    
-  </ul>
-
-
-        <ul class="post__meta">
-          <li class="post__meta-item">
-            <em class="fas fa-file-word post__meta-icon"></em>
-            <span class="post__meta-text">85 字</span>
-          </li>
-          <li class="post__meta-item">
-            <em class="fas fa-copyright post__meta-icon"></em>
-            <span class="post__meta-text">
-              
-                BY-NC-SA 4.0
-              
-            </span>
+            </div>
           </li>
         </ul>
       
-    </div>
-    <div class="post__footer">
-      
-        <span><a class="category" href="/categories/database/">Database</a></span>
-
-
-      
-
-      
-        <span><a class="tag" href="/tags/mysql/">MySQL</a></span>
-
-
-      
-    </div>
 
     
   </div>

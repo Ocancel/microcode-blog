@@ -1,0 +1,1849 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh-cn"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        OpenEuler 安装 PostgreSQL |
+      Corin
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.151.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="referrer" content="no-referrer">
+  <meta name="author" content="Corin" />
+  <meta
+    name="description"
+    content="OpenEuler 安装 PostgreSQL"
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.6741cbf1455d2ca6a6071ccf188138e54c551ec9bf5d344dbc37fc3cc325194a.css"
+      integrity="sha256-Z0HL8UVdLKamBxzPGIE45UxVHsm/XTRNvDf8PMMlGUo="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.ec69c65ba7911b8cde5a85155a04f042c3f7d38d440308373696912c81021fb0.css"
+    integrity="sha256-7GnGW6eRG4zeWoUVWgTwQsP3041EAwg3NpaRLIECH7A="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.2028dce76dbdcf7f947846702ca81e0c963979a9aaf826e22d30454fb8c2b216.css"
+    integrity="sha256-ICjc5229z3&#43;UeEZwLKgeDJY5eamq&#43;CbiLTBFT7jCshY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.3dd08e9de925ffed91663f3adeaf91acc3d518649cae6ce8047cee6cac5fdac5.css"
+    integrity="sha256-PdCOnekl/&#43;2RZj863q&#43;RrMPVGGScrmzoBHzubKxf2sU="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.610646915ba4d89f4ad3d568db6f19d2b8f69f957479658357222d8085be8c6e.css"
+    integrity="sha256-YQZGkVuk2J9K09Vo228Z0rj2n5V0eWWDVyItgIW&#43;jG4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://blog.microcode.site/post/openeuler-install-postgresql/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/code-copy.min.972dc758da9327e4d3f980c2890560a73a7549c7716ee21f32ed88945eb0a4b4.js"
+    integrity="sha256-ly3HWNqTJ&#43;TT&#43;YDCiQVgpzp1ScdxbuIfMu2IlF6wpLQ="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/wrapper-table.min.0010559d9b8353a340f7502cfacc93c74b3639656176fc6c668ccf35d43c9714.js"
+    integrity="sha256-ABBVnZuDU6NA91As&#43;syTx0s2OWVhdvxsZozPNdQ8lxQ="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/brief.min.e162f6b80febcba7434a7ee5c068ed9daa2c087a2d8e3724da629d7448c79f40.js"
+    integrity="sha256-4WL2uA/ry6dDSn7lwGjtnaosCHotjjck2mKddEjHn0A="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/toc-switcher.min.0c92979c495a65afca4bcacd65eb32866222cf2de1b7238a1e072546e7180294.js"
+      integrity="sha256-DJKXnElaZa/KS8rNZesyhmIizy3htyOKHgclRucYApQ="
+      crossorigin="anonymous">
+    </script>
+  <script 
+      async 
+      src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OpenEuler 安装 PostgreSQL">
+  <meta name="twitter:description" content="OpenEuler 安装 PostgreSQL">
+
+
+
+  
+  <meta property="og:url" content="https://blog.microcode.site/post/openeuler-install-postgresql/">
+  <meta property="og:site_name" content="Corin 的博客">
+  <meta property="og:title" content="OpenEuler 安装 PostgreSQL">
+  <meta property="og:description" content="OpenEuler 安装 PostgreSQL">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-06-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-06-05T00:00:00+00:00">
+    <meta property="article:tag" content="PostgreSQL">
+    <meta property="article:tag" content="OpenEuler">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "OpenEuler 安装 PostgreSQL",
+        "headline": "OpenEuler 安装 PostgreSQL",
+        "alternativeHeadline": "",
+        "description": "
+      OpenEuler 安装 PostgreSQL
+
+
+    ",
+        "inLanguage": "zh-cn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.microcode.site\/post\/openeuler-install-postgresql\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-06-05T00:00:00.00Z",
+        "datePublished": "2023-06-05T00:00:00.00Z",
+        "dateModified": "2023-06-05T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Corin",
+            "url": "https://blog.microcode.site/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.microcode.site\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/blog.microcode.site\/post\/openeuler-install-postgresql\/",
+        "wordCount" : "1350",
+        "genre" : [ 
+      
+      "Database"
+
+    
+      
+        ,
+
+      
+      "Linux"
+
+    ],
+        "keywords" : [ 
+      
+      "PostgreSQL"
+
+    
+      
+        ,
+
+      
+      "OpenEuler"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="https://gitee.com/ocancel/oss/raw/main/uPic/avator-1718763586277.png"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <div class="glitch">
+            <a href="/">Corin.dev</a>
+          </div>
+        </div>
+      
+      <div id="brief" class="sidebar__introduction-description">
+        <p>Whatever can happen will happen.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://microcode.site/"
+            target="_self"
+            rel="noopener me"
+            aria-label="Microcode"
+            title="Microcode"
+          >
+            <i class="fa fa-square-check fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/Ocancel/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github-square fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:jiaqi.gao.dev@gmail.com"
+            target=""
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fa fa-square-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+    
+      <div class="sentence-windows">
+          <div class="sentence-container">
+              <div class="sentence-content">
+                  <p class="sentence-hi"> </p>
+                  <p class="sentence-from"> </p>
+                  <div class="sentence-progress-con">
+                      <div class="sentence-progress-time" style="left:0%"></div>
+                  </div>
+              </div>
+              <div class="sentence-button">
+                  <input type="button" class="sentence-sub" value="update">
+              </div>
+          </div>
+      </div>
+    
+    
+      <div class="sakana-components">
+        <div id="sakana-widget"></div>
+      </div>
+    
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2020 - 2025
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/statement/"
+          
+          title=""
+        >
+          声明
+        </a>
+      </li>
+    
+  </ul>
+  <ul class="footer__list">
+    
+      <li class="footer__item">
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024061880号-2</a>
+      </li>
+    
+    
+      <li class="footer__item">
+        <img src="https://gitee.com/ocancel/oss/raw/main/uPic/mps-logo-1718703873983.png" alt="mps-logo">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054571" rel="noreferrer" target="_blank">
+          京公网安备11011402054571号
+        </a>
+      </li>
+    
+  </ul>  
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/sentence.min.d1d983ea1775bb4c791be469ce46d6bf27a0e1617456ed7c8fdc5529e4108096.js"
+      integrity="sha256-0dmD6hd1u0x5G&#43;RpzkbWvyeg4WF0Vu18j9xVKeQQgJY="
+      crossorigin="anonymous"
+    ></script>
+  
+  
+    <script>
+      function initSakanaWidget() {
+        new SakanaWidget({ autoFit: true }).mount('#sakana-widget');
+      }
+    </script>
+    
+    
+    <script
+      async
+      onload="initSakanaWidget()"
+      type="text/javascript"
+      src="/js/sakana-2.7.0.min.3a6416e000efeb774e85c37fe96f81033d63d6509957422e844e25532c211bc2.js"
+      integrity="sha256-OmQW4ADv63dOhcN/6W&#43;BAz1j1lCZV0IuhE4lUywhG8I="
+      crossorigin="anonymous"
+    ></script>
+  
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >主页</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >历程</a
+            >
+          </li>
+        
+      
+        
+        
+
+          <li class="nav__list-item">
+            <div class="optionswitch">
+              <input class="optionswitch__picker" type="checkbox" id="3" hidden />
+
+              
+              
+                
+
+              
+
+              <label class="optionswitch__label" for="3"
+                >精选 <i class="fa fa-angle-down" aria-hidden="true"></i
+              ></label>
+
+              <div class="optionswitch__triangle"></div>
+              <ul class="optionswitch__list">
+                
+                  <li class="optionswitch__list-item">
+                    
+                    <a
+                      href="/film/"
+                      
+                      title=""
+                      >电影</a
+                    >
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/statistics/"
+              
+              title=""
+              >统计</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/links/"
+              
+              title=""
+              >链接</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >关于</a
+            >
+          </li>
+        
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    <div id="toc-button" class="toc-button">☰</div>
+<div id="toc-overlay" class="toc-overlay"></div>
+<div id="toc-window" class="toc-window">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#下载">下载</a>
+      <ul>
+        <li><a href="#手动下载">手动下载</a></li>
+        <li><a href="#命令下载">命令下载</a></li>
+      </ul>
+    </li>
+    <li><a href="#安装依赖工具包">安装依赖工具包</a>
+      <ul>
+        <li><a href="#make">make</a></li>
+        <li><a href="#gcc">gcc</a></li>
+        <li><a href="#tar">tar</a></li>
+        <li><a href="#readline">readline</a></li>
+        <li><a href="#zlib">zlib</a></li>
+      </ul>
+    </li>
+    <li><a href="#编译安装">编译安装</a>
+      <ul>
+        <li><a href="#解压源码包">解压源码包</a></li>
+        <li><a href="#编译">编译</a>
+          <ul>
+            <li><a href="#切换目录">切换目录</a></li>
+            <li><a href="#configure">configure</a></li>
+            <li><a href="#使用-make-编译">使用 make 编译</a></li>
+          </ul>
+        </li>
+        <li><a href="#安装">安装</a>
+          <ul>
+            <li><a href="#使用-make-安装">使用 make 安装</a></li>
+          </ul>
+        </li>
+        <li><a href="#初始化">初始化</a>
+          <ul>
+            <li><a href="#创建数据库用户">创建数据库用户</a></li>
+            <li><a href="#创建数据目录">创建数据目录</a></li>
+            <li><a href="#修改用户组">修改用户组</a></li>
+            <li><a href="#切换数据库用户">切换数据库用户</a></li>
+            <li><a href="#初始化数据库">初始化数据库</a></li>
+            <li><a href="#启动数据库">启动数据库</a></li>
+            <li><a href="#创建-test-数据库">创建 test 数据库</a></li>
+            <li><a href="#连接-test-数据库">连接 test 数据库</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#配置">配置</a>
+      <ul>
+        <li><a href="#远程连接">远程连接</a>
+          <ul>
+            <li><a href="#切换到-data-目录">切换到 data 目录</a></li>
+            <li><a href="#修改-pg_hbaconf">修改 pg_hba.conf</a></li>
+            <li><a href="#修改-postgresqlconf">修改 postgresql.conf</a></li>
+            <li><a href="#防火墙对数据库端口放行">防火墙对数据库端口放行</a></li>
+          </ul>
+        </li>
+        <li><a href="#配置日志">配置日志</a></li>
+        <li><a href="#用户名与密码">用户名与密码</a></li>
+        <li><a href="#性能">性能</a>
+          <ul>
+            <li><a href="#修改-postgresqlconf-1">修改 postgresql.conf</a></li>
+          </ul>
+        </li>
+        <li><a href="#自动备份">自动备份</a>
+          <ul>
+            <li><a href="#配置-wal-日志归档">配置 WAL 日志归档</a></li>
+            <li><a href="#执行全量物理备份">执行全量物理备份</a></li>
+            <li><a href="#恢复备份">恢复备份</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<div class="post__content">
+      <h1>OpenEuler 安装 PostgreSQL</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Jun 05 2023
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">阅读时间 7 分钟</span>
+          </li>
+        </ul>
+      <div class="alert">
+      <div class="alert__indicator">!</div>
+      警告：这篇文章创作时长大于 730 天，其内容可能已经过时。
+    </div><h2 id="下载">下载</h2>
+<p>因 PostgreSQL 并未对 OpenEuler 发行版发布打包安装版本,需要下载源码进行编译安装，其他 Linux 发行版如果有打包版，可以自行下载安装。</p>
+<h3 id="手动下载">手动下载</h3>
+<p>PostgreSQL v13.9 源码下载地址：<a href="https://ftp.postgresql.org/pub/source/v13.9/postgresql-13.9.tar.gz">postgresql-13.9.tar.gz</a></p>
+<h3 id="命令下载">命令下载</h3>
+<p>使用 <code>root</code> 进行，在使用 <code>ssh</code> 登录后，默认在 <code>root</code> 用户的根目录，可以创建一个 <code>tools</code> 目录，将下载的源码包放置在该目录下，命令如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir tools
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> tools
+</span></span><span class="line"><span class="cl">wget https://ftp.postgresql.org/pub/source/v13.9/postgresql-13.9.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>PS：如果是手动下载的源码包，则需要手动放到 <code>tools</code> 目录下</p>
+<h2 id="安装依赖工具包">安装依赖工具包</h2>
+<h3 id="make">make</h3>
+<p>一般系统会预装 <code>make</code>，无需手动安装，检查当前系统 <code>make</code> 版本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">make --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="gcc">gcc</h3>
+<p>一般系统也会预装 <code>gcc</code>，查看版本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gcc -v
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="tar">tar</h3>
+<p><code>tar</code> 为解压软件，系统已内置，无需安装；</p>
+<h3 id="readline">readline</h3>
+<p><code>Readline</code> 库：它允许 <code>psql</code> 记住你输入的每个命令，这样就可以通过上下方向键快速输入之前的命令，默认开启，也可以通过编译参数 <code>--without-readline</code> 来禁止它，建议保留默认。</p>
+<p><code>readline</code> 库系统已经内置，但 OpenEuler 安装 PostgreSQL 还要安装 <code>readline-devel</code> 库。</p>
+<p>安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dnf install readline-devel <span class="c1"># 或：yum install readline-devel</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="zlib">zlib</h3>
+<p><code>zlib</code> 为默认的压缩库，同 <code>readline</code>，<code>zlib</code> 系统已默认内置，但需要额外安装 <code>zlib-devel</code> 库。</p>
+<p>安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dnf install zlib-devel <span class="c1"># 或：yum install zlib-devel</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="编译安装">编译安装</h2>
+<h3 id="解压源码包">解压源码包</h3>
+<p>在 <code>tools</code> 文件夹下，通过 <code>tar</code> 工具解压源码包到当前目录下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tar -xvf postgresql-13.9.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>解压后在当前 <code>tools</code> 下生成一个 <code>postgresql-13.9</code> 的文件夹。</p>
+<h3 id="编译">编译</h3>
+<h4 id="切换目录">切换目录</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> postgresql-13.9
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="configure">configure</h4>
+<p><code>configure</code> 文件是一个可执行的脚本文件，它有很多选项，在待安装的源码目录下使用命令 <code>./configure –help</code> 可以输出详细的选项列表。</p>
+<p>其中 <code>--prefix</code> 选项是配置安装目录，如果不配置该选项，安装后可执行文件默认放在 <code>/usr/local/bin</code>，库文件默认放在 <code>/usr/local/lib</code>，配置文件默认放在 <code>/usr/local/etc</code>，其它 的资源文件放在 <code>/usr/local/share</code>，比较凌乱。如果配置了 <code>--prefix</code>，如： <code>./configure --prefix=/usr/local/test</code> 安装后的所有资源文件都会被放在 <code>/usr/local/test</code> 目录中，不会分散到其他目录。</p>
+<p>这里我们配置的路径为：<code>/opt/pgsql13/postgresql-data</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./configure --prefix<span class="o">=</span>/opt/pgsql13/postgresql-data
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="使用-make-编译">使用 make 编译</h4>
+<p>输入 <code>make</code> 后回车，编译过程耗时较长，请耐心等待编译结束：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">make
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编译过程未出现 <code>Error</code> 错误字样，代表编译正常结束。</p>
+<h3 id="安装">安装</h3>
+<h4 id="使用-make-安装">使用 make 安装</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装过程未出现 <code>Error</code> 错误字样，代表编译正常结束。</p>
+<h3 id="初始化">初始化</h3>
+<h4 id="创建数据库用户">创建数据库用户</h4>
+<p>创建 <code>postgres</code> 用户和用户组，默认密码随机：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">adduser postgres
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="创建数据目录">创建数据目录</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p /opt/pgsql13/postgresql-data/data
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="修改用户组">修改用户组</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">chown postgres /opt/pgsql13/postgresql-data/data
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="切换数据库用户">切换数据库用户</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">su - postgres
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="初始化数据库">初始化数据库</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/opt/pgsql13/postgresql-data/bin/initdb -D /opt/pgsql13/postgresql-data/data
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="启动数据库">启动数据库</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/opt/pgsql13/postgresql-data/bin/pg_ctl -D /opt/pgsql13/postgresql-data/data -l logfile start
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="创建-test-数据库">创建 test 数据库</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/opt/pgsql13/postgresql-data/bin/createdb <span class="nb">test</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="连接-test-数据库">连接 test 数据库</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/opt/pgsql13/postgresql-data/bin/psql <span class="nb">test</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>出现 <code>test=#</code> 代表已经成功连接 <code>test</code> 数据库，可以进行相关 SQL 操作了。</p>
+<p>至此，PostgreSQL 数据库安装成功。</p>
+<h2 id="配置">配置</h2>
+<h3 id="远程连接">远程连接</h3>
+<h4 id="切换到-data-目录">切换到 data 目录</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> /opt/pgsql13/postgresql-data/data
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>base</code> 目录是表空间目录，<code>global</code> 目录是相关全局变量目录, <code>pg_hba.conf</code> 是访问控制配置文件，<code>postgresql.conf</code> 是 PostgreSQL 主配置文件。我们需要修改的配置文件为 <code>pg_hba.conf</code> 和 <code>postgresql.conf</code> 文件。</p>
+<p>接下来以 <code>postgres</code> 用户操作</p>
+<h4 id="修改-pg_hbaconf">修改 pg_hba.conf</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vi pg_hba.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将以下行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">host    all    all    127.0.0.1/32    trust
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">host    all    all    0.0.0.0/0    md5
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存退出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">:wq
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="修改-postgresqlconf">修改 postgresql.conf</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vi postgresql.conf 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将以下行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#listen_address = &#39;localhost&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">listen_address</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存退出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">:wq
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="防火墙对数据库端口放行">防火墙对数据库端口放行</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 退出postgres账号</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">##以下命令在root账户下执行</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 配置防火墙放行5432端口</span>
+</span></span><span class="line"><span class="cl">sudo firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>5432/tcp --permanent
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 防火墙重新加载配置文件</span>
+</span></span><span class="line"><span class="cl">sudo firewall-cmd --reload
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="配置日志">配置日志</h3>
+<p>切换到 <code>postgres</code> 用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">su - postgres
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>停止 PostgreSQL 数据库服务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/opt/pgsql13/postgresql-data/bin/pg_ctl -D /opt/pgsql13/postgresql-data/data -l logfile stop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建日志相关文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 0
+</span><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#退出postgres用户，返回root用户</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 对postgresql-data目录更改用户组为postgres</span>
+</span></span><span class="line"><span class="cl">chown postgres /opt/pgsql13/postgresql-data
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 切换到postgres用户</span>
+</span></span><span class="line"><span class="cl">su - postgres
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建日志目录</span>
+</span></span><span class="line"><span class="cl">mkdir /opt/pgsql13/postgresql-data/log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建日志文件</span>
+</span></span><span class="line"><span class="cl">touch /opt/pgsql13/postgresql-data/log/server.log
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>指定日志文件的方式启动 PostgreSQL 数据库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/opt/pgsql13/postgresql-data/bin/pg_ctl -D /opt/pgsql13/postgresql-data/data -l /opt/pgsql13/postgresql-data/log/server.log start
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="用户名与密码">用户名与密码</h3>
+<p>修改数据库用户 <code>postgres</code> 的默认密码后才能进行连接，先使用本地 <code>postgres</code> 用户连接默认数据库来修改数据库用户 <code>postgres</code> 的密码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 使用 postgres 用户连接默认 postgres 数据库</span>
+</span></span><span class="line"><span class="cl">/opt/pgsql13/postgresql-data/bin/psql
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改数据库用户 postgres 的密码为 postgres@369；   </span>
+</span></span><span class="line"><span class="cl">ALTER USER postgres WITH PASSWORD <span class="s1">&#39;postgres@369&#39;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>至此，可以使用外部工具连接PostgreSQL数据库</p>
+<p>用户名：postgres
+密码：postgres@369</p>
+<h3 id="性能">性能</h3>
+<p>以CPU 48核心和内存64GB为例</p>
+<h4 id="修改-postgresqlconf-1">修改 postgresql.conf</h4>
+<p>为避免错误，逐条搜索修改，切勿直接覆盖。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  0
+</span><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># ===========================
+</span></span><span class="line"><span class="cl"># 内存配置（Memory Settings）
+</span></span><span class="line"><span class="cl"># ===========================
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">shared_buffers = 24GB
+</span></span><span class="line"><span class="cl"># PostgreSQL 用于缓存数据页的内存空间（数据库自身的缓冲区）。
+</span></span><span class="line"><span class="cl"># 通常建议设置为系统物理内存的 25% 左右。
+</span></span><span class="line"><span class="cl"># 在本例中，24GB 缓冲区意味着大量的表数据将常驻内存，减少磁盘 I/O。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">work_mem = 64MB
+</span></span><span class="line"><span class="cl"># 每个排序（Sort）、哈希（Hash）、聚合（Aggregate）等操作使用的内存大小。
+</span></span><span class="line"><span class="cl"># 此参数是“每个操作、每个连接”的独立分配值。
+</span></span><span class="line"><span class="cl"># 对于复杂查询、并行执行或多连接时要谨慎设置，否则可能引发内存爆炸。
+</span></span><span class="line"><span class="cl"># 64MB 是较高的配置，适用于计算密集型 OLAP 查询环境。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">maintenance_work_mem = 2GB
+</span></span><span class="line"><span class="cl"># 用于维护操作（如 VACUUM、CREATE INDEX、ALTER TABLE ADD FOREIGN KEY）的内存大小。
+</span></span><span class="line"><span class="cl"># 值越大，这类操作的速度越快，但同时占用内存也更多。
+</span></span><span class="line"><span class="cl"># 2GB 较大，适合大表和批量操作场景。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">effective_cache_size = 45GB
+</span></span><span class="line"><span class="cl"># 用于告知 PostgreSQL 优化器：系统层面可用于缓存数据的总量（包括 OS 页缓存）。
+</span></span><span class="line"><span class="cl"># 并不实际分配内存，而是一个估算值，用于成本模型判断索引扫描 vs 顺序扫描。
+</span></span><span class="line"><span class="cl"># 通常设置为系统内存的 50%~75%，这里为 45GB，表示系统大约有 64GB+ 内存。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># ===========================
+</span></span><span class="line"><span class="cl"># WAL / 日志配置（WAL Settings）
+</span></span><span class="line"><span class="cl"># ===========================
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wal_level = replica
+</span></span><span class="line"><span class="cl"># 指定 WAL 日志的详细级别。
+</span></span><span class="line"><span class="cl"># “replica” 允许进行流复制和时间点恢复（PITR）。
+</span></span><span class="line"><span class="cl"># 是生产环境中常见配置。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wal_buffers = 64MB
+</span></span><span class="line"><span class="cl"># 用于缓存 WAL 写入的缓冲区大小。
+</span></span><span class="line"><span class="cl"># 默认通常较小（如 16MB），64MB 可以减少高并发写入时的 WAL flush 次数。
+</span></span><span class="line"><span class="cl"># 适合大量事务写入的负载。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">checkpoint_timeout = 15min
+</span></span><span class="line"><span class="cl"># 每次 checkpoint（检查点）之间的最大时间间隔。
+</span></span><span class="line"><span class="cl"># 15 分钟意味着最多 15 分钟触发一次 checkpoint。
+</span></span><span class="line"><span class="cl"># 过短会增加写入压力，过长可能增加恢复时间。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">checkpoint_completion_target = 0.9
+</span></span><span class="line"><span class="cl"># 指定 checkpoint 写入的“平滑度”。
+</span></span><span class="line"><span class="cl"># 值越接近 1，系统会更平缓地写 WAL，减少 I/O 峰值。
+</span></span><span class="line"><span class="cl"># 建议值为 0.7~0.9，当前为 0.9，属于良好配置。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">max_wal_size = 8GB
+</span></span><span class="line"><span class="cl"># WAL 文件的最大累积大小，超过该值会触发自动 checkpoint。
+</span></span><span class="line"><span class="cl"># 对写入压力较大的系统，可适当增大，减少频繁 checkpoint。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">min_wal_size = 1GB
+</span></span><span class="line"><span class="cl"># WAL 文件的最小保留大小，用于防止频繁创建和删除 WAL 文件。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">synchronous_commit = off
+</span></span><span class="line"><span class="cl"># 禁用同步提交，事务提交时不等待 WAL 写入磁盘。
+</span></span><span class="line"><span class="cl"># 极大提升写入性能，但在宕机时可能丢失最近 1 秒左右的事务。
+</span></span><span class="line"><span class="cl"># 常用于高吞吐、可容忍少量数据丢失的场景（如日志、统计类系统）。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">random_page_cost = 1.1
+</span></span><span class="line"><span class="cl"># 随机磁盘读取成本估计值，默认是 4。
+</span></span><span class="line"><span class="cl"># SSD 环境下随机访问成本很低，将其调低（1.0~1.5）可让优化器更倾向使用索引扫描。
+</span></span><span class="line"><span class="cl"># 1.1 适用于 NVMe / SSD 环境。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">effective_io_concurrency = 200
+</span></span><span class="line"><span class="cl"># 用于并发 I/O 请求数估算，针对支持异步 I/O 的系统（如 Linux）。
+</span></span><span class="line"><span class="cl"># 越高表示系统能并发处理更多 I/O。
+</span></span><span class="line"><span class="cl"># 200 表示 I/O 子系统性能较强（例如 NVMe RAID）。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># ===========================
+</span></span><span class="line"><span class="cl"># 并发与并行执行（Concurrency &amp; Parallelism）
+</span></span><span class="line"><span class="cl"># ===========================
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">max_connections = 500
+</span></span><span class="line"><span class="cl"># 允许的最大数据库连接数。
+</span></span><span class="line"><span class="cl"># 每个连接消耗内存（约 5~10MB），因此要与系统内存平衡。
+</span></span><span class="line"><span class="cl"># 适用于高并发访问场景，但建议搭配连接池（PgBouncer、Pgpool-II）。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">max_worker_processes = 48
+</span></span><span class="line"><span class="cl"># PostgreSQL 可用的最大后台工作进程数量。
+</span></span><span class="line"><span class="cl"># 包含并行查询、逻辑复制、后台任务等。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">max_parallel_workers = 48
+</span></span><span class="line"><span class="cl"># 系统允许的最大并行工作者（worker）总数。
+</span></span><span class="line"><span class="cl"># 限制整个系统中可并行执行的 worker 总数。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">max_parallel_workers_per_gather = 24
+</span></span><span class="line"><span class="cl"># 单个并行查询中允许的最大并行 worker 数。
+</span></span><span class="line"><span class="cl"># 对大型 OLAP 查询或分析任务非常有用。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># ===========================
+</span></span><span class="line"><span class="cl"># 自动清理（Autovacuum）
+</span></span><span class="line"><span class="cl"># ===========================
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">autovacuum = on
+</span></span><span class="line"><span class="cl"># 启用自动清理（VACUUM ANALYZE）。
+</span></span><span class="line"><span class="cl"># 清理无效行、防止膨胀、统计信息更新。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">autovacuum_max_workers = 10
+</span></span><span class="line"><span class="cl"># 同时运行的自动清理进程数。
+</span></span><span class="line"><span class="cl"># 默认是 3，这里提升到 10，适合有多个大表的系统。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">autovacuum_naptime = 1min
+</span></span><span class="line"><span class="cl"># 自动清理调度间隔。
+</span></span><span class="line"><span class="cl"># 每分钟检查一次需要清理的表，频率较高，有助于维持数据库健康。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">autovacuum_vacuum_scale_factor = 0.1
+</span></span><span class="line"><span class="cl"># 当表中“脏行”（更新或删除的旧版本）达到表总行数的 10% 时，触发 vacuum。
+</span></span><span class="line"><span class="cl"># 数值较低意味着更频繁清理，有助于控制膨胀。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">autovacuum_analyze_scale_factor = 0.05
+</span></span><span class="line"><span class="cl"># 当表中有 5% 的行发生变化时，触发 analyze 更新统计信息。
+</span></span><span class="line"><span class="cl"># 较低的值能保持查询优化器信息更准确。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># ===========================
+</span></span><span class="line"><span class="cl"># 日志（Logging）
+</span></span><span class="line"><span class="cl"># ===========================
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">logging_collector = on
+</span></span><span class="line"><span class="cl"># 启用日志收集器，将标准输出重定向到日志文件。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">log_directory = &#39;pg_log&#39;
+</span></span><span class="line"><span class="cl"># 指定日志文件保存目录（相对于数据目录）。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">log_filename = &#39;postgresql-%Y-%m-%d_%H%M%S.log&#39;
+</span></span><span class="line"><span class="cl"># 日志文件命名格式，包含日期和时间，方便按天归档。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">log_statement = &#39;none&#39;
+</span></span><span class="line"><span class="cl"># 不记录普通 SQL 语句（仅记录错误或慢查询）。
+</span></span><span class="line"><span class="cl"># 若想调试可设置为 &#39;ddl&#39; 或 &#39;all&#39;，但会产生大量日志。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">log_min_duration_statement = 1000
+</span></span><span class="line"><span class="cl"># 记录执行时间超过 1000 毫秒（1 秒）的 SQL。
+</span></span><span class="line"><span class="cl"># 可用于慢查询分析与性能优化。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># ===========================
+</span></span><span class="line"><span class="cl"># 其他设置（Miscellaneous）
+</span></span><span class="line"><span class="cl"># ===========================
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">max_locks_per_transaction = 512
+</span></span><span class="line"><span class="cl"># 每个事务允许的最大锁数量。
+</span></span><span class="line"><span class="cl"># 默认值通常为 64，512 可避免大批量 DDL 或复杂事务时报 “out of shared memory”。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="自动备份">自动备份</h3>
+<h4 id="配置-wal-日志归档">配置 WAL 日志归档</h4>
+<h5 id="创建归档目录">创建归档目录</h5>
+<p>以 <code>root</code> 用户操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 递归创建目录</span>
+</span></span><span class="line"><span class="cl">sudo mkdir -p /home/postgres/postgresql-backup/wal_archive
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 更改用户组为postgres</span>
+</span></span><span class="line"><span class="cl">sudo chown postgres:postgres /home/postgres/postgresql-backup/wal_archive
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 更改目录权限</span>
+</span></span><span class="line"><span class="cl">chmod <span class="m">700</span> /home/postgres/postgresql-backup/wal_archive
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="修改-postgresqlconf-2">修改 postgresql.conf</h5>
+<p>以 <code>postgres</code> 用户操作</p>
+<p>为避免错误，逐条搜索修改，切勿直接覆盖。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 开启 WAL 日志归档</span>
+</span></span><span class="line"><span class="cl"><span class="nv">archive_mode</span> <span class="o">=</span> on
+</span></span><span class="line"><span class="cl"><span class="nv">archive_command</span> <span class="o">=</span> <span class="s1">&#39;test ! -f /home/postgres/postgresql-backup/wal_archive/%f &amp;&amp; cp %p /home/postgres/postgresql-backup/wal_archive/%f&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">archive_timeout</span> <span class="o">=</span> <span class="m">60</span>
+</span></span><span class="line"><span class="cl"><span class="nv">wal_level</span> <span class="o">=</span> replica
+</span></span><span class="line"><span class="cl"><span class="nv">max_wal_senders</span> <span class="o">=</span> <span class="m">5</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="重启-postgresql">重启 PostgreSQL</h5>
+<p>以 <code>postgres</code> 用户操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/opt/pgsql13/postgresql-data/bin/pg_ctl -D /opt/pgsql13/postgresql-data/data -l /opt/pgsql13/postgresql-data/log/server.log restart
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="检查归档是否生效">检查归档是否生效</h5>
+<p>以 <code>postgres</code> 用户操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/opt/pgsql13/postgresql-data/bin/psql -U postgres -c <span class="s2">&#34;SELECT pg_switch_wal();&#34;</span>
+</span></span><span class="line"><span class="cl">ls /home/postgres/postgresql-backup/wal_archive
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>应该能看到归档的 WAL 文件</p>
+<h4 id="执行全量物理备份">执行全量物理备份</h4>
+<h5 id="创建备份目录">创建备份目录</h5>
+<p>以 <code>root</code> 用户操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 0
+</span><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 递归创建目录</span>
+</span></span><span class="line"><span class="cl">mkdir -p /home/postgres/postgresql-backup/full
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 更改用户组为postgres</span>
+</span></span><span class="line"><span class="cl">chown postgres:postgres /home/postgres/postgresql-backup/full
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 切换到postgres用户</span>
+</span></span><span class="line"><span class="cl">su - postgres
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改目录权限</span>
+</span></span><span class="line"><span class="cl">chmod <span class="m">700</span> /home/postgres/postgresql-backup/full
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="手动使用-pg_basebackup-进行全量备份">手动使用 pg_basebackup 进行全量备份</h5>
+<p>以 <code>postgres</code> 用户操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/opt/pgsql13/postgresql-data/bin/pg_basebackup -h localhost -U postgres -D /home/postgres/postgresql-backup/full/<span class="k">$(</span>date +%Y%m%d<span class="k">)</span> -Ft -Xs -P -z -Z <span class="m">9</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>参数说明：</p>
+<ul>
+<li><code>-D</code> 指定备份目录</li>
+<li><code>-Fp</code> 以普通文件形式备份（不是 <code>tar</code> 格式）</li>
+<li><code>-Xs</code> 备份时同时抓取 <code>WAL</code> 日志，保证一致性</li>
+<li><code>-P</code> 显示进度</li>
+<li><code>-R</code> 自动生成 <code>standby.signal</code> 和 <code>recovery.conf</code> 相关配置</li>
+</ul>
+<h5 id="备份脚本">备份脚本</h5>
+<p>以 <code>root</code> 用户操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 0
+</span><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 创建脚本目录</span>
+</span></span><span class="line"><span class="cl">mkdir -p /opt/pgsql13/postgresql-backup/scripts
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建备份脚本</span>
+</span></span><span class="line"><span class="cl">touch /opt/pgsql13/postgresql-backup/scripts/pg_basebackup.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 递归更改脚本目录用户组为postgres</span>
+</span></span><span class="line"><span class="cl">chown -R postgres:postgres /opt/pgsql13/postgresql-backup/scripts/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改脚本权限</span>
+</span></span><span class="line"><span class="cl">chmod <span class="m">700</span> /opt/pgsql13/postgresql-backup/scripts/pg_basebackup.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>切换到 <code>postgres</code> 用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">su - postgres
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 编写脚本</span>
+</span></span><span class="line"><span class="cl">vi /opt/pgsql13/postgresql-backup/scripts/pg_basebackup.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在脚本中写入如下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>//opt/pgsql13/postgresql-data/bin:<span class="nv">$PATH</span>
+</span></span><span class="line"><span class="cl"><span class="nv">BACKUP_DIR</span><span class="o">=</span><span class="s2">&#34;/home/postgres/postgresql-backup/full&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DATE</span><span class="o">=</span><span class="k">$(</span>date +%Y%m%d_%H%M%S<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TARGET</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$BACKUP_DIR</span><span class="s2">/</span><span class="nv">$DATE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">pg_basebackup -h localhost -U postgres -D <span class="s2">&#34;</span><span class="nv">$TARGET</span><span class="s2">&#34;</span> -Ft -Xs -P -z -Z <span class="m">9</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 保留最近 30 次全量备份</span>
+</span></span><span class="line"><span class="cl">ls -1dt <span class="nv">$BACKUP_DIR</span>/* <span class="p">|</span> tail -n +31 <span class="p">|</span> xargs rm -rf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存退出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">:wq
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="定时执行">定时执行</h5>
+<p>以 <code>root</code> 用户操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 0
+</span><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 创建脚本日志目录</span>
+</span></span><span class="line"><span class="cl">mkdir -p /opt/pgsql13/postgresql-backup/log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建备份脚本</span>
+</span></span><span class="line"><span class="cl">touch /opt/pgsql13/postgresql-backup/log/pg_basebackup.log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 递归更改脚本目录用户组为postgres</span>
+</span></span><span class="line"><span class="cl">chown -R postgres:postgres /opt/pgsql13/postgresql-backup/log/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 为postgres用户添加定时执行脚本任务</span>
+</span></span><span class="line"><span class="cl">crontab -u postgres -e
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>写入如下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 每天凌晨3点执行脚本</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span> <span class="m">3</span> * * * /opt/pgsql13/postgresql-backup/scripts/pg_basebackup.sh &gt;&gt; /opt/pgsql13/postgresql-backup/log/pg_basebackup.log 2&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除超过30天的WAL备份</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span> <span class="m">4</span> * * * find /home/postgres/postgresql-backup/wal_archive -type f -mtime +30 -delete
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存退出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">:wq
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>至此，PostgreSQL自动备份配置成功</p>
+<h4 id="恢复备份">恢复备份</h4>
+<h5 id="停止数据库">停止数据库</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/opt/pgsql13/postgresql-data/bin/pg_ctl -D /opt/pgsql13/postgresql-data/data -l logfile stop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="清空旧数据">清空旧数据</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo -i -u postgres
+</span></span><span class="line"><span class="cl">rm -rf /opt/pgsql13/postgresql-data/*
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="解压最近的备份">解压最近的备份</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">LATEST_BACKUP</span><span class="o">=</span><span class="k">$(</span>ls -1dt /home/postgres/postgresql-backup/full/* <span class="p">|</span> head -n 1<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$LATEST_BACKUP</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tar -xzf base.tar.gz -C /opt/pgsql13/postgresql-data
+</span></span><span class="line"><span class="cl">tar -xzf pg_wal.tar.gz -C /opt/pgsql13/postgresql-data
+</span></span><span class="line"><span class="cl">chown -R postgres:postgres /opt/pgsql13/postgresql-data
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="创建恢复配置">创建恢复配置</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> /opt/pgsql13/postgresql-data
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;restore_command = &#39;cp /home/postgres/postgresql-backup/wal_archive/%f %p&#39;&#34;</span> &gt;&gt; postgresql.auto.conf
+</span></span><span class="line"><span class="cl">touch recovery.signal
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可选：加上时间点恢复参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;recovery_target_time = &#39;2025-10-10 03:15:00&#39;&#34;</span> &gt;&gt; postgresql.auto.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="启动数据库-1">启动数据库</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/opt/pgsql13/postgresql-data/bin/pg_ctl -D /opt/pgsql13/postgresql-data/data -l /opt/pgsql13/postgresql-data/log/server.log start
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="查看恢复日志">查看恢复日志</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tail -f /opt/pgsql13/postgresql-data/log/server.log
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+
+  <h3>相关文章</h3>
+  <ul>
+    
+      <li><a href="/post/postgresql-lock-table/">PostgreSQL lock table</a></li>
+    
+      <li><a href="/post/debian-common-configuration/">Debian 常用配置</a></li>
+    
+      <li><a href="/post/mysql-mvcc/">MySQL MVCC</a></li>
+    
+  </ul>
+
+
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-file-word post__meta-icon"></em>
+            <span class="post__meta-text">1350 字</span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-copyright post__meta-icon"></em>
+            <span class="post__meta-text">
+               
+                BY-NC-SA 4.0
+              
+            </span>
+          </li>
+        </ul>
+      
+    </div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/database/">Database</a><a class="category" href="/categories/linux/">Linux</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/postgresql/">PostgreSQL</a><a class="tag" href="/tags/openeuler/">OpenEuler</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2020 - 2025
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/statement/"
+          
+          title=""
+        >
+          声明
+        </a>
+      </li>
+    
+  </ul>
+  <ul class="footer__list">
+    
+      <li class="footer__item">
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024061880号-2</a>
+      </li>
+    
+    
+      <li class="footer__item">
+        <img src="https://gitee.com/ocancel/oss/raw/main/uPic/mps-logo-1718703873983.png" alt="mps-logo">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054571" rel="noreferrer" target="_blank">
+          京公网安备11011402054571号
+        </a>
+      </li>
+    
+  </ul>  
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/sentence.min.d1d983ea1775bb4c791be469ce46d6bf27a0e1617456ed7c8fdc5529e4108096.js"
+      integrity="sha256-0dmD6hd1u0x5G&#43;RpzkbWvyeg4WF0Vu18j9xVKeQQgJY="
+      crossorigin="anonymous"
+    ></script>
+  
+  
+    <script>
+      function initSakanaWidget() {
+        new SakanaWidget({ autoFit: true }).mount('#sakana-widget');
+      }
+    </script>
+    
+    
+    <script
+      async
+      onload="initSakanaWidget()"
+      type="text/javascript"
+      src="/js/sakana-2.7.0.min.3a6416e000efeb774e85c37fe96f81033d63d6509957422e844e25532c211bc2.js"
+      integrity="sha256-OmQW4ADv63dOhcN/6W&#43;BAz1j1lCZV0IuhE4lUywhG8I="
+      crossorigin="anonymous"
+    ></script>
+  
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>
