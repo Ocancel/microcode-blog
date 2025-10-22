@@ -128,6 +128,24 @@
                 href="https://blog.microcode.site/series/"
                 />
   </url><url>
+    <loc>https://blog.microcode.site/series/jvm/</loc>
+    <lastmod>2023-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.microcode.site/tags/jvm/</loc>
+    <lastmod>2023-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.microcode.site/post/jvm-memory-allocation/</loc>
+    <lastmod>2023-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.microcode.site/post/jvm-garbage-collection/</loc>
+    <lastmod>2023-09-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.microcode.site/post/jvm-object/</loc>
+    <lastmod>2023-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.microcode.site/post/jvm-memory-structure/</loc>
+    <lastmod>2023-09-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.microcode.site/post/rust-start/</loc>
     <lastmod>2023-08-17T00:00:00+00:00</lastmod>
   </url><url>

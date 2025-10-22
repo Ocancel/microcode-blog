@@ -1,0 +1,795 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh-cn"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        JVM 对象内存分配 |
+      Corin
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.152.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="referrer" content="no-referrer">
+  <meta name="author" content="Corin" />
+  <meta
+    name="description"
+    content="JVM 对象内存分配"
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.dcbfb18df4ee2c9f4b050a86f90e4a50a05447725d9be756bbefbe5731aa4f88.css"
+      integrity="sha256-3L&#43;xjfTuLJ9LBQqG&#43;Q5KUKBUR3Jdm&#43;dWu&#43;&#43;&#43;VzGqT4g="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.ec69c65ba7911b8cde5a85155a04f042c3f7d38d440308373696912c81021fb0.css"
+    integrity="sha256-7GnGW6eRG4zeWoUVWgTwQsP3041EAwg3NpaRLIECH7A="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.2028dce76dbdcf7f947846702ca81e0c963979a9aaf826e22d30454fb8c2b216.css"
+    integrity="sha256-ICjc5229z3&#43;UeEZwLKgeDJY5eamq&#43;CbiLTBFT7jCshY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.3dd08e9de925ffed91663f3adeaf91acc3d518649cae6ce8047cee6cac5fdac5.css"
+    integrity="sha256-PdCOnekl/&#43;2RZj863q&#43;RrMPVGGScrmzoBHzubKxf2sU="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.610646915ba4d89f4ad3d568db6f19d2b8f69f957479658357222d8085be8c6e.css"
+    integrity="sha256-YQZGkVuk2J9K09Vo228Z0rj2n5V0eWWDVyItgIW&#43;jG4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://blog.microcode.site/post/jvm-memory-allocation/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/code-copy.min.972dc758da9327e4d3f980c2890560a73a7549c7716ee21f32ed88945eb0a4b4.js"
+    integrity="sha256-ly3HWNqTJ&#43;TT&#43;YDCiQVgpzp1ScdxbuIfMu2IlF6wpLQ="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/wrapper-table.min.0010559d9b8353a340f7502cfacc93c74b3639656176fc6c668ccf35d43c9714.js"
+    integrity="sha256-ABBVnZuDU6NA91As&#43;syTx0s2OWVhdvxsZozPNdQ8lxQ="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/brief.min.e162f6b80febcba7434a7ee5c068ed9daa2c087a2d8e3724da629d7448c79f40.js"
+    integrity="sha256-4WL2uA/ry6dDSn7lwGjtnaosCHotjjck2mKddEjHn0A="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/toc-switcher.min.0c92979c495a65afca4bcacd65eb32866222cf2de1b7238a1e072546e7180294.js"
+      integrity="sha256-DJKXnElaZa/KS8rNZesyhmIizy3htyOKHgclRucYApQ="
+      crossorigin="anonymous">
+    </script>
+  <script 
+      async 
+      src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JVM 对象内存分配">
+  <meta name="twitter:description" content="JVM 对象内存分配">
+
+
+
+  
+  <meta property="og:url" content="https://blog.microcode.site/post/jvm-memory-allocation/">
+  <meta property="og:site_name" content="Corin 的博客">
+  <meta property="og:title" content="JVM 对象内存分配">
+  <meta property="og:description" content="JVM 对象内存分配">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-10-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-10-15T00:00:00+00:00">
+    <meta property="article:tag" content="JVM">
+      <meta property="og:see_also" content="https://blog.microcode.site/post/jvm-garbage-collection/">
+      <meta property="og:see_also" content="https://blog.microcode.site/post/jvm-object/">
+      <meta property="og:see_also" content="https://blog.microcode.site/post/jvm-memory-structure/">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "JVM 对象内存分配",
+        "headline": "JVM 对象内存分配",
+        "alternativeHeadline": "",
+        "description": "
+      JVM 对象内存分配
+
+
+    ",
+        "inLanguage": "zh-cn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.microcode.site\/post\/jvm-memory-allocation\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-10-15T00:00:00.00Z",
+        "datePublished": "2023-10-15T00:00:00.00Z",
+        "dateModified": "2023-10-15T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Corin",
+            "url": "https://blog.microcode.site/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.microcode.site\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/blog.microcode.site\/post\/jvm-memory-allocation\/",
+        "wordCount" : "169",
+        "genre" : [ 
+      
+      "Java"
+
+    ],
+        "keywords" : [ 
+      
+      "JVM"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="https://gitee.com/ocancel/oss/raw/main/uPic/avator-1718763586277.png"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <div class="glitch">
+            <a href="/">Corin.dev</a>
+          </div>
+        </div>
+      
+      <div id="brief" class="sidebar__introduction-description">
+        <p>Whatever can happen will happen.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://microcode.site/"
+            target="_self"
+            rel="noopener me"
+            aria-label="Microcode"
+            title="Microcode"
+          >
+            <i class="fa fa-square-check fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/Ocancel/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github-square fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:jiaqi.gao.dev@gmail.com"
+            target=""
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fa fa-square-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+    
+      <div class="sentence-windows">
+          <div class="sentence-container">
+              <div class="sentence-content">
+                  <p class="sentence-hi"> </p>
+                  <p class="sentence-from"> </p>
+                  <div class="sentence-progress-con">
+                      <div class="sentence-progress-time" style="left:0%"></div>
+                  </div>
+              </div>
+              <div class="sentence-button">
+                  <input type="button" class="sentence-sub" value="update">
+              </div>
+          </div>
+      </div>
+    
+    
+      <div class="sakana-components">
+        <div id="sakana-widget"></div>
+      </div>
+    
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2020 - 2025
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/statement/"
+          
+          title=""
+        >
+          声明
+        </a>
+      </li>
+    
+  </ul>
+  <ul class="footer__list">
+    
+      <li class="footer__item">
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024061880号-2</a>
+      </li>
+    
+    
+      <li class="footer__item">
+        <img src="https://gitee.com/ocancel/oss/raw/main/uPic/mps-logo-1718703873983.png" alt="mps-logo">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054571" rel="noreferrer" target="_blank">
+          京公网安备11011402054571号
+        </a>
+      </li>
+    
+  </ul>  
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/sentence.min.d1d983ea1775bb4c791be469ce46d6bf27a0e1617456ed7c8fdc5529e4108096.js"
+      integrity="sha256-0dmD6hd1u0x5G&#43;RpzkbWvyeg4WF0Vu18j9xVKeQQgJY="
+      crossorigin="anonymous"
+    ></script>
+  
+  
+    <script>
+      function initSakanaWidget() {
+        new SakanaWidget({ autoFit: true }).mount('#sakana-widget');
+      }
+    </script>
+    
+    
+    <script
+      async
+      onload="initSakanaWidget()"
+      type="text/javascript"
+      src="/js/sakana-2.7.0.min.3a6416e000efeb774e85c37fe96f81033d63d6509957422e844e25532c211bc2.js"
+      integrity="sha256-OmQW4ADv63dOhcN/6W&#43;BAz1j1lCZV0IuhE4lUywhG8I="
+      crossorigin="anonymous"
+    ></script>
+  
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.8cc4e58cd5f865334908a0579db7b398d0017f8bf8633d7dd09582841b6f6d0a.js"
+    integrity="sha256-jMTljNX4ZTNJCKBXnbezmNABf4v4Yz190JWChBtvbQo="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >主页</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >历程</a
+            >
+          </li>
+        
+      
+        
+        
+
+          <li class="nav__list-item">
+            <div class="optionswitch">
+              <input class="optionswitch__picker" type="checkbox" id="3" hidden />
+
+              
+              
+                
+
+              
+
+              <label class="optionswitch__label" for="3"
+                >精选 <i class="fa fa-angle-down" aria-hidden="true"></i
+              ></label>
+
+              <div class="optionswitch__triangle"></div>
+              <ul class="optionswitch__list">
+                
+                  <li class="optionswitch__list-item">
+                    
+                    <a
+                      href="/film/"
+                      
+                      title=""
+                      >电影</a
+                    >
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/statistics/"
+              
+              title=""
+              >统计</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/links/"
+              
+              title=""
+              >链接</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >关于</a
+            >
+          </li>
+        
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    <div id="toc-button" class="toc-button">☰</div>
+<div id="toc-overlay" class="toc-overlay"></div>
+<div id="toc-window" class="toc-window">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#常见的内存分配规则">常见的内存分配规则</a>
+      <ul>
+        <li><a href="#对象优先在-eden-分配">对象优先在 Eden 分配</a></li>
+        <li><a href="#大对象直接进入老年代">大对象直接进入老年代</a></li>
+        <li><a href="#长期存活的对象将进入老年代">长期存活的对象将进入老年代</a></li>
+        <li><a href="#动态对象年龄判定">动态对象年龄判定</a></li>
+        <li><a href="#空间分配担保">空间分配担保</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<div class="post__content">
+      <h1>JVM 对象内存分配</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Oct 15 2023
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">阅读时间 1 分钟</span>
+          </li>
+        </ul>
+      <div class="alert">
+      <div class="alert__indicator">!</div>
+      警告：这篇文章创作时长大于 730 天，其内容可能已经过时。
+    </div><p>对象的内存分配，就是在堆上分配（也可能经过 JIT 编译后被拆散为标量类型并间接在栈上分配），对象主要分配在新生代的 Eden 区上，少数情况下可能直接分配在老年代，<strong>分配规则不固定</strong>，取决于当前使用的垃圾收集器组合以及相关的参数配置。</p>
+<h2 id="常见的内存分配规则">常见的内存分配规则</h2>
+<h3 id="对象优先在-eden-分配">对象优先在 Eden 分配</h3>
+<p>大多数情况下，对象在新生代 <code>Eden</code> 区中分配。当 <code>Eden</code> 区没有足够空间进行分配时，虚拟机将发起一次 <code>Minor GC</code>。</p>
+<p><strong>Minor GC</strong> vs <strong>Major GC</strong>/<strong>Full GC</strong>：</p>
+<ul>
+<li><code>Minor GC</code>：回收新生代（包括 <code>Eden</code> 和 <code>Survivor</code> 区域），因为 Java 对象大多都具备朝生夕灭的特性，所以 <code>Minor GC</code> 非常频繁，一般回收速度也比较快。</li>
+<li><code>Major GC</code> / <code>Full GC</code>：回收老年代，出现了 <code>Major GC</code>，经常会伴随至少一次的 <code>Minor GC</code>，但这并非绝对。<code>Major GC</code> 的速度一般会比 <code>Minor GC</code> 慢 10 倍 以上。</li>
+</ul>
+<blockquote>
+<p>在 JVM 规范中，<code>Major GC</code> 和 <code>Full GC</code> 都没有一个正式的定义，所以有人也简单地认为 <code>Major GC</code> 清理老年代，而 <code>Full GC</code> 清理整个内存堆。</p>
+</blockquote>
+<h3 id="大对象直接进入老年代">大对象直接进入老年代</h3>
+<p>大对象是指需要大量连续内存空间的 Java 对象，如很长的字符串或数据。</p>
+<p>一个大对象能够存入 <code>Eden</code> 区的概率比较小，发生分配担保的概率比较大，而分配担保需要涉及大量的复制，就会造成效率低下。</p>
+<p>虚拟机提供了一个 <code>-XX:PretenureSizeThreshold</code> 参数，令大于这个设置值的对象直接在老年代分配，这样做的目的是避免在 <code>Eden</code> 区及两个 <code>Survivor</code> 区之间发生大量的内存复制。</p>
+<h3 id="长期存活的对象将进入老年代">长期存活的对象将进入老年代</h3>
+<p>JVM 给每个对象定义了一个对象年龄计数器。当新生代发生一次 <code>Minor GC</code> 后，存活下来的对象年龄 <code>+1</code>，当年龄超过一定值时，就将超过该值的所有对象转移到老年代中去。</p>
+<p>使用 <code>-XXMaxTenuringThreshold</code> 设置新生代的最大年龄，只要超过该参数的新生代对象都会被转移到老年代中去。</p>
+<h3 id="动态对象年龄判定">动态对象年龄判定</h3>
+<p>如果当前新生代的 <code>Survivor</code> 中，相同年龄所有对象大小的总和大于 <code>Survivor</code> 空间的一半，年龄 <code>&gt;=</code> 该年龄的对象就可以直接进入老年代，无须等到 <code>MaxTenuringThreshold</code> 中要求的年龄。</p>
+<h3 id="空间分配担保">空间分配担保</h3>
+<p>只要老年代的连续空间大于新生代对象总大小或者历次晋升的平均大小，就会进行 <code>Minor GC</code>，否则将进行 <code>Full GC</code>。</p>
+<p>通过清除老年代中的废弃数据来扩大老年代空闲空间，以便给新生代作担保。</p>
+<hr>
+<p>以下是一些触发 JVM 进行 <code>Full GC</code> 的场景：</p>
+<ol>
+<li><strong><code>System.gc()</code> 方法的调用</strong>：此方法的调用是建议 JVM 进行 <code>Full GC</code>，注意这<strong>只是建议而非一定</strong>，但在很多情况下它会触发 <code>Full GC</code>，从而增加 <code>Full GC</code> 的频率。通常情况下我们只需要让虚拟机自己去管理内存即可，我们可以通过 <code>-XX:+ DisableExplicitGC</code> 来禁止调用 <code>System.gc()</code>。</li>
+<li><strong>老年代空间不足</strong>：老年代空间不足会触发 <code>Full GC</code> 操作，若进行该操作后空间依然不足，则会抛出如下错误：<code>java.lang.OutOfMemoryError: Java heap space</code></li>
+<li><strong>永久代空间不足</strong>：JVM 规范中运行时数据区域中的方法区，在 HotSpot 虚拟机中也称为永久代（Permanet Generation），存放一些类信息、常量、静态变量等数据，当系统要加载的类、反射的类和调用的方法较多时，永久代可能会被占满，会触发 <code>Full GC</code>。如果经过 <code>Full GC</code> 仍然回收不了，那么 JVM 会抛出如下错误信息：<code>java.lang.OutOfMemoryError: PermGen space </code></li>
+<li><strong>CMS GC 时出现 <code>promotion failed</code> 和 <code>concurrent mode failure</code></strong>：<code>promotion failed</code> 就是上文所说的担保失败，而 <code>concurrent mode failure</code> 是在执行 <code>CMS GC</code> 的过程中同时有对象要放入老年代，而此时老年代空间不足造成的。</li>
+<li><strong>统计得到的 Minor GC 晋升到旧生代的平均大小大于老年代的剩余空间。</strong></li>
+</ol>
+
+
+  <h3>这个系列的帖子</h3>
+  <ul>
+    
+      <li><a href="/post/jvm-memory-allocation/">JVM 对象内存分配</a></li>
+    
+      <li><a href="/post/jvm-garbage-collection/">JVM 垃圾回收</a></li>
+    
+      <li><a href="/post/jvm-object/">JVM 对象</a></li>
+    
+      <li><a href="/post/jvm-memory-structure/">JVM 内存结构</a></li>
+    
+  </ul>
+
+
+  <h3>相关文章</h3>
+  <ul>
+    
+      <li><a href="/post/jvm-garbage-collection/">JVM 垃圾回收</a></li>
+    
+      <li><a href="/post/jvm-object/">JVM 对象</a></li>
+    
+      <li><a href="/post/jvm-memory-structure/">JVM 内存结构</a></li>
+    
+  </ul>
+
+
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-file-word post__meta-icon"></em>
+            <span class="post__meta-text">169 字</span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-copyright post__meta-icon"></em>
+            <span class="post__meta-text">
+               
+                BY-NC-SA 4.0
+              
+            </span>
+          </li>
+        </ul>
+      
+    </div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/java/">Java</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/jvm/">JVM</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2020 - 2025
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/statement/"
+          
+          title=""
+        >
+          声明
+        </a>
+      </li>
+    
+  </ul>
+  <ul class="footer__list">
+    
+      <li class="footer__item">
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024061880号-2</a>
+      </li>
+    
+    
+      <li class="footer__item">
+        <img src="https://gitee.com/ocancel/oss/raw/main/uPic/mps-logo-1718703873983.png" alt="mps-logo">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054571" rel="noreferrer" target="_blank">
+          京公网安备11011402054571号
+        </a>
+      </li>
+    
+  </ul>  
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/sentence.min.d1d983ea1775bb4c791be469ce46d6bf27a0e1617456ed7c8fdc5529e4108096.js"
+      integrity="sha256-0dmD6hd1u0x5G&#43;RpzkbWvyeg4WF0Vu18j9xVKeQQgJY="
+      crossorigin="anonymous"
+    ></script>
+  
+  
+    <script>
+      function initSakanaWidget() {
+        new SakanaWidget({ autoFit: true }).mount('#sakana-widget');
+      }
+    </script>
+    
+    
+    <script
+      async
+      onload="initSakanaWidget()"
+      type="text/javascript"
+      src="/js/sakana-2.7.0.min.3a6416e000efeb774e85c37fe96f81033d63d6509957422e844e25532c211bc2.js"
+      integrity="sha256-OmQW4ADv63dOhcN/6W&#43;BAz1j1lCZV0IuhE4lUywhG8I="
+      crossorigin="anonymous"
+    ></script>
+  
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.8cc4e58cd5f865334908a0579db7b398d0017f8bf8633d7dd09582841b6f6d0a.js"
+    integrity="sha256-jMTljNX4ZTNJCKBXnbezmNABf4v4Yz190JWChBtvbQo="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>

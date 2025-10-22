@@ -1,0 +1,955 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh-cn"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        JVM 垃圾回收 |
+      Corin
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.152.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="referrer" content="no-referrer">
+  <meta name="author" content="Corin" />
+  <meta
+    name="description"
+    content="JVM 垃圾回收"
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.dcbfb18df4ee2c9f4b050a86f90e4a50a05447725d9be756bbefbe5731aa4f88.css"
+      integrity="sha256-3L&#43;xjfTuLJ9LBQqG&#43;Q5KUKBUR3Jdm&#43;dWu&#43;&#43;&#43;VzGqT4g="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.ec69c65ba7911b8cde5a85155a04f042c3f7d38d440308373696912c81021fb0.css"
+    integrity="sha256-7GnGW6eRG4zeWoUVWgTwQsP3041EAwg3NpaRLIECH7A="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.2028dce76dbdcf7f947846702ca81e0c963979a9aaf826e22d30454fb8c2b216.css"
+    integrity="sha256-ICjc5229z3&#43;UeEZwLKgeDJY5eamq&#43;CbiLTBFT7jCshY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.3dd08e9de925ffed91663f3adeaf91acc3d518649cae6ce8047cee6cac5fdac5.css"
+    integrity="sha256-PdCOnekl/&#43;2RZj863q&#43;RrMPVGGScrmzoBHzubKxf2sU="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.610646915ba4d89f4ad3d568db6f19d2b8f69f957479658357222d8085be8c6e.css"
+    integrity="sha256-YQZGkVuk2J9K09Vo228Z0rj2n5V0eWWDVyItgIW&#43;jG4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://blog.microcode.site/post/jvm-garbage-collection/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/code-copy.min.972dc758da9327e4d3f980c2890560a73a7549c7716ee21f32ed88945eb0a4b4.js"
+    integrity="sha256-ly3HWNqTJ&#43;TT&#43;YDCiQVgpzp1ScdxbuIfMu2IlF6wpLQ="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/wrapper-table.min.0010559d9b8353a340f7502cfacc93c74b3639656176fc6c668ccf35d43c9714.js"
+    integrity="sha256-ABBVnZuDU6NA91As&#43;syTx0s2OWVhdvxsZozPNdQ8lxQ="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/brief.min.e162f6b80febcba7434a7ee5c068ed9daa2c087a2d8e3724da629d7448c79f40.js"
+    integrity="sha256-4WL2uA/ry6dDSn7lwGjtnaosCHotjjck2mKddEjHn0A="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/toc-switcher.min.0c92979c495a65afca4bcacd65eb32866222cf2de1b7238a1e072546e7180294.js"
+      integrity="sha256-DJKXnElaZa/KS8rNZesyhmIizy3htyOKHgclRucYApQ="
+      crossorigin="anonymous">
+    </script>
+  <script 
+      async 
+      src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JVM 垃圾回收">
+  <meta name="twitter:description" content="JVM 垃圾回收">
+
+
+
+  
+  <meta property="og:url" content="https://blog.microcode.site/post/jvm-garbage-collection/">
+  <meta property="og:site_name" content="Corin 的博客">
+  <meta property="og:title" content="JVM 垃圾回收">
+  <meta property="og:description" content="JVM 垃圾回收">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-09-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-09-26T00:00:00+00:00">
+    <meta property="article:tag" content="JVM">
+      <meta property="og:see_also" content="https://blog.microcode.site/post/jvm-memory-allocation/">
+      <meta property="og:see_also" content="https://blog.microcode.site/post/jvm-object/">
+      <meta property="og:see_also" content="https://blog.microcode.site/post/jvm-memory-structure/">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "JVM 垃圾回收",
+        "headline": "JVM 垃圾回收",
+        "alternativeHeadline": "",
+        "description": "
+      JVM 垃圾回收
+
+
+    ",
+        "inLanguage": "zh-cn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.microcode.site\/post\/jvm-garbage-collection\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-09-26T00:00:00.00Z",
+        "datePublished": "2023-09-26T00:00:00.00Z",
+        "dateModified": "2023-09-26T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Corin",
+            "url": "https://blog.microcode.site/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.microcode.site\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/blog.microcode.site\/post\/jvm-garbage-collection\/",
+        "wordCount" : "424",
+        "genre" : [ 
+      
+      "Java"
+
+    ],
+        "keywords" : [ 
+      
+      "JVM"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="https://gitee.com/ocancel/oss/raw/main/uPic/avator-1718763586277.png"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <div class="glitch">
+            <a href="/">Corin.dev</a>
+          </div>
+        </div>
+      
+      <div id="brief" class="sidebar__introduction-description">
+        <p>Whatever can happen will happen.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://microcode.site/"
+            target="_self"
+            rel="noopener me"
+            aria-label="Microcode"
+            title="Microcode"
+          >
+            <i class="fa fa-square-check fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/Ocancel/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github-square fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:jiaqi.gao.dev@gmail.com"
+            target=""
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fa fa-square-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+    
+      <div class="sentence-windows">
+          <div class="sentence-container">
+              <div class="sentence-content">
+                  <p class="sentence-hi"> </p>
+                  <p class="sentence-from"> </p>
+                  <div class="sentence-progress-con">
+                      <div class="sentence-progress-time" style="left:0%"></div>
+                  </div>
+              </div>
+              <div class="sentence-button">
+                  <input type="button" class="sentence-sub" value="update">
+              </div>
+          </div>
+      </div>
+    
+    
+      <div class="sakana-components">
+        <div id="sakana-widget"></div>
+      </div>
+    
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2020 - 2025
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/statement/"
+          
+          title=""
+        >
+          声明
+        </a>
+      </li>
+    
+  </ul>
+  <ul class="footer__list">
+    
+      <li class="footer__item">
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024061880号-2</a>
+      </li>
+    
+    
+      <li class="footer__item">
+        <img src="https://gitee.com/ocancel/oss/raw/main/uPic/mps-logo-1718703873983.png" alt="mps-logo">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054571" rel="noreferrer" target="_blank">
+          京公网安备11011402054571号
+        </a>
+      </li>
+    
+  </ul>  
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/sentence.min.d1d983ea1775bb4c791be469ce46d6bf27a0e1617456ed7c8fdc5529e4108096.js"
+      integrity="sha256-0dmD6hd1u0x5G&#43;RpzkbWvyeg4WF0Vu18j9xVKeQQgJY="
+      crossorigin="anonymous"
+    ></script>
+  
+  
+    <script>
+      function initSakanaWidget() {
+        new SakanaWidget({ autoFit: true }).mount('#sakana-widget');
+      }
+    </script>
+    
+    
+    <script
+      async
+      onload="initSakanaWidget()"
+      type="text/javascript"
+      src="/js/sakana-2.7.0.min.3a6416e000efeb774e85c37fe96f81033d63d6509957422e844e25532c211bc2.js"
+      integrity="sha256-OmQW4ADv63dOhcN/6W&#43;BAz1j1lCZV0IuhE4lUywhG8I="
+      crossorigin="anonymous"
+    ></script>
+  
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.8cc4e58cd5f865334908a0579db7b398d0017f8bf8633d7dd09582841b6f6d0a.js"
+    integrity="sha256-jMTljNX4ZTNJCKBXnbezmNABf4v4Yz190JWChBtvbQo="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >主页</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >历程</a
+            >
+          </li>
+        
+      
+        
+        
+
+          <li class="nav__list-item">
+            <div class="optionswitch">
+              <input class="optionswitch__picker" type="checkbox" id="3" hidden />
+
+              
+              
+                
+
+              
+
+              <label class="optionswitch__label" for="3"
+                >精选 <i class="fa fa-angle-down" aria-hidden="true"></i
+              ></label>
+
+              <div class="optionswitch__triangle"></div>
+              <ul class="optionswitch__list">
+                
+                  <li class="optionswitch__list-item">
+                    
+                    <a
+                      href="/film/"
+                      
+                      title=""
+                      >电影</a
+                    >
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/statistics/"
+              
+              title=""
+              >统计</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/links/"
+              
+              title=""
+              >链接</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >关于</a
+            >
+          </li>
+        
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    <div id="toc-button" class="toc-button">☰</div>
+<div id="toc-overlay" class="toc-overlay"></div>
+<div id="toc-window" class="toc-window">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#垃圾收集策略与算法">垃圾收集策略与算法</a>
+      <ul>
+        <li><a href="#判定对象是否存活">判定对象是否存活</a>
+          <ul>
+            <li><a href="#引用计数法">引用计数法</a></li>
+            <li><a href="#可达性分析法">可达性分析法</a></li>
+          </ul>
+        </li>
+        <li><a href="#引用的种类">引用的种类</a>
+          <ul>
+            <li><a href="#强引用strong-reference">强引用（Strong Reference）</a></li>
+            <li><a href="#软引用soft-reference">软引用（Soft Reference）</a></li>
+            <li><a href="#弱引用weak-reference">弱引用（Weak Reference）</a></li>
+            <li><a href="#虚引用phantom-reference">虚引用（Phantom Reference）</a></li>
+          </ul>
+        </li>
+        <li><a href="#回收堆中无效对象">回收堆中无效对象</a>
+          <ul>
+            <li><a href="#判定-finalize-是否有必要执行">判定 finalize() 是否有必要执行</a></li>
+            <li><a href="#对象重生或死亡">对象重生或死亡</a></li>
+          </ul>
+        </li>
+        <li><a href="#回收方法区内存">回收方法区内存</a>
+          <ul>
+            <li><a href="#判定废弃常量">判定废弃常量</a></li>
+            <li><a href="#判定无用的类">判定无用的类</a></li>
+          </ul>
+        </li>
+        <li><a href="#垃圾收集算法">垃圾收集算法</a>
+          <ul>
+            <li><a href="#标记-清除算法">标记-清除算法</a></li>
+            <li><a href="#复制算法新生代">复制算法（新生代）</a></li>
+            <li><a href="#分配担保">分配担保</a></li>
+            <li><a href="#标记-整理算法老年代">标记-整理算法（老年代）</a></li>
+            <li><a href="#分代收集算法">分代收集算法</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#hotspot-垃圾收集器">HotSpot 垃圾收集器</a>
+      <ul>
+        <li><a href="#新生代垃圾收集器">新生代垃圾收集器</a>
+          <ul>
+            <li><a href="#serial-垃圾收集器单线程">Serial 垃圾收集器（单线程）</a></li>
+            <li><a href="#parnew-垃圾收集器多线程">ParNew 垃圾收集器（多线程）</a></li>
+            <li><a href="#parallel-scavenge-垃圾收集器多线程">Parallel Scavenge 垃圾收集器（多线程）</a></li>
+          </ul>
+        </li>
+        <li><a href="#老年代垃圾收集器">老年代垃圾收集器</a>
+          <ul>
+            <li><a href="#serial-old-垃圾收集器单线程">Serial Old 垃圾收集器（单线程）</a></li>
+            <li><a href="#parallel-old-垃圾收集器多线程">Parallel Old 垃圾收集器（多线程）</a></li>
+            <li><a href="#cms-垃圾收集器">CMS 垃圾收集器</a></li>
+          </ul>
+        </li>
+        <li><a href="#g1-通用垃圾收集器">G1 通用垃圾收集器</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<div class="post__content">
+      <h1>JVM 垃圾回收</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Sep 26 2023
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">阅读时间 2 分钟</span>
+          </li>
+        </ul>
+      <div class="alert">
+      <div class="alert__indicator">!</div>
+      警告：这篇文章创作时长大于 730 天，其内容可能已经过时。
+    </div><h2 id="垃圾收集策略与算法">垃圾收集策略与算法</h2>
+<p>程序计数器、虚拟机栈、本地方法栈随线程而生，也随线程而灭；栈帧随着方法的开始而入栈，随着方法的结束而出栈。这几个区域的内存分配和回收都具有确定性，在这几个区域内不需要过多考虑回收的问题，因为方法结束或者线程结束时，内存自然就跟随着回收了。</p>
+<p>而对于 Java 堆和方法区，我们只有在程序运行期间才能知道会创建哪些对象，这部分内存的分配和回收都是动态的，垃圾收集器所关注的正是这部分内存。</p>
+<h3 id="判定对象是否存活">判定对象是否存活</h3>
+<p>若一个对象不被任何对象或变量引用，那么它就是无效对象，需要被回收。</p>
+<h4 id="引用计数法">引用计数法</h4>
+<p>在对象头维护着一个 <code>counter</code> 计数器，对象被引用一次则计数器 <code>+1</code>；若引用失效则计数器 <code>-1</code>。当计数器为 <code>0</code> 时，就认为该对象无效了。</p>
+<p>引用计数算法的实现简单，判定效率也很高，在大部分情况下它都是一个不错的算法。但是主流的 Java 虚拟机里没有选用引用计数算法来管理内存，主要是因为它很难解决对象之间循环引用的问题。（虽然循环引用的问题可通过 <code>Recycler</code> 算法解决，但是在多线程环境下，引用计数变更也要进行昂贵的同步操作，性能较低，早期的编程语言会采用此算法。）</p>
+<blockquote>
+<p>例如：对象 <code>objA</code> 和 <code>objB</code> 都有字段 <code>instance</code>，令 <code>objA.instance = objB</code> 并且 <code>objB.instance = objA</code>，由于它们互相引用着对方，导致它们的引用计数都不为 <code>0</code>，于是引用计数算法无法通知 GC 收集器回收它们。</p>
+</blockquote>
+<h4 id="可达性分析法">可达性分析法</h4>
+<p>所有和 <code>GC Roots</code> 直接或间接关联的对象都是有效对象，和 <code>GC Roots</code> 没有关联的对象就是无效对象。</p>
+<p><code>GC Roots</code> 是指：</p>
+<ul>
+<li>Java 虚拟机栈（栈帧中的本地变量表）中引用的对象</li>
+<li>本地方法栈中引用的对象</li>
+<li>方法区中常量引用的对象</li>
+<li>方法区中类静态属性引用的对象</li>
+</ul>
+<p><code>GC Roots</code> 并不包括堆中对象所引用的对象，这样就不会有循环引用的问题。</p>
+<h3 id="引用的种类">引用的种类</h3>
+<p>不同的引用类型，主要体现的是对象不同的可达性状态 <code>reachable</code> 和垃圾收集的影响。</p>
+<h4 id="强引用strong-reference">强引用（Strong Reference）</h4>
+<p>类似 &ldquo;<code>Object obj = new Object()</code>&rdquo; 这类的引用，就是强引用，只要强引用存在，垃圾收集器永远不会回收被引用的对象。但是，如果我们<strong>错误地保持了强引用</strong>，比如：赋值给了 static 变量，那么对象在很长一段时间内不会被回收，会产生内存泄漏。</p>
+<h4 id="软引用soft-reference">软引用（Soft Reference）</h4>
+<p>软引用是一种相对强引用弱化一些的引用，可以让对象豁免一些垃圾收集，只有当 JVM 认为内存不足时，才会去试图回收软引用指向的对象。JVM 会确保在抛出 <code>OutOfMemoryError</code> 之前，清理软引用指向的对象。软引用通常用来<strong>实现内存敏感的缓存</strong>，如果还有空闲内存，就可以暂时保留缓存，当内存不足时清理掉，这样就保证了使用缓存的同时，不会耗尽内存。</p>
+<h4 id="弱引用weak-reference">弱引用（Weak Reference）</h4>
+<p>弱引用的<strong>强度比软引用更弱</strong>一些。当 JVM 进行垃圾回收时，<strong>无论内存是否充足，都会回收</strong>只被弱引用关联的对象。</p>
+<h4 id="虚引用phantom-reference">虚引用（Phantom Reference）</h4>
+<p>虚引用也称幽灵引用或者幻影引用，它是<strong>最弱</strong>的一种引用关系。一个对象是否有虚引用的存在，完全不会对其生存时间构成影响。它仅仅是提供了一种确保对象被 <code>finalize</code> 以后，做某些事情的机制，比如，通常用来做所谓的 <code>Post-Mortem</code> 清理机制。</p>
+<h3 id="回收堆中无效对象">回收堆中无效对象</h3>
+<p>对于可达性分析中不可达的对象，也并不是没有存活的可能。</p>
+<h4 id="判定-finalize-是否有必要执行">判定 finalize() 是否有必要执行</h4>
+<p>JVM 会判断此对象是否有必要执行 <code>finalize()</code> 方法，如果对象没有覆盖 <code>finalize()</code> 方法，或者 <code>finalize()</code> 方法已经被虚拟机调用过，那么视为“没有必要执行”。那么对象基本上就真的被回收了。</p>
+<p>如果对象被判定为有必要执行 <code>finalize()</code> 方法，那么对象会被放入一个 <code>F-Queue</code> 队列中，虚拟机会以较低的优先级执行这些 <code>finalize()</code> 方法，但不会确保所有的 <code>finalize()</code> 方法都会执行结束。如果 <code>finalize()</code> 方法出现耗时操作，虚拟机就直接停止指向该方法，将对象清除。</p>
+<h4 id="对象重生或死亡">对象重生或死亡</h4>
+<p>如果在执行 <code>finalize()</code> 方法时，将 <code>this</code> 赋给了某一个引用，那么该对象就重生了。如果没有，那么就会被垃圾收集器清除。</p>
+<blockquote>
+<p>任何一个对象的 <code>finalize()</code> 方法只会被系统自动调用一次，如果对象面临下一次回收，它的 <code>finalize()</code>方法不会被再次执行，想继续在 <code>finalize()</code> 中自救就失效了。</p>
+</blockquote>
+<h3 id="回收方法区内存">回收方法区内存</h3>
+<p>方法区中存放生命周期较长的类信息、常量、静态变量，每次垃圾收集只有少量的垃圾被清除。方法区中主要清除两种垃圾：</p>
+<ul>
+<li>废弃常量</li>
+<li>无用的类</li>
+</ul>
+<h4 id="判定废弃常量">判定废弃常量</h4>
+<p>只要常量池中的常量不被任何变量或对象引用，那么这些常量就会被清除掉。比如，一个字符串 <code>&quot;bingo&quot;</code> 进入了常量池，但是当前系统没有任何一个 <code>String</code> 对象引用常量池中的 <code>&quot;bingo&quot;</code> 常量，也没有其它地方引用这个字面量，必要的话，<code>&quot;bingo&quot;</code> 常量会被清理出常量池。</p>
+<h4 id="判定无用的类">判定无用的类</h4>
+<p>判定一个类是否是“无用的类”，条件较为苛刻。</p>
+<ul>
+<li>该类的所有对象都已经被清除</li>
+<li>加载该类的 <code>ClassLoader</code> 已经被回收</li>
+<li>该类的 <code>java.lang.Class</code> 对象没有在任何地方被引用，无法在任何地方通过反射访问该类的方法。</li>
+</ul>
+<blockquote>
+<p>一个类被虚拟机加载进方法区，那么在堆中就会有一个代表该类的对象：<code>java.lang.Class</code>。这个对象在类被加载进方法区时创建，在方法区该类被删除时清除。</p>
+</blockquote>
+<h3 id="垃圾收集算法">垃圾收集算法</h3>
+<p>学会了如何判定无效对象、无用类、废弃常量之后，剩余工作就是回收这些垃圾。常见的垃圾收集算法有以下几个：</p>
+<h4 id="标记-清除算法">标记-清除算法</h4>
+<p><strong>标记</strong>的过程是：遍历所有的 <code>GC Roots</code>，然后将所有 <code>GC Roots</code> 可达的对象<strong>标记为存活的对象</strong>。</p>
+<p><strong>清除</strong>的过程将遍历堆中所有的对象，将没有标记的对象全部清除掉。与此同时，清除那些被标记过的对象的标记，以便下次的垃圾回收。</p>
+<p>这种方法有两个<strong>不足</strong>：</p>
+<ul>
+<li>效率问题：标记和清除两个过程的效率都不高。</li>
+<li>空间问题：标记清除之后会产生大量不连续的内存碎片，碎片太多可能导致以后需要分配较大对象时，无法找到足够的连续内存而不得不提前触发另一次垃圾收集动作。</li>
+</ul>
+<h4 id="复制算法新生代">复制算法（新生代）</h4>
+<p>为了解决效率问题，“复制”收集算法出现了。它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块内存用完，需要进行垃圾收集时，就将存活者的对象复制到另一块上面，然后将第一块内存全部清除。这种算法有优有劣：</p>
+<ul>
+<li>优点：不会有内存碎片的问题。</li>
+<li>缺点：内存缩小为原来的一半，浪费空间。</li>
+</ul>
+<p>为了解决空间利用率问题，可以将内存分为三块： <code>Eden</code>、<code>From Survivor</code>、<code>To Survivor</code>，比例是 <code>8:1:1</code>，每次使用 <code>Eden</code> 和其中一块 <code>Survivor</code>。回收时，将 <code>Eden</code> 和 <code>Survivor</code> 中还存活的对象一次性复制到另外一块 <code>Survivor</code> 空间上，最后清理掉 <code>Eden</code> 和刚才使用的 <code>Survivor</code> 空间。这样只有 <code>10%</code> 的内存被浪费。</p>
+<p>但是我们无法保证每次回收都只有不多于 <code>10%</code> 的对象存活，当 <code>Survivor</code> 空间不够，需要依赖其他内存（指老年代）进行分配担保。</p>
+<h4 id="分配担保">分配担保</h4>
+<p>为对象分配内存空间时，如果 <code>Eden + Survivor</code> 中空闲区域无法装下该对象，会触发 <code>Minor GC</code> 进行垃圾收集。但如果 <code>Minor GC</code> 过后依然有超过 <code>10%</code> 的对象存活，这样存活的对象直接通过分配担保机制进入老年代，然后再将新对象存入 <code>Eden</code> 区。</p>
+<h4 id="标记-整理算法老年代">标记-整理算法（老年代）</h4>
+<p><strong>标记</strong>：它的第一个阶段与<strong>标记-清除算法</strong>是一模一样的，均是遍历 <code>GC Roots</code>，然后将存活的对象标记。</p>
+<p><strong>整理</strong>：移动所有<strong>存活的对象</strong>，且按照内存地址次序依次排列，然后将末端内存地址以后的内存全部回收。因此，第二阶段才称为整理阶段。</p>
+<p>这是一种老年代的垃圾收集算法。老年代的对象一般寿命比较长，因此每次垃圾回收会有大量对象存活，如果采用复制算法，每次需要复制大量存活的对象，效率很低。</p>
+<h4 id="分代收集算法">分代收集算法</h4>
+<p>根据对象存活周期的不同，将内存划分为几块。一般是把 Java 堆分为新生代和老年代，针对各个年代的特点采用最适当的收集算法。</p>
+<ul>
+<li>新生代：复制算法</li>
+<li>老年代：标记-清除算法、标记-整理算法</li>
+</ul>
+<h2 id="hotspot-垃圾收集器">HotSpot 垃圾收集器</h2>
+<p>HotSpot 虚拟机提供了多种垃圾收集器，每种收集器都有各自的特点，虽然我们要对各个收集器进行比较，但并非为了挑选出一个最好的收集器。我们选择的只是对具体应用最合适的收集器。</p>
+<h3 id="新生代垃圾收集器">新生代垃圾收集器</h3>
+<h4 id="serial-垃圾收集器单线程">Serial 垃圾收集器（单线程）</h4>
+<p>只开启<strong>一条</strong> GC 线程进行垃圾回收，并且在垃圾收集过程中停止一切用户线程，即 Stop The World。</p>
+<p>一般客户端应用所需内存较小，不会创建太多对象，而且堆内存不大，因此垃圾收集器回收时间短，即使在这段时间停止一切用户线程，也不会感觉明显卡顿。因此 Serial 垃圾收集器<strong>适合客户端</strong>使用。</p>
+<p>由于 Serial 收集器只使用一条 GC 线程，避免了线程切换的开销，从而简单高效。</p>
+<h4 id="parnew-垃圾收集器多线程">ParNew 垃圾收集器（多线程）</h4>
+<p>ParNew 是 Serial 的多线程版本。由多条 GC 线程并行地进行垃圾清理。但清理过程依然需要 Stop The World。</p>
+<p>ParNew 追求“<strong>低停顿时间</strong>”，与 Serial 唯一区别就是使用了多线程进行垃圾收集，在多 CPU 环境下性能比 Serial 会有一定程度的提升；但<strong>线程切换需要额外的开销</strong>，因此在单 CPU 环境中表现不如 Serial。</p>
+<h4 id="parallel-scavenge-垃圾收集器多线程">Parallel Scavenge 垃圾收集器（多线程）</h4>
+<p>Parallel Scavenge 和 ParNew 一样，都是多线程、新生代垃圾收集器。但是两者有巨大的不同点：</p>
+<ul>
+<li>Parallel Scavenge：追求 CPU 吞吐量，能够在较短时间内完成指定任务，因此适合没有交互的后台计算。</li>
+<li>ParNew：追求降低用户停顿时间，适合交互式应用。</li>
+</ul>
+<p><code>吞吐量 = 运行用户代码时间 / (运行用户代码时间 + 垃圾收集时间)</code></p>
+<p>追求高吞吐量，可以通过减少 GC 执行实际工作的时间，然而，仅仅偶尔运行 GC 意味着每当 GC 运行时将有许多工作要做，因为在此期间积累在堆中的对象数量很高。单个 GC 需要花更多的时间来完成，从而导致更高的暂停时间。而考虑到低暂停时间，最好频繁运行 GC 以便更快速完成，反过来又导致吞吐量下降。</p>
+<ul>
+<li>通过参数 <code>-XX:GCTimeRadio</code> 设置垃圾回收时间占总 CPU 时间的百分比。</li>
+<li>通过参数 <code>-XX:MaxGCPauseMillis</code> 设置垃圾处理过程最久停顿时间。</li>
+<li>通过命令 <code>-XX:+UseAdaptiveSizePolicy</code> 开启自适应策略。我们只要设置好堆的大小和 <code>MaxGCPauseMillis</code> 或 <code>GCTimeRadio</code>，收集器会自动调整新生代的大小、<code>Eden</code> 和 <code>Survivor</code> 的比例、对象进入老年代的年龄，以最大程度上接近我们设置的 <code>MaxGCPauseMillis</code> 或 <code>GCTimeRadio</code>。</li>
+</ul>
+<h3 id="老年代垃圾收集器">老年代垃圾收集器</h3>
+<h4 id="serial-old-垃圾收集器单线程">Serial Old 垃圾收集器（单线程）</h4>
+<p>Serial Old 收集器是 Serial 的老年代版本，都是单线程收集器，只启用一条 GC 线程，都适合客户端应用。它们唯一的区别就是：Serial Old 工作在老年代，使用“标记-整理”算法；Serial 工作在新生代，使用“复制”算法。</p>
+<h4 id="parallel-old-垃圾收集器多线程">Parallel Old 垃圾收集器（多线程）</h4>
+<p>Parallel Old 收集器是 Parallel Scavenge 的老年代版本，追求 CPU 吞吐量。</p>
+<h4 id="cms-垃圾收集器">CMS 垃圾收集器</h4>
+<p>CMS（Concurrent Mark Sweep，并发标记清除）收集器是以获取最短回收停顿时间为目标的收集器（追求低停顿），它在垃圾收集时使得用户线程和 GC 线程并发执行，因此在垃圾收集过程中用户也不会感到明显的卡顿。</p>
+<ul>
+<li>初始标记：Stop The World，仅使用一条初始标记线程对所有与 GC Roots 直接关联的对象进行标记。</li>
+<li>并发标记：使用<strong>多条</strong>标记线程，与用户线程并发执行。此过程进行可达性分析，标记出所有废弃对象。速度很慢。</li>
+<li>重新标记：Stop The World，使用多条标记线程并发执行，将刚才并发标记过程中新出现的废弃对象标记出来。</li>
+<li>并发清除：只使用一条 GC 线程，与用户线程并发执行，清除刚才标记的对象。这个过程非常耗时。</li>
+</ul>
+<p>并发标记与并发清除过程耗时最长，且可以与用户线程一起工作，因此，<strong>总体上说</strong>，CMS 收集器的内存回收过程是与用户线程<strong>一起并发执行</strong>的。</p>
+<p>CMS 的缺点：</p>
+<ul>
+<li>吞吐量低</li>
+<li>无法处理浮动垃圾</li>
+<li>使用“标记-清除”算法产生碎片空间，导致频繁 Full GC</li>
+</ul>
+<p>对于产生碎片空间的问题，可以通过开启 <code>-XX:+UseCMSCompactAtFullCollection</code>，在每次 Full GC 完成后都会进行一次内存压缩整理，将零散在各处的对象整理到一块。设置参数 <code>-XX:CMSFullGCsBeforeCompaction</code> 告诉 CMS，经过了 <code>N</code> 次 Full GC 之后再进行一次内存整理。</p>
+<h3 id="g1-通用垃圾收集器">G1 通用垃圾收集器</h3>
+<p>G1 是一款面向服务端应用的垃圾收集器，它没有新生代和老年代的概念，而是将堆划分为一块块独立的 <code>Region</code>。当要进行垃圾收集时，首先估计每个 <code>Region</code> 中垃圾的数量，每次都从垃圾回收价值最大的 <code>Region</code> 开始回收，因此可以获得最大的回收效率。</p>
+<p>从整体上看， G1 是基于“标记-整理”算法实现的收集器，从局部（两个 <code>Region</code> 之间）上看是基于“复制”算法实现的，这意味着运行期间不会产生内存空间碎片。</p>
+<p>每个 <code>Region</code> 都有一个 <code>Remembered Set</code>，用于记录本区域中所有对象引用的对象所在的区域，进行可达性分析时，只要在 <code>GC Roots</code> 中再加上 <code>Remembered Set</code> 即可防止对整个堆内存进行遍历。</p>
+<p>如果不计算维护 <code>Remembered Set</code> 的操作，G1 收集器的工作过程分为以下几个步骤：</p>
+<ul>
+<li>初始标记：Stop The World，仅使用一条初始标记线程对所有与 <code>GC Roots</code> 直接关联的对象进行标记。</li>
+<li>并发标记：使用<strong>一条</strong>标记线程与用户线程并发执行。此过程进行可达性分析，速度很慢。</li>
+<li>最终标记：Stop The World，使用多条标记线程并发执行。</li>
+<li>筛选回收：回收废弃对象，此时也要 Stop The World，并使用多条筛选回收线程并发执行。</li>
+</ul>
+
+
+  <h3>这个系列的帖子</h3>
+  <ul>
+    
+      <li><a href="/post/jvm-memory-allocation/">JVM 对象内存分配</a></li>
+    
+      <li><a href="/post/jvm-garbage-collection/">JVM 垃圾回收</a></li>
+    
+      <li><a href="/post/jvm-object/">JVM 对象</a></li>
+    
+      <li><a href="/post/jvm-memory-structure/">JVM 内存结构</a></li>
+    
+  </ul>
+
+
+  <h3>相关文章</h3>
+  <ul>
+    
+      <li><a href="/post/jvm-memory-allocation/">JVM 对象内存分配</a></li>
+    
+      <li><a href="/post/jvm-object/">JVM 对象</a></li>
+    
+      <li><a href="/post/jvm-memory-structure/">JVM 内存结构</a></li>
+    
+  </ul>
+
+
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-file-word post__meta-icon"></em>
+            <span class="post__meta-text">424 字</span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-copyright post__meta-icon"></em>
+            <span class="post__meta-text">
+               
+                BY-NC-SA 4.0
+              
+            </span>
+          </li>
+        </ul>
+      
+    </div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/java/">Java</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/jvm/">JVM</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2020 - 2025
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/statement/"
+          
+          title=""
+        >
+          声明
+        </a>
+      </li>
+    
+  </ul>
+  <ul class="footer__list">
+    
+      <li class="footer__item">
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024061880号-2</a>
+      </li>
+    
+    
+      <li class="footer__item">
+        <img src="https://gitee.com/ocancel/oss/raw/main/uPic/mps-logo-1718703873983.png" alt="mps-logo">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054571" rel="noreferrer" target="_blank">
+          京公网安备11011402054571号
+        </a>
+      </li>
+    
+  </ul>  
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/sentence.min.d1d983ea1775bb4c791be469ce46d6bf27a0e1617456ed7c8fdc5529e4108096.js"
+      integrity="sha256-0dmD6hd1u0x5G&#43;RpzkbWvyeg4WF0Vu18j9xVKeQQgJY="
+      crossorigin="anonymous"
+    ></script>
+  
+  
+    <script>
+      function initSakanaWidget() {
+        new SakanaWidget({ autoFit: true }).mount('#sakana-widget');
+      }
+    </script>
+    
+    
+    <script
+      async
+      onload="initSakanaWidget()"
+      type="text/javascript"
+      src="/js/sakana-2.7.0.min.3a6416e000efeb774e85c37fe96f81033d63d6509957422e844e25532c211bc2.js"
+      integrity="sha256-OmQW4ADv63dOhcN/6W&#43;BAz1j1lCZV0IuhE4lUywhG8I="
+      crossorigin="anonymous"
+    ></script>
+  
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.8cc4e58cd5f865334908a0579db7b398d0017f8bf8633d7dd09582841b6f6d0a.js"
+    integrity="sha256-jMTljNX4ZTNJCKBXnbezmNABf4v4Yz190JWChBtvbQo="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>

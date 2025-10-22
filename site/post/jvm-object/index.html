@@ -1,0 +1,825 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh-cn"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        JVM 对象 |
+      Corin
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.152.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="referrer" content="no-referrer">
+  <meta name="author" content="Corin" />
+  <meta
+    name="description"
+    content="JVM 对象"
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.dcbfb18df4ee2c9f4b050a86f90e4a50a05447725d9be756bbefbe5731aa4f88.css"
+      integrity="sha256-3L&#43;xjfTuLJ9LBQqG&#43;Q5KUKBUR3Jdm&#43;dWu&#43;&#43;&#43;VzGqT4g="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.ec69c65ba7911b8cde5a85155a04f042c3f7d38d440308373696912c81021fb0.css"
+    integrity="sha256-7GnGW6eRG4zeWoUVWgTwQsP3041EAwg3NpaRLIECH7A="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.2028dce76dbdcf7f947846702ca81e0c963979a9aaf826e22d30454fb8c2b216.css"
+    integrity="sha256-ICjc5229z3&#43;UeEZwLKgeDJY5eamq&#43;CbiLTBFT7jCshY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.3dd08e9de925ffed91663f3adeaf91acc3d518649cae6ce8047cee6cac5fdac5.css"
+    integrity="sha256-PdCOnekl/&#43;2RZj863q&#43;RrMPVGGScrmzoBHzubKxf2sU="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.610646915ba4d89f4ad3d568db6f19d2b8f69f957479658357222d8085be8c6e.css"
+    integrity="sha256-YQZGkVuk2J9K09Vo228Z0rj2n5V0eWWDVyItgIW&#43;jG4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://blog.microcode.site/post/jvm-object/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/code-copy.min.972dc758da9327e4d3f980c2890560a73a7549c7716ee21f32ed88945eb0a4b4.js"
+    integrity="sha256-ly3HWNqTJ&#43;TT&#43;YDCiQVgpzp1ScdxbuIfMu2IlF6wpLQ="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/wrapper-table.min.0010559d9b8353a340f7502cfacc93c74b3639656176fc6c668ccf35d43c9714.js"
+    integrity="sha256-ABBVnZuDU6NA91As&#43;syTx0s2OWVhdvxsZozPNdQ8lxQ="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/brief.min.e162f6b80febcba7434a7ee5c068ed9daa2c087a2d8e3724da629d7448c79f40.js"
+    integrity="sha256-4WL2uA/ry6dDSn7lwGjtnaosCHotjjck2mKddEjHn0A="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/toc-switcher.min.0c92979c495a65afca4bcacd65eb32866222cf2de1b7238a1e072546e7180294.js"
+      integrity="sha256-DJKXnElaZa/KS8rNZesyhmIizy3htyOKHgclRucYApQ="
+      crossorigin="anonymous">
+    </script>
+  <script 
+      async 
+      src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JVM 对象">
+  <meta name="twitter:description" content="JVM 对象">
+
+
+
+  
+  <meta property="og:url" content="https://blog.microcode.site/post/jvm-object/">
+  <meta property="og:site_name" content="Corin 的博客">
+  <meta property="og:title" content="JVM 对象">
+  <meta property="og:description" content="JVM 对象">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-09-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-09-18T00:00:00+00:00">
+    <meta property="article:tag" content="JVM">
+      <meta property="og:see_also" content="https://blog.microcode.site/post/jvm-memory-allocation/">
+      <meta property="og:see_also" content="https://blog.microcode.site/post/jvm-garbage-collection/">
+      <meta property="og:see_also" content="https://blog.microcode.site/post/jvm-memory-structure/">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "JVM 对象",
+        "headline": "JVM 对象",
+        "alternativeHeadline": "",
+        "description": "
+      JVM 对象
+
+
+    ",
+        "inLanguage": "zh-cn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.microcode.site\/post\/jvm-object\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-09-18T00:00:00.00Z",
+        "datePublished": "2023-09-18T00:00:00.00Z",
+        "dateModified": "2023-09-18T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Corin",
+            "url": "https://blog.microcode.site/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.microcode.site\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/blog.microcode.site\/post\/jvm-object\/",
+        "wordCount" : "70",
+        "genre" : [ 
+      
+      "Java"
+
+    ],
+        "keywords" : [ 
+      
+      "JVM"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="https://gitee.com/ocancel/oss/raw/main/uPic/avator-1718763586277.png"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <div class="glitch">
+            <a href="/">Corin.dev</a>
+          </div>
+        </div>
+      
+      <div id="brief" class="sidebar__introduction-description">
+        <p>Whatever can happen will happen.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://microcode.site/"
+            target="_self"
+            rel="noopener me"
+            aria-label="Microcode"
+            title="Microcode"
+          >
+            <i class="fa fa-square-check fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/Ocancel/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github-square fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:jiaqi.gao.dev@gmail.com"
+            target=""
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fa fa-square-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+    
+      <div class="sentence-windows">
+          <div class="sentence-container">
+              <div class="sentence-content">
+                  <p class="sentence-hi"> </p>
+                  <p class="sentence-from"> </p>
+                  <div class="sentence-progress-con">
+                      <div class="sentence-progress-time" style="left:0%"></div>
+                  </div>
+              </div>
+              <div class="sentence-button">
+                  <input type="button" class="sentence-sub" value="update">
+              </div>
+          </div>
+      </div>
+    
+    
+      <div class="sakana-components">
+        <div id="sakana-widget"></div>
+      </div>
+    
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2020 - 2025
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/statement/"
+          
+          title=""
+        >
+          声明
+        </a>
+      </li>
+    
+  </ul>
+  <ul class="footer__list">
+    
+      <li class="footer__item">
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024061880号-2</a>
+      </li>
+    
+    
+      <li class="footer__item">
+        <img src="https://gitee.com/ocancel/oss/raw/main/uPic/mps-logo-1718703873983.png" alt="mps-logo">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054571" rel="noreferrer" target="_blank">
+          京公网安备11011402054571号
+        </a>
+      </li>
+    
+  </ul>  
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/sentence.min.d1d983ea1775bb4c791be469ce46d6bf27a0e1617456ed7c8fdc5529e4108096.js"
+      integrity="sha256-0dmD6hd1u0x5G&#43;RpzkbWvyeg4WF0Vu18j9xVKeQQgJY="
+      crossorigin="anonymous"
+    ></script>
+  
+  
+    <script>
+      function initSakanaWidget() {
+        new SakanaWidget({ autoFit: true }).mount('#sakana-widget');
+      }
+    </script>
+    
+    
+    <script
+      async
+      onload="initSakanaWidget()"
+      type="text/javascript"
+      src="/js/sakana-2.7.0.min.3a6416e000efeb774e85c37fe96f81033d63d6509957422e844e25532c211bc2.js"
+      integrity="sha256-OmQW4ADv63dOhcN/6W&#43;BAz1j1lCZV0IuhE4lUywhG8I="
+      crossorigin="anonymous"
+    ></script>
+  
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.8cc4e58cd5f865334908a0579db7b398d0017f8bf8633d7dd09582841b6f6d0a.js"
+    integrity="sha256-jMTljNX4ZTNJCKBXnbezmNABf4v4Yz190JWChBtvbQo="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >主页</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >历程</a
+            >
+          </li>
+        
+      
+        
+        
+
+          <li class="nav__list-item">
+            <div class="optionswitch">
+              <input class="optionswitch__picker" type="checkbox" id="3" hidden />
+
+              
+              
+                
+
+              
+
+              <label class="optionswitch__label" for="3"
+                >精选 <i class="fa fa-angle-down" aria-hidden="true"></i
+              ></label>
+
+              <div class="optionswitch__triangle"></div>
+              <ul class="optionswitch__list">
+                
+                  <li class="optionswitch__list-item">
+                    
+                    <a
+                      href="/film/"
+                      
+                      title=""
+                      >电影</a
+                    >
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/statistics/"
+              
+              title=""
+              >统计</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/links/"
+              
+              title=""
+              >链接</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >关于</a
+            >
+          </li>
+        
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    <div id="toc-button" class="toc-button">☰</div>
+<div id="toc-overlay" class="toc-overlay"></div>
+<div id="toc-window" class="toc-window">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#对象的内存布局">对象的内存布局</a>
+      <ul>
+        <li><a href="#对象头">对象头</a></li>
+        <li><a href="#实例数据">实例数据</a></li>
+        <li><a href="#对齐填充">对齐填充</a></li>
+      </ul>
+    </li>
+    <li><a href="#对象的创建过程">对象的创建过程</a>
+      <ul>
+        <li><a href="#类加载检查">类加载检查</a></li>
+        <li><a href="#为新生对象分配内存">为新生对象分配内存</a></li>
+        <li><a href="#初始化">初始化</a></li>
+      </ul>
+    </li>
+    <li><a href="#对象的访问方式">对象的访问方式</a>
+      <ul>
+        <li><a href="#句柄访问方式">句柄访问方式</a></li>
+        <li><a href="#直接指针访问方式">直接指针访问方式</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<div class="post__content">
+      <h1>JVM 对象</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Sep 18 2023
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">阅读时间 1 分钟</span>
+          </li>
+        </ul>
+      <div class="alert">
+      <div class="alert__indicator">!</div>
+      警告：这篇文章创作时长大于 730 天，其内容可能已经过时。
+    </div><h2 id="对象的内存布局">对象的内存布局</h2>
+<p>在 HotSpot 虚拟机中，对象的内存布局分为以下 3 块区域：</p>
+<ul>
+<li>对象头（Header）</li>
+<li>实例数据（Instance Data）</li>
+<li>对齐填充（Padding）</li>
+</ul>
+<h3 id="对象头">对象头</h3>
+<p>对象头记录了对象在运行过程中所需要使用的一些数据：</p>
+<ul>
+<li>哈希码</li>
+<li>GC 分代年龄</li>
+<li>锁状态标志</li>
+<li>线程持有的锁</li>
+<li>偏向线程 ID</li>
+<li>偏向时间戳</li>
+</ul>
+<p>对象头可能包含类型指针，通过该指针能确定对象属于哪个类。如果对象是一个数组，那么对象头还会包括数组长度。</p>
+<h3 id="实例数据">实例数据</h3>
+<p>实例数据部分就是成员变量的值，其中包括父类成员变量和本类成员变量。</p>
+<h3 id="对齐填充">对齐填充</h3>
+<p>用于确保对象的总长度为 8 字节的整数倍。</p>
+<p>HotSpot VM 的自动内存管理系统要求对象的大小必须是 <code>8</code> 字节的整数倍。而对象头部分正好是 <code>8</code> 字节的倍数（<code>1</code> 倍或 <code>2</code> 倍），因此，当对象实例数据部分没有对齐时，就需要通过对齐填充来补全。</p>
+<blockquote>
+<p>对齐填充并不是必然存在，也没有特别的含义，它仅仅起着占位符的作用。</p>
+</blockquote>
+<h2 id="对象的创建过程">对象的创建过程</h2>
+<h3 id="类加载检查">类加载检查</h3>
+<p>虚拟机在解析 <code>.class</code> 文件时，若遇到一条 <code>new</code> 指令，首先它会去检查常量池中是否有这个类的符号引用，并且检查这个符号引用所代表的类是否已被加载、解析和初始化过。如果没有，那么必须先执行相应的类加载过程。</p>
+<h3 id="为新生对象分配内存">为新生对象分配内存</h3>
+<p>对象所需内存的大小在类加载完成后便可完全确定，接下来从堆中划分一块对应大小的内存空间给新的对象。分配堆中内存有两种方式：</p>
+<ul>
+<li>
+<p><strong>指针碰撞</strong><br>
+如果 Java <strong>堆中内存绝对规整</strong>（说明采用的是“<strong>复制算法</strong>”或“<strong>标记整理法</strong>”），空闲内存和已使用内存中间放着一个指针作为分界点指示器，那么分配内存时只需要把指针向空闲内存挪动一段与对象大小一样的距离，这种分配方式称为“<strong>指针碰撞</strong>”。</p>
+</li>
+<li>
+<p><strong>空闲列表</strong><br>
+如果 Java <strong>堆中内存并不规整</strong>，已使用的内存和空闲内存交错（说明采用的是<strong>标记-清除法</strong>，有碎片），此时没法简单进行指针碰撞， VM 必须维护一个列表，记录其中哪些内存块空闲可用。分配之时从空闲列表中找到一块足够大的内存空间划分给对象实例。这种方式称为“<strong>空闲列表</strong>”。</p>
+</li>
+</ul>
+<h3 id="初始化">初始化</h3>
+<p>分配完内存后，为对象中的成员变量赋上初始值，设置对象头信息，调用对象的构造函数方法进行初始化。</p>
+<p>至此，整个对象的创建过程就完成了。</p>
+<h2 id="对象的访问方式">对象的访问方式</h2>
+<p>所有对象的存储空间都是在堆中分配的，但是这个对象的引用却是在堆栈中分配的。也就是说在建立一个对象时两个地方都分配内存，在堆中分配的内存实际建立这个对象，而在堆栈中分配的内存只是一个指向这个堆对象的指针（引用）而已。 那么根据引用存放的地址类型的不同，对象有不同的访问方式。</p>
+<h3 id="句柄访问方式">句柄访问方式</h3>
+<p>堆中需要有一块叫做“句柄池”的内存空间，句柄中包含了对象实例数据与类型数据各自的具体地址信息。</p>
+<p>引用类型的变量存放的是该对象的句柄地址（reference）。访问对象时，首先需要通过引用类型的变量找到该对象的句柄，然后根据句柄中对象的地址找到对象。</p>
+<h3 id="直接指针访问方式">直接指针访问方式</h3>
+<p>引用类型的变量直接存放对象的地址，从而不需要句柄池，通过引用能够直接访问对象。但对象所在的内存空间需要额外的策略存储对象所属的类信息的地址。</p>
+<p>需要说明的是，HotSpot 采用第二种方式，即直接指针方式来访问对象，只需要一次寻址操作，所以在性能上比句柄访问方式快一倍。但像上面所说，它需要<strong>额外的策略</strong>来存储对象在方法区中类信息的地址。</p>
+
+
+  <h3>这个系列的帖子</h3>
+  <ul>
+    
+      <li><a href="/post/jvm-memory-allocation/">JVM 对象内存分配</a></li>
+    
+      <li><a href="/post/jvm-garbage-collection/">JVM 垃圾回收</a></li>
+    
+      <li><a href="/post/jvm-object/">JVM 对象</a></li>
+    
+      <li><a href="/post/jvm-memory-structure/">JVM 内存结构</a></li>
+    
+  </ul>
+
+
+  <h3>相关文章</h3>
+  <ul>
+    
+      <li><a href="/post/jvm-memory-allocation/">JVM 对象内存分配</a></li>
+    
+      <li><a href="/post/jvm-garbage-collection/">JVM 垃圾回收</a></li>
+    
+      <li><a href="/post/jvm-memory-structure/">JVM 内存结构</a></li>
+    
+  </ul>
+
+
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-file-word post__meta-icon"></em>
+            <span class="post__meta-text">70 字</span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-copyright post__meta-icon"></em>
+            <span class="post__meta-text">
+               
+                BY-NC-SA 4.0
+              
+            </span>
+          </li>
+        </ul>
+      
+    </div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/java/">Java</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/jvm/">JVM</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2020 - 2025
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/statement/"
+          
+          title=""
+        >
+          声明
+        </a>
+      </li>
+    
+  </ul>
+  <ul class="footer__list">
+    
+      <li class="footer__item">
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024061880号-2</a>
+      </li>
+    
+    
+      <li class="footer__item">
+        <img src="https://gitee.com/ocancel/oss/raw/main/uPic/mps-logo-1718703873983.png" alt="mps-logo">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054571" rel="noreferrer" target="_blank">
+          京公网安备11011402054571号
+        </a>
+      </li>
+    
+  </ul>  
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/sentence.min.d1d983ea1775bb4c791be469ce46d6bf27a0e1617456ed7c8fdc5529e4108096.js"
+      integrity="sha256-0dmD6hd1u0x5G&#43;RpzkbWvyeg4WF0Vu18j9xVKeQQgJY="
+      crossorigin="anonymous"
+    ></script>
+  
+  
+    <script>
+      function initSakanaWidget() {
+        new SakanaWidget({ autoFit: true }).mount('#sakana-widget');
+      }
+    </script>
+    
+    
+    <script
+      async
+      onload="initSakanaWidget()"
+      type="text/javascript"
+      src="/js/sakana-2.7.0.min.3a6416e000efeb774e85c37fe96f81033d63d6509957422e844e25532c211bc2.js"
+      integrity="sha256-OmQW4ADv63dOhcN/6W&#43;BAz1j1lCZV0IuhE4lUywhG8I="
+      crossorigin="anonymous"
+    ></script>
+  
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.8cc4e58cd5f865334908a0579db7b398d0017f8bf8633d7dd09582841b6f6d0a.js"
+    integrity="sha256-jMTljNX4ZTNJCKBXnbezmNABf4v4Yz190JWChBtvbQo="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>

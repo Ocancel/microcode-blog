@@ -30,6 +30,50 @@
     </item>
     
     <item>
+      <title>JVM 对象内存分配</title>
+      <link>https://blog.microcode.site/post/jvm-memory-allocation/</link>
+      <pubDate>Sun, 15 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.microcode.site/post/jvm-memory-allocation/</guid>
+      
+        <description>JVM 对象内存分配</description>
+      
+    </item>
+    
+    <item>
+      <title>JVM 垃圾回收</title>
+      <link>https://blog.microcode.site/post/jvm-garbage-collection/</link>
+      <pubDate>Tue, 26 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.microcode.site/post/jvm-garbage-collection/</guid>
+      
+        <description>JVM 垃圾回收</description>
+      
+    </item>
+    
+    <item>
+      <title>JVM 对象</title>
+      <link>https://blog.microcode.site/post/jvm-object/</link>
+      <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.microcode.site/post/jvm-object/</guid>
+      
+        <description>JVM 对象</description>
+      
+    </item>
+    
+    <item>
+      <title>JVM 内存结构</title>
+      <link>https://blog.microcode.site/post/jvm-memory-structure/</link>
+      <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.microcode.site/post/jvm-memory-structure/</guid>
+      
+        <description>JVM 内存结构</description>
+      
+    </item>
+    
+    <item>
       <title>Java HashMap</title>
       <link>https://blog.microcode.site/post/java-hashmap/</link>
       <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
