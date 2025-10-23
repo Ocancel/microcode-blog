@@ -30,6 +30,17 @@
     </item>
     
     <item>
+      <title>Java 类加载机制</title>
+      <link>https://blog.microcode.site/post/java-class-load/</link>
+      <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.microcode.site/post/java-class-load/</guid>
+      
+        <description>Java 类加载机制</description>
+      
+    </item>
+    
+    <item>
       <title>JVM 对象内存分配</title>
       <link>https://blog.microcode.site/post/jvm-memory-allocation/</link>
       <pubDate>Sun, 15 Oct 2023 00:00:00 +0000</pubDate>

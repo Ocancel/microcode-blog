@@ -1,0 +1,1095 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh-cn"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        Java 类加载机制 |
+      Corin
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.152.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="referrer" content="no-referrer">
+  <meta name="author" content="Corin" />
+  <meta
+    name="description"
+    content="Java 类加载机制"
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.dcbfb18df4ee2c9f4b050a86f90e4a50a05447725d9be756bbefbe5731aa4f88.css"
+      integrity="sha256-3L&#43;xjfTuLJ9LBQqG&#43;Q5KUKBUR3Jdm&#43;dWu&#43;&#43;&#43;VzGqT4g="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.ec69c65ba7911b8cde5a85155a04f042c3f7d38d440308373696912c81021fb0.css"
+    integrity="sha256-7GnGW6eRG4zeWoUVWgTwQsP3041EAwg3NpaRLIECH7A="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.2028dce76dbdcf7f947846702ca81e0c963979a9aaf826e22d30454fb8c2b216.css"
+    integrity="sha256-ICjc5229z3&#43;UeEZwLKgeDJY5eamq&#43;CbiLTBFT7jCshY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.3dd08e9de925ffed91663f3adeaf91acc3d518649cae6ce8047cee6cac5fdac5.css"
+    integrity="sha256-PdCOnekl/&#43;2RZj863q&#43;RrMPVGGScrmzoBHzubKxf2sU="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.610646915ba4d89f4ad3d568db6f19d2b8f69f957479658357222d8085be8c6e.css"
+    integrity="sha256-YQZGkVuk2J9K09Vo228Z0rj2n5V0eWWDVyItgIW&#43;jG4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://blog.microcode.site/post/java-class-load/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/code-copy.min.972dc758da9327e4d3f980c2890560a73a7549c7716ee21f32ed88945eb0a4b4.js"
+    integrity="sha256-ly3HWNqTJ&#43;TT&#43;YDCiQVgpzp1ScdxbuIfMu2IlF6wpLQ="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/wrapper-table.min.0010559d9b8353a340f7502cfacc93c74b3639656176fc6c668ccf35d43c9714.js"
+    integrity="sha256-ABBVnZuDU6NA91As&#43;syTx0s2OWVhdvxsZozPNdQ8lxQ="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/brief.min.e162f6b80febcba7434a7ee5c068ed9daa2c087a2d8e3724da629d7448c79f40.js"
+    integrity="sha256-4WL2uA/ry6dDSn7lwGjtnaosCHotjjck2mKddEjHn0A="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/toc-switcher.min.0c92979c495a65afca4bcacd65eb32866222cf2de1b7238a1e072546e7180294.js"
+      integrity="sha256-DJKXnElaZa/KS8rNZesyhmIizy3htyOKHgclRucYApQ="
+      crossorigin="anonymous">
+    </script>
+  <script 
+      async 
+      src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Java 类加载机制">
+  <meta name="twitter:description" content="Java 类加载机制">
+
+
+
+  
+  <meta property="og:url" content="https://blog.microcode.site/post/java-class-load/">
+  <meta property="og:site_name" content="Corin 的博客">
+  <meta property="og:title" content="Java 类加载机制">
+  <meta property="og:description" content="Java 类加载机制">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-10-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-10-27T00:00:00+00:00">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Java 类加载机制",
+        "headline": "Java 类加载机制",
+        "alternativeHeadline": "",
+        "description": "
+      Java 类加载机制
+
+
+    ",
+        "inLanguage": "zh-cn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.microcode.site\/post\/java-class-load\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Corin"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-10-27T00:00:00.00Z",
+        "datePublished": "2023-10-27T00:00:00.00Z",
+        "dateModified": "2023-10-27T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Corin",
+            "url": "https://blog.microcode.site/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.microcode.site\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/blog.microcode.site\/post\/java-class-load\/",
+        "wordCount" : "531",
+        "genre" : [ 
+      
+      "Java"
+
+    ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="https://gitee.com/ocancel/oss/raw/main/uPic/avator-1718763586277.png"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <div class="glitch">
+            <a href="/">Corin.dev</a>
+          </div>
+        </div>
+      
+      <div id="brief" class="sidebar__introduction-description">
+        <p>Whatever can happen will happen.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://microcode.site/"
+            target="_self"
+            rel="noopener me"
+            aria-label="Microcode"
+            title="Microcode"
+          >
+            <i class="fa fa-square-check fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/Ocancel/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github-square fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:jiaqi.gao.dev@gmail.com"
+            target=""
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fa fa-square-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+    
+      <div class="sentence-windows">
+          <div class="sentence-container">
+              <div class="sentence-content">
+                  <p class="sentence-hi"> </p>
+                  <p class="sentence-from"> </p>
+                  <div class="sentence-progress-con">
+                      <div class="sentence-progress-time" style="left:0%"></div>
+                  </div>
+              </div>
+              <div class="sentence-button">
+                  <input type="button" class="sentence-sub" value="update">
+              </div>
+          </div>
+      </div>
+    
+    
+      <div class="sakana-components">
+        <div id="sakana-widget"></div>
+      </div>
+    
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2020 - 2025
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/statement/"
+          
+          title=""
+        >
+          声明
+        </a>
+      </li>
+    
+  </ul>
+  <ul class="footer__list">
+    
+      <li class="footer__item">
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024061880号-2</a>
+      </li>
+    
+    
+      <li class="footer__item">
+        <img src="https://gitee.com/ocancel/oss/raw/main/uPic/mps-logo-1718703873983.png" alt="mps-logo">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054571" rel="noreferrer" target="_blank">
+          京公网安备11011402054571号
+        </a>
+      </li>
+    
+  </ul>  
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/sentence.min.d1d983ea1775bb4c791be469ce46d6bf27a0e1617456ed7c8fdc5529e4108096.js"
+      integrity="sha256-0dmD6hd1u0x5G&#43;RpzkbWvyeg4WF0Vu18j9xVKeQQgJY="
+      crossorigin="anonymous"
+    ></script>
+  
+  
+    <script>
+      function initSakanaWidget() {
+        new SakanaWidget({ autoFit: true }).mount('#sakana-widget');
+      }
+    </script>
+    
+    
+    <script
+      async
+      onload="initSakanaWidget()"
+      type="text/javascript"
+      src="/js/sakana-2.7.0.min.3a6416e000efeb774e85c37fe96f81033d63d6509957422e844e25532c211bc2.js"
+      integrity="sha256-OmQW4ADv63dOhcN/6W&#43;BAz1j1lCZV0IuhE4lUywhG8I="
+      crossorigin="anonymous"
+    ></script>
+  
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.8cc4e58cd5f865334908a0579db7b398d0017f8bf8633d7dd09582841b6f6d0a.js"
+    integrity="sha256-jMTljNX4ZTNJCKBXnbezmNABf4v4Yz190JWChBtvbQo="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >主页</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >历程</a
+            >
+          </li>
+        
+      
+        
+        
+
+          <li class="nav__list-item">
+            <div class="optionswitch">
+              <input class="optionswitch__picker" type="checkbox" id="3" hidden />
+
+              
+              
+                
+
+              
+
+              <label class="optionswitch__label" for="3"
+                >精选 <i class="fa fa-angle-down" aria-hidden="true"></i
+              ></label>
+
+              <div class="optionswitch__triangle"></div>
+              <ul class="optionswitch__list">
+                
+                  <li class="optionswitch__list-item">
+                    
+                    <a
+                      href="/film/"
+                      
+                      title=""
+                      >电影</a
+                    >
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/statistics/"
+              
+              title=""
+              >统计</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/links/"
+              
+              title=""
+              >链接</a
+            >
+          </li>
+        
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >关于</a
+            >
+          </li>
+        
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    <div id="toc-button" class="toc-button">☰</div>
+<div id="toc-overlay" class="toc-overlay"></div>
+<div id="toc-window" class="toc-window">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#类加载的时机">类加载的时机</a>
+      <ul>
+        <li><a href="#类的生命周期">类的生命周期</a></li>
+        <li><a href="#类加载过程中初始化开始的时机">类加载过程中“初始化”开始的时机</a></li>
+        <li><a href="#被动引用演示">被动引用演示</a>
+          <ul>
+            <li><a href="#通过子类引用父类的静态字段">通过子类引用父类的静态字段</a></li>
+            <li><a href="#通过数组定义来引用类">通过数组定义来引用类</a></li>
+            <li><a href="#通过引用类中定义的常量">通过引用类中定义的常量</a></li>
+          </ul>
+        </li>
+        <li><a href="#接口的加载过程">接口的加载过程</a></li>
+      </ul>
+    </li>
+    <li><a href="#类加载的过程">类加载的过程</a>
+      <ul>
+        <li><a href="#加载">加载</a>
+          <ul>
+            <li><a href="#加载的过程">加载的过程</a></li>
+            <li><a href="#获取二进制字节流">获取二进制字节流</a></li>
+            <li><a href="#非数组类与数组类加载比较">“非数组类”与“数组类”加载比较</a></li>
+            <li><a href="#注意事项">注意事项</a></li>
+          </ul>
+        </li>
+        <li><a href="#验证">验证</a>
+          <ul>
+            <li><a href="#验证的重要性">验证的重要性</a></li>
+            <li><a href="#验证的过程">验证的过程</a></li>
+          </ul>
+        </li>
+        <li><a href="#准备">准备</a></li>
+        <li><a href="#解析">解析</a></li>
+        <li><a href="#初始化">初始化</a></li>
+      </ul>
+    </li>
+    <li><a href="#类加载器">类加载器</a>
+      <ul>
+        <li><a href="#类与类加载器">类与类加载器</a>
+          <ul>
+            <li><a href="#判断类是否相等">判断类是否“相等”</a></li>
+            <li><a href="#加载器种类">加载器种类</a></li>
+          </ul>
+        </li>
+        <li><a href="#双亲委派模型">双亲委派模型</a>
+          <ul>
+            <li><a href="#什么是双亲委派模型">什么是双亲委派模型</a></li>
+            <li><a href="#工作过程">工作过程</a></li>
+            <li><a href="#为什么使用双亲委派模型">为什么使用双亲委派模型</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<div class="post__content">
+      <h1>Java 类加载机制</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Oct 27 2023
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">阅读时间 3 分钟</span>
+          </li>
+        </ul>
+      <h2 id="类加载的时机">类加载的时机</h2>
+<h3 id="类的生命周期">类的生命周期</h3>
+<p>类从被加载到虚拟机内存开始，到卸载出内存为止，它的整个生命周期包括以下 <code>7</code> 个阶段：</p>
+<ul>
+<li>加载</li>
+<li>验证</li>
+<li>准备</li>
+<li>解析</li>
+<li>初始化</li>
+<li>使用</li>
+<li>卸载</li>
+</ul>
+<p>验证、准备、解析 <code>3</code> 个阶段统称为连接。</p>
+<p>加载、验证、准备、初始化和卸载这 <code>5</code> 个阶段的顺序是确定的，类的加载过程必须按照这种顺序按部就班地开始，而解析阶段则不一定：它在某些情况下可以在初始化后再开始，这是为了支持 Java 语言的运行时绑定。</p>
+<h3 id="类加载过程中初始化开始的时机">类加载过程中“初始化”开始的时机</h3>
+<p>Java 虚拟机规范没有强制约束类加载过程的第一阶段（即：加载）什么时候开始，但对于“初始化”阶段，有着严格的规定。有且仅有 <code>5</code> 种情况必须立即对类进行“初始化”：</p>
+<ul>
+<li>在遇到 <code>new</code>、<code>putstatic</code>、<code>getstatic</code>、<code>invokestatic</code> 字节码指令时，如果类尚未初始化，则需要先触发其初始化。</li>
+<li>对类进行反射调用时，如果类还没有初始化，则需要先触发其初始化。</li>
+<li>初始化一个类时，如果其父类还没有初始化，则需要先初始化父类。</li>
+<li>虚拟机启动时，用于需要指定一个包含 <code>main()</code> 方法的主类，虚拟机会先初始化这个主类。</li>
+<li>如果一个 <code>java.lang.invoke.MethodHandle</code> 实例最后的解析结果为 <code>REF_getStatic</code>、<code>REF_putStatic</code>、<code>REF_invokeStatic</code> 的方法句柄，并且这个方法句柄所对应的类还没初始化，则需要先触发其初始化。</li>
+</ul>
+<p>这 <code>5</code> 种场景中的行为称为对一个类进行<strong>主动引用</strong>，除此之外，其它所有引用类的方式都不会触发初始化，称为<strong>被动引用</strong>。</p>
+<h3 id="被动引用演示">被动引用演示</h3>
+<h4 id="通过子类引用父类的静态字段">通过子类引用父类的静态字段</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 0
+</span><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 通过子类引用父类的静态字段，不会导致子类初始化。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">class</span> <span class="nc">SuperClass</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;SuperClass init!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">123</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">class</span> <span class="nc">SubClass</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">SuperClass</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;SubClass init!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NotInitialization</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">SubClass</span><span class="p">.</span><span class="na">value</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// SuperClass init!</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>对于静态字段，只有直接定义这个字段的类才会被初始化，因此通过其子类来引用父类中定义的静态字段，只会触发父类的初始化而不会触发子类的初始化。</p>
+<h4 id="通过数组定义来引用类">通过数组定义来引用类</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 通过数组定义来引用类，不会触发此类的初始化。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NotInitialization</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">SuperClass</span><span class="o">[]</span><span class="w"> </span><span class="n">superClasses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SuperClass</span><span class="o">[</span><span class="n">10</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这段代码不会触发父类的初始化，但会触发 <code>[Lcom.example.SuperClass</code> 这个类的初始化，它由虚拟机自动生成，直接继承自 <code>java.lang.Object</code>，创建动作由字节码指令 <code>newarray</code> 触发。</p>
+<h4 id="通过引用类中定义的常量">通过引用类中定义的常量</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 0
+</span><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 常量在编译阶段会存入调用类的常量池中，本质上并没有直接引用到定义常量的类，因此不会触发定义常量的类的初始化。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">class</span> <span class="nc">ConstClass</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;ConstClass init!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">HELLO_BINGO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;Hello Bingo&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NotInitialization</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ConstClass</span><span class="p">.</span><span class="na">HELLO_BINGO</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>编译通过之后，常量存储到 <code>NotInitialization</code> 类的常量池中，<code>NotInitialization</code> 的 <code>Class</code> 文件中并没有 <code>ConstClass</code> 类的符号引用入口，这两个类在编译成 <code>Class</code> 之后就没有任何联系了。</p>
+<h3 id="接口的加载过程">接口的加载过程</h3>
+<p>接口加载过程与类加载过程稍有不同。</p>
+<p>当一个类在初始化时，要求其父类全部都已经初始化过了，但是一个接口在初始化时，并不要求其父接口全部都完成了初始化，当真正用到父接口的时候才会初始化。</p>
+<h2 id="类加载的过程">类加载的过程</h2>
+<p>类加载过程包括 5 个阶段：加载、验证、准备、解析和初始化。</p>
+<h3 id="加载">加载</h3>
+<h4 id="加载的过程">加载的过程</h4>
+<p>“加载”是“类加载”过程的一个阶段，不能混淆这两个名词。在加载阶段，虚拟机需要完成 3 件事：</p>
+<ul>
+<li>通过类的全限定名获取该类的二进制字节流。</li>
+<li>将二进制字节流所代表的静态结构转化为方法区的运行时数据结构。</li>
+<li>在内存中创建一个代表该类的 <code>java.lang.Class</code> 对象，作为方法区这个类的各种数据的访问入口。</li>
+</ul>
+<h4 id="获取二进制字节流">获取二进制字节流</h4>
+<p>对于 <code>Class</code> 文件，虚拟机没有指明要从哪里获取、怎样获取。除了直接从编译好的 <code>.class</code> 文件中读取，还有以下几种方式：</p>
+<ul>
+<li>从 <code>zip</code> 包中读取，如 <code>jar</code>、<code>war</code> 等；</li>
+<li>从网络中获取，如 <code>Applet</code>；</li>
+<li>通过动态代理技术生成代理类的二进制字节流；</li>
+<li>由 <code>JSP</code> 文件生成对应的 <code>Class</code> 类；</li>
+<li>从数据库中读取，如 有些中间件服务器可以选择把程序安装到数据库中来完成程序代码在集群间的分发。</li>
+</ul>
+<h4 id="非数组类与数组类加载比较">“非数组类”与“数组类”加载比较</h4>
+<ul>
+<li>非数组类加载阶段可以使用系统提供的引导类加载器，也可以由用户自定义的类加载器完成，开发人员可以通过定义自己的类加载器控制字节流的获取方式（如重写一个类加载器的 <code>loadClass()</code> 方法）。</li>
+<li>数组类本身不通过类加载器创建，它是由 Java 虚拟机直接创建的，再由类加载器创建数组中的元素类。</li>
+</ul>
+<h4 id="注意事项">注意事项</h4>
+<ul>
+<li>虚拟机规范未规定 <code>Class</code> 对象的存储位置，对于 HotSpot 虚拟机而言，<code>Class</code> 对象比较特殊，它虽然是对象，但存放在方法区中。</li>
+<li>加载阶段与连接阶段的部分内容交叉进行，加载阶段尚未完成，连接阶段可能已经开始了。但这两个阶段的开始时间仍然保持着固定的先后顺序。</li>
+</ul>
+<h3 id="验证">验证</h3>
+<h4 id="验证的重要性">验证的重要性</h4>
+<p>验证阶段确保 <code>Class</code> 文件的字节流中包含的信息符合当前虚拟机的要求，并且不会危害虚拟机自身的安全。</p>
+<h4 id="验证的过程">验证的过程</h4>
+<ul>
+<li>文件格式验证 验证字节流是否符合 <code>Class</code> 文件格式的规范，并且能被当前版本的虚拟机处理，验证点如下：
+<ul>
+<li>是否以魔数 <code>0XCAFEBABE</code> 开头。</li>
+<li>主次版本号是否在当前虚拟机处理范围内。</li>
+<li>常量池是否有不被支持的常量类型。</li>
+<li>指向常量的索引值是否指向了不存在的常量。</li>
+<li><code>CONSTANT_Utf8_info</code> 型的常量是否有不符合 <code>UTF-8</code> 编码的数据。</li>
+<li>&hellip;&hellip;</li>
+</ul>
+</li>
+<li>元数据验证 对字节码描述信息进行语义分析，确保其符合 Java 语法规范。</li>
+<li>字节码验证 本阶段是验证过程中最复杂的一个阶段，是对方法体进行语义分析，保证方法在运行时不会出现危害虚拟机的事件。</li>
+<li>符号引用验证 本阶段发生在解析阶段，确保解析正常执行。</li>
+</ul>
+<h3 id="准备">准备</h3>
+<p>准备阶段是正式为类变量（或称“静态成员变量”）分配内存并设置初始值的阶段。这些变量（不包括实例变量）所使用的内存都在方法区中进行分配。</p>
+<p>初始值“通常情况下”是数据类型的零值（ <code>0</code> 、 <code>null</code> 等），假设一个类变量的定义为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">123</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>那么变量 <code>value</code> 在准备阶段过后的初始值为 <code>0</code> 而不是 <code>123</code>，因为这时候尚未开始执行任何 Java 方法。</p>
+<p>存在“特殊情况”：如果类字段的字段属性表中存在 <code>ConstantValue</code> 属性，那么在准备阶段 <code>value</code> 就会被初始化为 <code>ConstantValue</code> 属性所指定的值，假设上面类变量 <code>value</code> 的定义变为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">123</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>那么在准备阶段虚拟机会根据 <code>ConstantValue</code> 的设置将 <code>value</code> 赋值为 <code>123</code>。</p>
+<h3 id="解析">解析</h3>
+<p>解析阶段是虚拟机将常量池内的符号引用替换为直接引用的过程。</p>
+<h3 id="初始化">初始化</h3>
+<p>类初始化阶段是类加载过程的最后一步，是执行类构造器 <code>&lt;clinit&gt;()</code> 方法的过程。</p>
+<p><code>&lt;clinit&gt;()</code> 方法是由编译器自动收集类中的所有类变量的赋值动作和静态语句块（<code>static {}</code> 块）中的语句合并产生的，编译器收集的顺序是由语句在源文件中出现的顺序所决定的。</p>
+<p>静态语句块中只能访问定义在静态语句块之前的变量，定义在它之后的变量，在前面的静态语句块中可以赋值，但不能访问。如下方代码所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">0
+</span><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// 给变量赋值可以正常编译通过</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">  </span><span class="c1">// 这句编译器会提示“非法向前引用”</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>&lt;clinit&gt;()</code> 方法不需要显式调用父类构造器，虚拟机会保证在子类的 <code>&lt;clinit&gt;()</code> 方法执行之前，父类的 <code>&lt;clinit&gt;()</code> 方法已经执行完毕。</p>
+<p>由于父类的 <code>&lt;clinit&gt;()</code> 方法先执行，意味着父类中定义的静态语句块要优先于子类的变量赋值操作。如下方代码所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 0
+</span><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Parent</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Sub</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Parent</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Sub</span><span class="p">.</span><span class="na">B</span><span class="p">);</span><span class="w"> </span><span class="c1">// 输出 2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>&lt;clinit&gt;()</code> 方法不是必需的，如果一个类没有静态语句块，也没有对类变量的赋值操作，那么编译器可以不为这个类生成 <code>&lt;clinit&gt;()</code> 方法。</p>
+<p>接口中不能使用静态代码块，但接口也需要通过 <code>&lt;clinit&gt;()</code> 方法为接口中定义的静态成员变量显式初始化。但接口与类不同，接口的 <code>&lt;clinit&gt;()</code> 方法不需要先执行父类的 <code>&lt;clinit&gt;()</code> 方法，只有当父接口中定义的变量使用时，父接口才会初始化。</p>
+<p>虚拟机会保证一个类的 <code>&lt;clinit&gt;()</code> 方法在多线程环境中被正确加锁、同步。如果多个线程同时去初始化一个类，那么只会有一个线程去执行这个类的 <code>&lt;clinit&gt;()</code> 方法。</p>
+<h2 id="类加载器">类加载器</h2>
+<h3 id="类与类加载器">类与类加载器</h3>
+<h4 id="判断类是否相等">判断类是否“相等”</h4>
+<p>任意一个类，都由<strong>加载它的类加载器</strong>和这个<strong>类本身</strong>一同确立其在 Java 虚拟机中的唯一性，每一个类加载器，都有一个独立的类名称空间。</p>
+<p>因此，比较两个类是否“相等”，只有在这两个类是由同一个类加载器加载的前提下才有意义，否则，即使这两个类来源于同一个 <code>Class</code> 文件，被同一个虚拟机加载，只要加载它们的类加载器不同，那么这两个类就必定不相等。</p>
+<p>这里的“相等”，包括代表类的 <code>Class</code> 对象的 <code>equals()</code> 方法、<code>isInstance()</code> 方法的返回结果，也包括使用 <code>instanceof</code> 关键字做对象所属关系判定等情况。</p>
+<h4 id="加载器种类">加载器种类</h4>
+<p>系统提供了 3 种类加载器：</p>
+<ul>
+<li>启动类加载器（Bootstrap ClassLoader）： 负责将存放在 <code>&lt;JAVA_HOME&gt;\lib</code> 目录中的，并且能被虚拟机识别的（仅按照文件名识别，如 <code>rt.jar</code>，名字不符合的类库即使放在 <code>lib</code> 目录中也不会被加载）类库加载到虚拟机内存中。</li>
+<li>扩展类加载器（Extension ClassLoader）： 负责加载 <code>&lt;JAVA_HOME&gt;\lib\ext</code> 目录中的所有类库，开发者可以直接使用扩展类加载器。</li>
+<li>应用程序类加载器（Application ClassLoader）： 由于这个类加载器是 <code>ClassLoader</code> 中的 <code>getSystemClassLoader()</code> 方法的返回值，所以一般也称它为“系统类加载器”。它负责加载用户类路径（<code>classpath</code>）上所指定的类库，开发者可以直接使用这个类加载器，如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。</li>
+</ul>
+<p>当然，如果有必要，还可以加入自己定义的类加载器。</p>
+<h3 id="双亲委派模型">双亲委派模型</h3>
+<h4 id="什么是双亲委派模型">什么是双亲委派模型</h4>
+<p>双亲委派模型是描述类加载器之间的层次关系。它要求除了顶层的启动类加载器外，其余的类加载器都应当有自己的父类加载器。（父子关系一般不会以继承的关系实现，而是以组合关系来复用父加载器的代码）</p>
+<h4 id="工作过程">工作过程</h4>
+<p>如果一个类加载器收到了类加载的请求，它首先不会自己去尝试加载这个类，而是把这个请求委派给父类加载器去完成，每一个层次的类加载器都是如此，因此所有的加载请求最终都应该传送到顶层的启动类加载器中，只有当父加载器反馈自己无法完成这个加载请求（找不到所需的类）时，子加载器才会尝试自己去加载。</p>
+<p>在 <code>java.lang.ClassLoader</code> 中的 <code>loadClass</code> 方法中实现该过程。</p>
+<h4 id="为什么使用双亲委派模型">为什么使用双亲委派模型</h4>
+<p>像 <code>java.lang.Object</code> 这些存放在 <code>rt.jar</code> 中的类，无论使用哪个类加载器加载，最终都会委派给最顶端的启动类加载器加载，从而使得不同加载器加载的 <code>Object</code> 类都是同一个。</p>
+<p>相反，如果没有使用双亲委派模型，由各个类加载器自行去加载的话，如果用户自己编写了一个称为 <code>java.lang.Object</code> 的类，并放在 <code>classpath</code> 下，那么系统将会出现多个不同的 <code>Object</code> 类，Java 类型体系中最基础的行为也就无法保证。</p>
+
+
+
+  <h3>相关文章</h3>
+  <ul>
+    
+      <li><a href="/post/maven-project-import-local-jar/">Maven 导入本地Jar包</a></li>
+    
+      <li><a href="/post/java-util-packaging/">Java util packaging</a></li>
+    
+      <li><a href="/post/jvm-memory-allocation/">JVM 对象内存分配</a></li>
+    
+  </ul>
+
+
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-file-word post__meta-icon"></em>
+            <span class="post__meta-text">531 字</span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-copyright post__meta-icon"></em>
+            <span class="post__meta-text">
+               
+                BY-NC-SA 4.0
+              
+            </span>
+          </li>
+        </ul>
+      
+    </div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/java/">Java</a></span>
+
+
+      
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2020 - 2025
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/statement/"
+          
+          title=""
+        >
+          声明
+        </a>
+      </li>
+    
+  </ul>
+  <ul class="footer__list">
+    
+      <li class="footer__item">
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024061880号-2</a>
+      </li>
+    
+    
+      <li class="footer__item">
+        <img src="https://gitee.com/ocancel/oss/raw/main/uPic/mps-logo-1718703873983.png" alt="mps-logo">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054571" rel="noreferrer" target="_blank">
+          京公网安备11011402054571号
+        </a>
+      </li>
+    
+  </ul>  
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/sentence.min.d1d983ea1775bb4c791be469ce46d6bf27a0e1617456ed7c8fdc5529e4108096.js"
+      integrity="sha256-0dmD6hd1u0x5G&#43;RpzkbWvyeg4WF0Vu18j9xVKeQQgJY="
+      crossorigin="anonymous"
+    ></script>
+  
+  
+    <script>
+      function initSakanaWidget() {
+        new SakanaWidget({ autoFit: true }).mount('#sakana-widget');
+      }
+    </script>
+    
+    
+    <script
+      async
+      onload="initSakanaWidget()"
+      type="text/javascript"
+      src="/js/sakana-2.7.0.min.3a6416e000efeb774e85c37fe96f81033d63d6509957422e844e25532c211bc2.js"
+      integrity="sha256-OmQW4ADv63dOhcN/6W&#43;BAz1j1lCZV0IuhE4lUywhG8I="
+      crossorigin="anonymous"
+    ></script>
+  
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.8cc4e58cd5f865334908a0579db7b398d0017f8bf8633d7dd09582841b6f6d0a.js"
+    integrity="sha256-jMTljNX4ZTNJCKBXnbezmNABf4v4Yz190JWChBtvbQo="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>
