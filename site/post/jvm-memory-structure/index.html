@@ -238,7 +238,7 @@
 
     ,
         "url" : "https:\/\/blog.microcode.site\/post\/jvm-memory-structure\/",
-        "wordCount" : "535",
+        "wordCount" : "534",
         "genre" : [ 
       
       "Java"
@@ -616,7 +616,7 @@
         <li><a href="#堆的特点">堆的特点</a></li>
         <li><a href="#新生代与老年代">新生代与老年代</a></li>
         <li><a href="#对象分配过程">对象分配过程</a></li>
-        <li><a href="#full-gc-major-gc-触发条件">Full GC /Major GC 触发条件</a></li>
+        <li><a href="#full-gcmajor-gc-触发条件">Full GC/Major GC 触发条件</a></li>
         <li><a href="#逃逸分析">逃逸分析</a></li>
         <li><a href="#tlab">TLAB</a></li>
         <li><a href="#四种引用方式">四种引用方式</a></li>
@@ -818,7 +818,7 @@
 <li>默认是 <code>15</code> 次的循环，超过 <code>15</code> 次，则会将幸存者区幸存下来的转去老年区，通过 JVM 参数设置次数 : <code>-XX:MaxTenuringThreshold=N</code> 进行设置</li>
 <li>频繁在新生区收集，很少在养老区收集，几乎不在永久区/元空间搜集</li>
 </ul>
-<h3 id="full-gc-major-gc-触发条件">Full GC /Major GC 触发条件</h3>
+<h3 id="full-gcmajor-gc-触发条件">Full GC/Major GC 触发条件</h3>
 <ul>
 <li>显示调用 <code>System.gc()</code>，老年代的空间不够，方法区的空间不够等都会触发 <code>Full GC</code>，同时对新生代和老年代回收，<code>FUll GC</code> 的 <code>STW</code> 的时间最长，应该要避免</li>
 <li>在出现 <code>Major GC</code> 之前，会先触发 <code>Minor GC</code>，如果老年代的空间还是不够就会触发 <code>Major GC</code>，<code>STW</code> 的时间长于 <code>Minor GC</code></li>
@@ -974,7 +974,7 @@
         <ul class="post__meta">
           <li class="post__meta-item">
             <em class="fas fa-file-word post__meta-icon"></em>
-            <span class="post__meta-text">535 字</span>
+            <span class="post__meta-text">534 字</span>
           </li>
           <li class="post__meta-item">
             <em class="fas fa-copyright post__meta-icon"></em>
